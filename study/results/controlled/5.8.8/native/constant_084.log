@@ -1,0 +1,10 @@
+
+INFO: Analyze all flags starting with sym. and entry0 (aa)
+INFO: Analyze all functions arguments/locals (afva@@@F)
+[2K
+INFO: Analyze function calls (aac)
+INFO: Analyze len bytes of instructions for references (aar)
+INFO: Finding and parsing C++ vtables (avrr)
+INFO: Type matching analysis for all functions (aaft)
+INFO: Propagate noreturn information (aanr)
+INFO: Use -AA or aaaa to perform additional experimental analysis

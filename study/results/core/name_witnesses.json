@@ -1,0 +1,164 @@
+[
+  {
+    "classification": "feature-level full-signature compression collision; no semantic claim",
+    "field": "name",
+    "input_a": {
+      "args": "",
+      "callgraph": "",
+      "cc": 1,
+      "cfg": "0:;",
+      "indegree": 0,
+      "locals": "",
+      "name": "function_00304",
+      "nblocks": 1,
+      "ninstrs": 10,
+      "nvars": 0,
+      "opcodes": "add;and;mov;mul;or;ret;sub;xor;",
+      "outdegree": 0,
+      "stackframe": 0
+    },
+    "input_b": {
+      "args": "",
+      "callgraph": "",
+      "cc": 1,
+      "cfg": "0:;",
+      "indegree": 0,
+      "locals": "",
+      "name": "function_00305",
+      "nblocks": 1,
+      "ninstrs": 10,
+      "nvars": 0,
+      "opcodes": "add;and;mov;mul;or;ret;sub;xor;",
+      "outdegree": 0,
+      "stackframe": 0
+    },
+    "pair_indices": [
+      304,
+      305
+    ],
+    "score": 1.0,
+    "signature": {
+      "args": "b1fe",
+      "callgraph": "b1fe",
+      "cc": 1,
+      "cfg": "35a4",
+      "indegree": 0,
+      "locals": "b1fe",
+      "name": "ea4d",
+      "nblocks": 1,
+      "ninstrs": 3,
+      "nvars": 0,
+      "opcodes": "e89c",
+      "outdegree": 0,
+      "stackframe": 0
+    }
+  },
+  {
+    "classification": "feature-level full-signature compression collision; no semantic claim",
+    "field": "name",
+    "input_a": {
+      "args": "",
+      "callgraph": "",
+      "cc": 1,
+      "cfg": "0:;",
+      "indegree": 0,
+      "locals": "",
+      "name": "function_00218",
+      "nblocks": 1,
+      "ninstrs": 10,
+      "nvars": 0,
+      "opcodes": "add;and;mov;mul;or;ret;sub;xor;",
+      "outdegree": 0,
+      "stackframe": 0
+    },
+    "input_b": {
+      "args": "",
+      "callgraph": "",
+      "cc": 1,
+      "cfg": "0:;",
+      "indegree": 0,
+      "locals": "",
+      "name": "function_00340",
+      "nblocks": 1,
+      "ninstrs": 10,
+      "nvars": 0,
+      "opcodes": "add;and;mov;mul;or;ret;sub;xor;",
+      "outdegree": 0,
+      "stackframe": 0
+    },
+    "pair_indices": [
+      218,
+      340
+    ],
+    "score": 1.0,
+    "signature": {
+      "args": "b1fe",
+      "callgraph": "b1fe",
+      "cc": 1,
+      "cfg": "35a4",
+      "indegree": 0,
+      "locals": "b1fe",
+      "name": "7e47",
+      "nblocks": 1,
+      "ninstrs": 3,
+      "nvars": 0,
+      "opcodes": "e89c",
+      "outdegree": 0,
+      "stackframe": 0
+    }
+  },
+  {
+    "classification": "feature-level full-signature compression collision; no semantic claim",
+    "field": "name",
+    "input_a": {
+      "args": "",
+      "callgraph": "",
+      "cc": 1,
+      "cfg": "0:;",
+      "indegree": 0,
+      "locals": "",
+      "name": "function_00054",
+      "nblocks": 1,
+      "ninstrs": 10,
+      "nvars": 0,
+      "opcodes": "add;and;mov;mul;or;ret;sub;xor;",
+      "outdegree": 0,
+      "stackframe": 0
+    },
+    "input_b": {
+      "args": "",
+      "callgraph": "",
+      "cc": 1,
+      "cfg": "0:;",
+      "indegree": 0,
+      "locals": "",
+      "name": "function_00413",
+      "nblocks": 1,
+      "ninstrs": 10,
+      "nvars": 0,
+      "opcodes": "add;and;mov;mul;or;ret;sub;xor;",
+      "outdegree": 0,
+      "stackframe": 0
+    },
+    "pair_indices": [
+      54,
+      413
+    ],
+    "score": 1.0,
+    "signature": {
+      "args": "b1fe",
+      "callgraph": "b1fe",
+      "cc": 1,
+      "cfg": "35a4",
+      "indegree": 0,
+      "locals": "b1fe",
+      "name": "9ae8",
+      "nblocks": 1,
+      "ninstrs": 3,
+      "nvars": 0,
+      "opcodes": "e89c",
+      "outdegree": 0,
+      "stackframe": 0
+    }
+  }
+]

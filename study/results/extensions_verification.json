@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "raw_inputs": 120000,
+      "seed_sequences_verified": true,
+      "test": "stratified_controls",
+      "widths": [
+        2,
+        4,
+        8
+      ]
+    },
+    {
+      "d": 0.06458360491592188,
+      "p": 0.3308345827086457,
+      "replicates": 2000,
+      "test": "birthday_discrete_model_and_monte_carlo"
+    },
+    {
+      "emulated_cases": 224,
+      "routines": 7,
+      "test": "additional_binary_witnesses",
+      "versions": [
+        "5.8.8",
+        "6.0.4-wasi"
+      ]
+    },
+    {
+      "status": "passed",
+      "test": "original_python_version",
+      "version": "3.9.0"
+    }
+  ],
+  "status": "passed"
+}

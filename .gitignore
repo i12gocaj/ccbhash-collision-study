@@ -1,0 +1,27 @@
+# Herramientas descargadas por setup.ps1 y depósito bruto de 29 GB
+.tools/
+
+# Copias locales de repositorios externos (fijados por commit en la procedencia)
+references/
+upstream/
+
+# Trabajo intermedio y cachés
+tmp/
+__pycache__/
+*.pyc
+.venv/
+
+# Paquete reproducible: se publica en Zenodo, no en Git
+output/*.zip
+output/package_checks.json
+
+# Datos pesados del corpus completo (incluidos en el paquete)
+study/results/large/signature_columns.npz
+study/results/large/record_ids.csv.gz
+study/results/large/validation_samples/
+study/results/large/binary_summaries/
+
+# Metadatos de sistemas operativos
+._*
+.DS_Store
+Thumbs.db

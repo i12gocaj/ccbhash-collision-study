@@ -1,0 +1,67 @@
+{
+  "all_widths_verified": true,
+  "binaries": 5489,
+  "counts": {
+    "pre_digest": {
+      "all_equal_pairs": 31202521,
+      "collision_classes": 775684,
+      "distinct_recovered_code_collision_pairs": 25451630,
+      "equal_recovered_code_pairs": 5750891,
+      "excess": 2646151,
+      "functions": 7224074,
+      "max_class": 573,
+      "unique": 4577923
+    },
+    "raw": {
+      "all_equal_pairs": 30538415,
+      "collision_classes": 757433,
+      "distinct_recovered_code_collision_pairs": 24860645,
+      "equal_recovered_code_pairs": 5677770,
+      "excess": 2560968,
+      "functions": 7224074,
+      "max_class": 573,
+      "unique": 4663106
+    },
+    "s2": {
+      "all_equal_pairs": 31203109,
+      "collision_classes": 775728,
+      "distinct_recovered_code_collision_pairs": 25452152,
+      "equal_recovered_code_pairs": 5750957,
+      "excess": 2646301,
+      "functions": 7224074,
+      "max_class": 573,
+      "unique": 4577773
+    },
+    "s4": {
+      "all_equal_pairs": 31202521,
+      "collision_classes": 775684,
+      "distinct_recovered_code_collision_pairs": 25451630,
+      "equal_recovered_code_pairs": 5750891,
+      "excess": 2646151,
+      "functions": 7224074,
+      "max_class": 573,
+      "unique": 4577923
+    },
+    "s8": {
+      "all_equal_pairs": 31202521,
+      "collision_classes": 775684,
+      "distinct_recovered_code_collision_pairs": 25451630,
+      "equal_recovered_code_pairs": 5750891,
+      "excess": 2646151,
+      "functions": 7224074,
+      "max_class": 573,
+      "unique": 4577923
+    }
+  },
+  "grouping": "Independent NumPy exact fixed-byte grouping of every record and signature/code combination",
+  "input_accounting": "Every finfo function classified exactly once",
+  "minimum_included_nblocks": 1,
+  "numeric_values_independently_verified": 50568518,
+  "per_record_serialization_diagnostics_verified": true,
+  "project_and_build_counts_verified": true,
+  "raw_samples_linked_to_portable_columns": true,
+  "raw_vectors_reconstructed": 15528,
+  "records": 7224074,
+  "source_files_crc32": "All selected archive members matched",
+  "status": "passed"
+}

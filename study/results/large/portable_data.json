@@ -1,0 +1,63 @@
+{
+  "binary_column_format": "NumPy fixed-width void arrays preserve every byte, including trailing zero bytes",
+  "diagnostics": {
+    "description": "Original CFG serialization warning count for each record",
+    "dtype": "<u4"
+  },
+  "field_widths": {
+    "code": 32,
+    "pre_digest": 32,
+    "raw": 32,
+    "s2": 19,
+    "s4": 31,
+    "s8": 55
+  },
+  "files": {
+    "record_ids.csv.gz": {
+      "bytes": 111822452,
+      "sha256": "244a16c84c69483af069301b64c5c3dc5d2f6b4aa9e2014e54938796dfa30d4c"
+    },
+    "signature_columns.npz": {
+      "bytes": 1196913997,
+      "sha256": "e528283c9775d1bdaeffe7d74951f96fd4ab9fbcb43b27c516ae24cdea28ff59"
+    }
+  },
+  "raw_numeric": {
+    "dtype": "<i8",
+    "order": [
+      "cc",
+      "outdegree",
+      "ninstrs",
+      "nvars",
+      "nblocks",
+      "indegree",
+      "stackframe"
+    ],
+    "shape": [
+      7224074,
+      7
+    ]
+  },
+  "records": 7224074,
+  "row_order": "Zero-based record_index in record_ids.csv.gz; deterministic binary-summary order and CFG record order",
+  "signature_order": {
+    "numeric": [
+      "cc",
+      "outdegree",
+      "ninstrs",
+      "nvars",
+      "nblocks",
+      "indegree",
+      "stackframe"
+    ],
+    "text": [
+      "name",
+      "cfg",
+      "callgraph",
+      "opcodes",
+      "args",
+      "locals"
+    ]
+  },
+  "status": "passed"
+}

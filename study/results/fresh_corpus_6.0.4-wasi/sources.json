@@ -1,0 +1,26 @@
+[
+  {
+    "binary": "git_2-47-1.exe",
+    "file_sha256": "f668c4ba88417ecdf29470b3af92d576a701cc0f76dd083b13d032f4b3f1f247",
+    "radare_version": "6.0.4-wasi",
+    "records": 68
+  },
+  {
+    "binary": "libpng16.so.16.43.0",
+    "file_sha256": "29896eea00b1567c55044ff497ebd7a8bd5594ac3e0b5a52fbcda619ce8badc2",
+    "radare_version": "6.0.4-wasi",
+    "records": 407
+  },
+  {
+    "binary": "vlc_3-0-20",
+    "file_sha256": "1fbb0287954bfb1669927eb8542e82af01508b1fd96cce0cf1ada05a6980bb43",
+    "radare_version": "6.0.4-wasi",
+    "records": 43
+  },
+  {
+    "binary": "zlib1_1-2-3.dll",
+    "file_sha256": "e96b397b499d9eaa3f52eaf496ca8941e80c0ad1544879ccadf02bf2c6a1ecfc",
+    "radare_version": "6.0.4-wasi",
+    "records": 131
+  }
+]

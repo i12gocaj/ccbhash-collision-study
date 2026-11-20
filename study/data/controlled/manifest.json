@@ -1,0 +1,2050 @@
+[
+  {
+    "assembly": "mov eax, ecx; add eax, 0; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 0,
+    "file": "constant_000.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 1; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00131d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 1,
+    "file": "constant_001.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 2; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00231d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 2,
+    "file": "constant_002.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 3; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00331d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 3,
+    "file": "constant_003.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 4; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00431d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 4,
+    "file": "constant_004.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 5; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00531d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 5,
+    "file": "constant_005.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 6; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00631d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 6,
+    "file": "constant_006.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 7; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00731d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 7,
+    "file": "constant_007.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 8; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00831d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 8,
+    "file": "constant_008.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 9; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00931d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 9,
+    "file": "constant_009.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 10; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00a31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 10,
+    "file": "constant_010.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 11; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00b31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 11,
+    "file": "constant_011.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 12; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00c31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 12,
+    "file": "constant_012.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 13; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00d31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 13,
+    "file": "constant_013.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 14; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00e31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 14,
+    "file": "constant_014.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 15; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c00f31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 15,
+    "file": "constant_015.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 16; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 16,
+    "file": "constant_016.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 17; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01131d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 17,
+    "file": "constant_017.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 18; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01231d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 18,
+    "file": "constant_018.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 19; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01331d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 19,
+    "file": "constant_019.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 20; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01431d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 20,
+    "file": "constant_020.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 21; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01531d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 21,
+    "file": "constant_021.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 22; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01631d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 22,
+    "file": "constant_022.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 23; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01731d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 23,
+    "file": "constant_023.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 24; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01831d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 24,
+    "file": "constant_024.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 25; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01931d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 25,
+    "file": "constant_025.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 26; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01a31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 26,
+    "file": "constant_026.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 27; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01b31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 27,
+    "file": "constant_027.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 28; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01c31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 28,
+    "file": "constant_028.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 29; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01d31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 29,
+    "file": "constant_029.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 30; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01e31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 30,
+    "file": "constant_030.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 31; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c01f31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 31,
+    "file": "constant_031.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 32; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 32,
+    "file": "constant_032.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 33; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02131d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 33,
+    "file": "constant_033.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 34; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02231d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 34,
+    "file": "constant_034.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 35; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02331d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 35,
+    "file": "constant_035.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 36; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02431d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 36,
+    "file": "constant_036.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 37; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02531d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 37,
+    "file": "constant_037.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 38; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02631d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 38,
+    "file": "constant_038.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 39; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02731d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 39,
+    "file": "constant_039.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 40; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02831d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 40,
+    "file": "constant_040.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 41; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02931d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 41,
+    "file": "constant_041.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 42; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02a31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 42,
+    "file": "constant_042.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 43; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02b31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 43,
+    "file": "constant_043.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 44; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02c31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 44,
+    "file": "constant_044.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 45; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02d31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 45,
+    "file": "constant_045.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 46; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02e31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 46,
+    "file": "constant_046.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 47; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c02f31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 47,
+    "file": "constant_047.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 48; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 48,
+    "file": "constant_048.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 49; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03131d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 49,
+    "file": "constant_049.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 50; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03231d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 50,
+    "file": "constant_050.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 51; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03331d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 51,
+    "file": "constant_051.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 52; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03431d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 52,
+    "file": "constant_052.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 53; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03531d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 53,
+    "file": "constant_053.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 54; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03631d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 54,
+    "file": "constant_054.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 55; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03731d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 55,
+    "file": "constant_055.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 56; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03831d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 56,
+    "file": "constant_056.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 57; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03931d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 57,
+    "file": "constant_057.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 58; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03a31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 58,
+    "file": "constant_058.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 59; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03b31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 59,
+    "file": "constant_059.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 60; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03c31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 60,
+    "file": "constant_060.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 61; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03d31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 61,
+    "file": "constant_061.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 62; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03e31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 62,
+    "file": "constant_062.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 63; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c03f31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 63,
+    "file": "constant_063.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 64; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 64,
+    "file": "constant_064.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 65; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04131d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 65,
+    "file": "constant_065.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 66; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04231d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 66,
+    "file": "constant_066.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 67; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04331d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 67,
+    "file": "constant_067.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 68; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04431d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 68,
+    "file": "constant_068.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 69; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04531d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 69,
+    "file": "constant_069.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 70; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04631d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 70,
+    "file": "constant_070.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 71; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04731d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 71,
+    "file": "constant_071.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 72; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04831d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 72,
+    "file": "constant_072.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 73; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04931d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 73,
+    "file": "constant_073.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 74; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04a31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 74,
+    "file": "constant_074.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 75; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04b31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 75,
+    "file": "constant_075.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 76; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04c31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 76,
+    "file": "constant_076.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 77; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04d31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 77,
+    "file": "constant_077.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 78; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04e31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 78,
+    "file": "constant_078.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 79; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c04f31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 79,
+    "file": "constant_079.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 80; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 80,
+    "file": "constant_080.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 81; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05131d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 81,
+    "file": "constant_081.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 82; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05231d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 82,
+    "file": "constant_082.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 83; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05331d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 83,
+    "file": "constant_083.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 84; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05431d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 84,
+    "file": "constant_084.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 85; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05531d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 85,
+    "file": "constant_085.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 86; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05631d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 86,
+    "file": "constant_086.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 87; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05731d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 87,
+    "file": "constant_087.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 88; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05831d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 88,
+    "file": "constant_088.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 89; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05931d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 89,
+    "file": "constant_089.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 90; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05a31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 90,
+    "file": "constant_090.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 91; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05b31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 91,
+    "file": "constant_091.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 92; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05c31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 92,
+    "file": "constant_092.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 93; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05d31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 93,
+    "file": "constant_093.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 94; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05e31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 94,
+    "file": "constant_094.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 95; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c05f31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 95,
+    "file": "constant_095.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 96; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 96,
+    "file": "constant_096.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 97; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06131d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 97,
+    "file": "constant_097.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 98; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06231d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 98,
+    "file": "constant_098.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 99; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06331d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 99,
+    "file": "constant_099.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 100; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06431d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 100,
+    "file": "constant_100.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 101; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06531d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 101,
+    "file": "constant_101.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 102; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06631d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 102,
+    "file": "constant_102.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 103; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06731d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 103,
+    "file": "constant_103.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 104; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06831d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 104,
+    "file": "constant_104.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 105; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06931d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 105,
+    "file": "constant_105.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 106; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06a31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 106,
+    "file": "constant_106.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 107; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06b31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 107,
+    "file": "constant_107.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 108; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06c31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 108,
+    "file": "constant_108.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 109; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06d31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 109,
+    "file": "constant_109.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 110; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06e31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 110,
+    "file": "constant_110.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 111; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c06f31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 111,
+    "file": "constant_111.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 112; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 112,
+    "file": "constant_112.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 113; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07131d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 113,
+    "file": "constant_113.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 114; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07231d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 114,
+    "file": "constant_114.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 115; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07331d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 115,
+    "file": "constant_115.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 116; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07431d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 116,
+    "file": "constant_116.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 117; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07531d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 117,
+    "file": "constant_117.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 118; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07631d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 118,
+    "file": "constant_118.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 119; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07731d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 119,
+    "file": "constant_119.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 120; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07831d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 120,
+    "file": "constant_120.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 121; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07931d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 121,
+    "file": "constant_121.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 122; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07a31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 122,
+    "file": "constant_122.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 123; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07b31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 123,
+    "file": "constant_123.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 124; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07c31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 124,
+    "file": "constant_124.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 125; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07d31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 125,
+    "file": "constant_125.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 126; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07e31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 126,
+    "file": "constant_126.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 127; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c883c07f31d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 127,
+    "file": "constant_127.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 128; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058000000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 128,
+    "file": "constant_128.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 129; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058100000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 129,
+    "file": "constant_129.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 130; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058200000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 130,
+    "file": "constant_130.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 131; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058300000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 131,
+    "file": "constant_131.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 132; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058400000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 132,
+    "file": "constant_132.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 133; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058500000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 133,
+    "file": "constant_133.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 134; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058600000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 134,
+    "file": "constant_134.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 135; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058700000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 135,
+    "file": "constant_135.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 136; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058800000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 136,
+    "file": "constant_136.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 137; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058900000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 137,
+    "file": "constant_137.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 138; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058a00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 138,
+    "file": "constant_138.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 139; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058b00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 139,
+    "file": "constant_139.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 140; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058c00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 140,
+    "file": "constant_140.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 141; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058d00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 141,
+    "file": "constant_141.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 142; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058e00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 142,
+    "file": "constant_142.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 143; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8058f00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 143,
+    "file": "constant_143.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 144; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059000000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 144,
+    "file": "constant_144.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 145; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059100000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 145,
+    "file": "constant_145.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 146; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059200000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 146,
+    "file": "constant_146.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 147; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059300000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 147,
+    "file": "constant_147.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 148; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059400000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 148,
+    "file": "constant_148.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 149; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059500000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 149,
+    "file": "constant_149.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 150; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059600000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 150,
+    "file": "constant_150.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 151; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059700000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 151,
+    "file": "constant_151.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 152; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059800000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 152,
+    "file": "constant_152.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 153; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059900000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 153,
+    "file": "constant_153.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 154; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059a00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 154,
+    "file": "constant_154.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 155; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059b00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 155,
+    "file": "constant_155.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 156; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059c00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 156,
+    "file": "constant_156.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 157; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059d00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 157,
+    "file": "constant_157.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 158; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059e00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 158,
+    "file": "constant_158.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 159; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c8059f00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 159,
+    "file": "constant_159.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 160; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805a000000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 160,
+    "file": "constant_160.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 161; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805a100000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 161,
+    "file": "constant_161.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 162; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805a200000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 162,
+    "file": "constant_162.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 163; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805a300000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 163,
+    "file": "constant_163.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 164; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805a400000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 164,
+    "file": "constant_164.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 165; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805a500000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 165,
+    "file": "constant_165.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 166; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805a600000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 166,
+    "file": "constant_166.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 167; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805a700000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 167,
+    "file": "constant_167.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 168; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805a800000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 168,
+    "file": "constant_168.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 169; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805a900000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 169,
+    "file": "constant_169.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 170; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805aa00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 170,
+    "file": "constant_170.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 171; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805ab00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 171,
+    "file": "constant_171.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 172; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805ac00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 172,
+    "file": "constant_172.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 173; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805ad00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 173,
+    "file": "constant_173.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 174; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805ae00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 174,
+    "file": "constant_174.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 175; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805af00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 175,
+    "file": "constant_175.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 176; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805b000000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 176,
+    "file": "constant_176.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 177; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805b100000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 177,
+    "file": "constant_177.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 178; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805b200000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 178,
+    "file": "constant_178.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 179; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805b300000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 179,
+    "file": "constant_179.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 180; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805b400000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 180,
+    "file": "constant_180.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 181; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805b500000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 181,
+    "file": "constant_181.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 182; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805b600000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 182,
+    "file": "constant_182.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 183; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805b700000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 183,
+    "file": "constant_183.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 184; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805b800000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 184,
+    "file": "constant_184.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 185; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805b900000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 185,
+    "file": "constant_185.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 186; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805ba00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 186,
+    "file": "constant_186.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 187; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805bb00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 187,
+    "file": "constant_187.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 188; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805bc00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 188,
+    "file": "constant_188.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 189; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805bd00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 189,
+    "file": "constant_189.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 190; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805be00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 190,
+    "file": "constant_190.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 191; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805bf00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 191,
+    "file": "constant_191.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 192; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805c000000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 192,
+    "file": "constant_192.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 193; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805c100000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 193,
+    "file": "constant_193.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 194; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805c200000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 194,
+    "file": "constant_194.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 195; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805c300000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 195,
+    "file": "constant_195.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 196; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805c400000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 196,
+    "file": "constant_196.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 197; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805c500000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 197,
+    "file": "constant_197.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 198; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805c600000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 198,
+    "file": "constant_198.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 199; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805c700000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 199,
+    "file": "constant_199.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 200; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805c800000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 200,
+    "file": "constant_200.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 201; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805c900000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 201,
+    "file": "constant_201.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 202; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805ca00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 202,
+    "file": "constant_202.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 203; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805cb00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 203,
+    "file": "constant_203.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 204; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805cc00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 204,
+    "file": "constant_204.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 205; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805cd00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 205,
+    "file": "constant_205.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 206; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805ce00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 206,
+    "file": "constant_206.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 207; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805cf00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 207,
+    "file": "constant_207.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 208; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805d000000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 208,
+    "file": "constant_208.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 209; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805d100000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 209,
+    "file": "constant_209.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 210; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805d200000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 210,
+    "file": "constant_210.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 211; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805d300000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 211,
+    "file": "constant_211.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 212; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805d400000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 212,
+    "file": "constant_212.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 213; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805d500000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 213,
+    "file": "constant_213.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 214; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805d600000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 214,
+    "file": "constant_214.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 215; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805d700000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 215,
+    "file": "constant_215.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 216; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805d800000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 216,
+    "file": "constant_216.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 217; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805d900000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 217,
+    "file": "constant_217.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 218; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805da00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 218,
+    "file": "constant_218.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 219; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805db00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 219,
+    "file": "constant_219.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 220; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805dc00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 220,
+    "file": "constant_220.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 221; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805dd00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 221,
+    "file": "constant_221.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 222; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805de00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 222,
+    "file": "constant_222.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 223; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805df00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 223,
+    "file": "constant_223.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 224; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805e000000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 224,
+    "file": "constant_224.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 225; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805e100000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 225,
+    "file": "constant_225.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 226; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805e200000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 226,
+    "file": "constant_226.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 227; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805e300000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 227,
+    "file": "constant_227.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 228; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805e400000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 228,
+    "file": "constant_228.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 229; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805e500000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 229,
+    "file": "constant_229.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 230; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805e600000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 230,
+    "file": "constant_230.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 231; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805e700000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 231,
+    "file": "constant_231.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 232; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805e800000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 232,
+    "file": "constant_232.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 233; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805e900000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 233,
+    "file": "constant_233.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 234; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805ea00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 234,
+    "file": "constant_234.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 235; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805eb00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 235,
+    "file": "constant_235.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 236; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805ec00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 236,
+    "file": "constant_236.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 237; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805ed00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 237,
+    "file": "constant_237.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 238; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805ee00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 238,
+    "file": "constant_238.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 239; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805ef00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 239,
+    "file": "constant_239.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 240; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805f000000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 240,
+    "file": "constant_240.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 241; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805f100000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 241,
+    "file": "constant_241.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 242; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805f200000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 242,
+    "file": "constant_242.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 243; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805f300000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 243,
+    "file": "constant_243.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 244; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805f400000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 244,
+    "file": "constant_244.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 245; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805f500000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 245,
+    "file": "constant_245.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 246; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805f600000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 246,
+    "file": "constant_246.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 247; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805f700000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 247,
+    "file": "constant_247.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 248; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805f800000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 248,
+    "file": "constant_248.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 249; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805f900000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 249,
+    "file": "constant_249.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 250; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805fa00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 250,
+    "file": "constant_250.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 251; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805fb00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 251,
+    "file": "constant_251.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 252; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805fc00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 252,
+    "file": "constant_252.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 253; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805fd00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 253,
+    "file": "constant_253.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 254; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805fe00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 254,
+    "file": "constant_254.exe",
+    "instruction_count": 10
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 255; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "behavior": "(3 * (x + constant) - 1) modulo 2^32",
+    "code_hex": "89c805ff00000031d201d06bc00383e80283c80083e0ff83c001c3",
+    "constant": 255,
+    "file": "constant_255.exe",
+    "instruction_count": 10
+  }
+]

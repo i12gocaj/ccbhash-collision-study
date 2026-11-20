@@ -1,0 +1,3 @@
+[submodule "ccbhash-src"]
+	path = ccbhash-src
+	url = https://github.com/pblprz/ccbhash.git

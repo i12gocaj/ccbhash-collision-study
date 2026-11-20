@@ -1,0 +1,4307 @@
+{
+  "arithmetic": {
+    "calibration_selection_exact_rational": true,
+    "compiler_metrics_checked": 202,
+    "maximum_float_error": 3.3306690738754696e-16,
+    "nominal_capacity_bits": 128,
+    "return_difference_invertibility_verified": true,
+    "score_patterns": 8192,
+    "weights_sum": "1"
+  },
+  "external_peer_review": false,
+  "partitions": {
+    "counts": {
+      "pre_digest": {
+        "all_equal_pairs": 31202521,
+        "distinct_recovered_code_collision_pairs": 25451630,
+        "equal_recovered_code_pairs": 5750891,
+        "unique": 4577923
+      },
+      "raw": {
+        "all_equal_pairs": 30538415,
+        "distinct_recovered_code_collision_pairs": 24860645,
+        "equal_recovered_code_pairs": 5677770,
+        "unique": 4663106
+      },
+      "s2": {
+        "all_equal_pairs": 31203109,
+        "distinct_recovered_code_collision_pairs": 25452152,
+        "equal_recovered_code_pairs": 5750957,
+        "unique": 4577773
+      },
+      "s4": {
+        "all_equal_pairs": 31202521,
+        "distinct_recovered_code_collision_pairs": 25451630,
+        "equal_recovered_code_pairs": 5750891,
+        "unique": 4577923
+      },
+      "s8": {
+        "all_equal_pairs": 31202521,
+        "distinct_recovered_code_collision_pairs": 25451630,
+        "equal_recovered_code_pairs": 5750891,
+        "unique": 4577923
+      }
+    },
+    "four_and_eight_byte_partitions_identical_to_pre_digest": true,
+    "identity_convention": "Raw/pre-digest/recovered-code identity uses SHA-256 keys; signature equality uses exact bytes",
+    "mechanisms": {
+      "added_by_quantisation": 590985,
+      "added_by_text_digest": {
+        "s2": 522,
+        "s4": 0,
+        "s8": 0
+      },
+      "representation": 24860645
+    },
+    "nested_partitions": [
+      {
+        "coarser": "pre_digest",
+        "equal_adjacencies_verified": 2560968,
+        "finer": "raw"
+      },
+      {
+        "coarser": "s2",
+        "equal_adjacencies_verified": 2646151,
+        "finer": "pre_digest"
+      },
+      {
+        "coarser": "s4",
+        "equal_adjacencies_verified": 2646151,
+        "finer": "pre_digest"
+      },
+      {
+        "coarser": "s8",
+        "equal_adjacencies_verified": 2646151,
+        "finer": "pre_digest"
+      }
+    ],
+    "pair_denominators_exact_python_integers": true,
+    "records": 7224074
+  },
+  "review_kind": "Internal logic and mathematics review",
+  "statistical_support": [
+    2,
+    65537
+  ],
+  "status": "passed",
+  "symbolic": {
+    "domain_cardinality": 4294967296,
+    "method": "Independent PE parser, Capstone byte decoding and whitelisted modular affine execution",
+    "path_domains": [
+      "x=0",
+      "x!=0"
+    ],
+    "proofs": [
+      {
+        "code_sha256": "d4e2c56ffff1b6ff29abc382e6beb5de921001819d54408c31bc2c8512c5efb5",
+        "file": "controlled/constant_000.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 4294967295,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 4294967295,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "653b7904c884f4d94811162dec201baffff45efbbd33af964d8c7d3813ac7445",
+        "file": "controlled/constant_001.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 2,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 2,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "0c79b09016445126fcaeb19f1d9d0077341bbc2a1ca258558e8e57f5217f2e6b",
+        "file": "controlled/constant_002.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 5,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 5,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "6021741c44a6a2aa51100701ed6617d32cd3df9611714ee2bc08fc15ccdaa26a",
+        "file": "controlled/constant_003.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 8,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 8,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b9f67083855c0d03206f71ba5b24b40ac0e283be54d683e89d8a127e6fa1eef1",
+        "file": "controlled/constant_004.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 11,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 11,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "988573cd3114af19495abf154777a74cf2ecc284487e2b218edd273908a530ea",
+        "file": "controlled/constant_005.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 14,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 14,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "798ff2694bc5f9cce06fb91d7f82115ff63cdc792d7dbb836a5a04345fea4450",
+        "file": "controlled/constant_006.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 17,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 17,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "01c1c6145d3233f546fcd79305931275f44e4d5d1601cef78eae44bc81c61360",
+        "file": "controlled/constant_007.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 20,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 20,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "6633bd873029e1d2d66a1ea4dee03ee4816cad5cabd489c7556c100e07ef654e",
+        "file": "controlled/constant_008.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 23,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 23,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e10daeeb0e3a127a490d882134669a25013c5c045f109175fc3cd9aeacec9628",
+        "file": "controlled/constant_009.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 26,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 26,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "ec8ba197889792890a6a9f9d51b714e8ad507fde11778b08822d17fc1f4df612",
+        "file": "controlled/constant_010.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 29,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 29,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "c24019728a79ae7501c44e6e0a7262818408e3745265e6eef09e51739337a9ce",
+        "file": "controlled/constant_011.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 32,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 32,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b4077885d21947da973865b24a1d20040000a8df088719daed7e0f6482f5b2c1",
+        "file": "controlled/constant_012.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 35,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 35,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b65ff162c295935f6d2ab0e6301272caab41c0c5a1af9da8e400b537ad70b3dc",
+        "file": "controlled/constant_013.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 38,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 38,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "97d733aaec264568925477bd1707a3cfca11006eb42e03f04a44b6a2ddc57b77",
+        "file": "controlled/constant_014.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 41,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 41,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "0974abaee8772cb0e255b612c34d3045db89733005433724925546b1095c7fa2",
+        "file": "controlled/constant_015.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 44,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 44,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "cc42b98909c9877d7c147f4d5dc591f888ae5f0fe638321f6053ad200be5cc93",
+        "file": "controlled/constant_016.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 47,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 47,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "985e7d1204a034bb218e15872cb41df8e8f013cf40e5588e1270f63a8706a10d",
+        "file": "controlled/constant_017.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 50,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 50,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "7624303e4a2fa5f76afc2523d8daf08592157dc6dd2b7abe91b23d2ab5c0eb1e",
+        "file": "controlled/constant_018.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 53,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 53,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "08ca22a09a818a1072de80020b9c606f4518995e84b7998baf7676b3358b9a8f",
+        "file": "controlled/constant_019.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 56,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 56,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "2e43c4edb224f1b7df4d13134cce4591f1e82ee48988a226f236a4eeb480bf39",
+        "file": "controlled/constant_020.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 59,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 59,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "9d87bdd7f3cb7cddf38b8c18838cb6a0a06e66caf242cd092d2159f512fecd43",
+        "file": "controlled/constant_021.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 62,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 62,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "ba3e4f0ba502ed117873efb205b9d5c51b41c742d2189d594e7b40f30c80412a",
+        "file": "controlled/constant_022.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 65,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 65,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "828e4fe37ce8917ae1beead90e9d4437a7f46827e50f2eeeda6dbeacc19d21aa",
+        "file": "controlled/constant_023.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 68,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 68,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "f15f6336b89b1952b1069ce8fdfad596440edc3387b9e89956434ca07b20614d",
+        "file": "controlled/constant_024.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 71,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 71,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "05d4491e3cb1579e0963d2c6d74412243160cd8b928756d79ce98021ae5c906e",
+        "file": "controlled/constant_025.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 74,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 74,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "2e455384a718ddef60631831545e8da04fd5fffe36110f054221869d5b8fac80",
+        "file": "controlled/constant_026.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 77,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 77,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "af04a38758bbc7140f8a9a3a694684a397827e9cf2c09b5c38b0743c1d06a563",
+        "file": "controlled/constant_027.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 80,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 80,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "9a9e70d5a1848be1a048456474fdb00d976c8239e10240015ccc6b6c0c4dd9d9",
+        "file": "controlled/constant_028.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 83,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 83,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e10a232c200974f77591aecdfd6790bdce9b17779e7a2121daa4d9b2f7a6fb02",
+        "file": "controlled/constant_029.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 86,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 86,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "a73257be6e96ec0f0f0bd4f6cc1ef84568e0f697a46d0008d72ad975ff4aab7f",
+        "file": "controlled/constant_030.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 89,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 89,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "85bec72aee83783ffad2b17761efb16bd5d4f588610f1521336967defc3a7c7e",
+        "file": "controlled/constant_031.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 92,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 92,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "aaeba0f4de2f7e6d979e920f510dfb79843411b936f981c4ace26a346fe79431",
+        "file": "controlled/constant_032.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 95,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 95,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "0b6bb9f3e477308fe25322c59859fde0738979ac8bf270566a2b695c39c8af8f",
+        "file": "controlled/constant_033.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 98,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 98,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "276fdc5bd13187b72099dc3bc830af7d05686b0326e6431d7f3c0866509816ef",
+        "file": "controlled/constant_034.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 101,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 101,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "190163ad7f8640545d8bb78ca2738fd2e3561c93474cd9bf814a693c013f423b",
+        "file": "controlled/constant_035.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 104,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 104,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "3807a65d373d0de93f6db20a463998585dbbbc8a7e5d4a706443097d7f1d4633",
+        "file": "controlled/constant_036.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 107,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 107,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "9789ff89d8f79df2231baa35ca3135795f956b0c9cfc041dd8ce89003912154a",
+        "file": "controlled/constant_037.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 110,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 110,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "dbb3d234e2c95a3bfd1b5fa257d5c59da554792606a24ce169dc6d52b51992f5",
+        "file": "controlled/constant_038.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 113,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 113,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "f66098a1b278ebcf8100645ad97ff86785a858d1742bc419451c9bf7059c4c64",
+        "file": "controlled/constant_039.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 116,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 116,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b0ca4025dde486837c3e5e188c223f370682a21d0fa0cbd2a8ec3ff6078bcd4c",
+        "file": "controlled/constant_040.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 119,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 119,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "faa6a869053476511880f02c9a3a5913922cf2cd01e32d3aeb40fc785f9c86e5",
+        "file": "controlled/constant_041.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 122,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 122,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "7b80c1c8f606b64f407d5153ec0551ee5a99d18a5da88ff4ee80f9f8be3d6d53",
+        "file": "controlled/constant_042.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 125,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 125,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "0f6466d54bb621f2d92d17811a306a2948d4f86b54e8875a5fee380c8f109cb7",
+        "file": "controlled/constant_043.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 128,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 128,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "f0af5efff597b5c281d8dd0ffeb547ee7cce1e5abbefc500b264ca336aeee8a7",
+        "file": "controlled/constant_044.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 131,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 131,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "82e1a729ef13ae795725c09f7ccaddf2077e6854bd0a3ed5100f48be503ff9f4",
+        "file": "controlled/constant_045.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 134,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 134,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b5a9a7b1db97532afd576508c5bf044bfa2562d1ae7a31ce42d40a2bbd5aa189",
+        "file": "controlled/constant_046.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 137,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 137,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b5939b1bbe8980e35df0c989d9b97e6335efc85f9e6f82dfdee10a51570d3ad0",
+        "file": "controlled/constant_047.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 140,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 140,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "566319f709509f44a0f5b92a4c3794bbf6c2fc0310e693688af46c453e6e274a",
+        "file": "controlled/constant_048.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 143,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 143,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "92515070c6bfe84431a5567e4788c81ef717b1616095eb0a15e5af47dc4a2ab7",
+        "file": "controlled/constant_049.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 146,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 146,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "7195d56694bdac6069f9a25bf1f5e0646d4f81fbf66730ddd6a4f302d8e4393a",
+        "file": "controlled/constant_050.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 149,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 149,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "4d1ed4c1dcd390edbbf3932b9744af5bdc5f5ee86da2894721add40a4958792d",
+        "file": "controlled/constant_051.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 152,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 152,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "3f206e091547693533e7201b75016644794c6f9287d88a9239a1936d3b81125c",
+        "file": "controlled/constant_052.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 155,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 155,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "ca58abc5af86c17bd19f707615f626369a9766ed82bdd264a6a44d8d1b273d2b",
+        "file": "controlled/constant_053.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 158,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 158,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "9afd0c00f0974ebf5221d14cf141a1795db839ed4a1f7a4b2c134767958c3eda",
+        "file": "controlled/constant_054.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 161,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 161,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e2f92685153b1c2b0e5a7e584e15e2ea50d5e8b664cc934b2ffa61c770e182df",
+        "file": "controlled/constant_055.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 164,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 164,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "07f3d0e012fbbccd287de65e46830f6853a7c153ca3c4e09acb4d3021e48191d",
+        "file": "controlled/constant_056.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 167,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 167,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "00a31bb4e53a6aaae3410d74f6e7465ba36ecda889f0b0035ccdf9c9df3cdb34",
+        "file": "controlled/constant_057.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 170,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 170,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "39c1ae58821bd461ca0eca7c4cadeb3d96321f7b7828c070562b3046cd9d2136",
+        "file": "controlled/constant_058.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 173,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 173,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "2710f83fb72020d85c6d818aa98779c06aa4fe3aef4e02c8323a631626cde3cf",
+        "file": "controlled/constant_059.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 176,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 176,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "0091d83f7f5c815a31873b4d12ebc2e9f338af24294ad67086a3e1056b4fa9e7",
+        "file": "controlled/constant_060.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 179,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 179,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e5249a6cb8037661ec7ff487aed0097813504589666387b23e1c6945a4a8f175",
+        "file": "controlled/constant_061.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 182,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 182,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "3b22f9fe55bdc050b05cc6010e09c0a497dd0c87cbb5c8cc4d740320f3a73dce",
+        "file": "controlled/constant_062.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 185,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 185,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "113b4d6fd2997228d1a32025fad0ea38e0fe88f3b971c9afdd5ed77731324635",
+        "file": "controlled/constant_063.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 188,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 188,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e60034d6d29a5eb62f110b878b22d98631112c1787798ac9dc169cdd363f2d31",
+        "file": "controlled/constant_064.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 191,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 191,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "d4602deb9a60833698789b7d2a0c4c87b5df0772725f5142430681e18c512f51",
+        "file": "controlled/constant_065.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 194,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 194,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "cafaf76d6126a8866b10db16f59e210160c934e05fcd82ebba5940f728bfcb86",
+        "file": "controlled/constant_066.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 197,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 197,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "5548c3950e32e834ed7cfa9a243c19d7041f5206b896cdf4e7164bfcbab77151",
+        "file": "controlled/constant_067.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 200,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 200,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "696b96a4495f4ec3ab63a3feb35e41aabcafd1c638bffa6b37fb5b82f651f0e9",
+        "file": "controlled/constant_068.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 203,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 203,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "7f819881fa246618d28e5f9994e6bccd0b5dcfcec0a8b57f73af483567dc6875",
+        "file": "controlled/constant_069.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 206,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 206,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "6decbdb38771064a1109d828a0fd5981adab1f24d5823209f47431f181d736e3",
+        "file": "controlled/constant_070.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 209,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 209,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "6ad1eb89c291864b7543ddcc190856d3edb3f701112539557b5d02f896182f1c",
+        "file": "controlled/constant_071.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 212,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 212,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "ce5098ff5ad38ebbfe52cc26483470f4193f8e48def6114b9e7ae64629ad1985",
+        "file": "controlled/constant_072.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 215,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 215,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "648272e61fcb428b35d2d951a43b6270f168a1ba1b9bffb601dd277629c12b09",
+        "file": "controlled/constant_073.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 218,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 218,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "2b49e5e5d4c274cb8679c344b113983045525a9347ded3aacb01a5cb444db402",
+        "file": "controlled/constant_074.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 221,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 221,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "f0e900485846bc2ec5dba78ea3953830a9b8de9f1dd4710dd2176ce5b72d5d44",
+        "file": "controlled/constant_075.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 224,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 224,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b1ef6e108790c8c380895cb84dbd9ed942849f5ea31a57f798bc9a492109bdb1",
+        "file": "controlled/constant_076.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 227,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 227,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b0ffc600fb4743162a076841785ed1a3664d240f451e25d36d3b341b42c4c503",
+        "file": "controlled/constant_077.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 230,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 230,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "4b0f4e61b550288954186be93045248a61a95e932e7c6a302876cd31f594b4f4",
+        "file": "controlled/constant_078.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 233,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 233,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "7a94ef504f31da890f4d72ddd9ffaf9f80a1c3f2909d3cc7b47c6033bfb10fe7",
+        "file": "controlled/constant_079.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 236,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 236,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "8ef38c4512edfcc280acb9b292efbc858b69e2f844cde671f25b7d1566ff02c6",
+        "file": "controlled/constant_080.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 239,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 239,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "437156be961ae23218a6abe150c396da444bb2390de6f5bc49b065b9994575f8",
+        "file": "controlled/constant_081.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 242,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 242,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "cdbb3cf3bc4a492cb30380e0d79aee291a21e7e9c059ecd1f18df0680c9e6696",
+        "file": "controlled/constant_082.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 245,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 245,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "5e9539f5618aac2ddce0218810ec58b9cb9c78fa43d0f24589a58b7e85b37930",
+        "file": "controlled/constant_083.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 248,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 248,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "824a3580357acf08f3f4218d017d9294f1c0056247e620d39c1b766ceb0a319e",
+        "file": "controlled/constant_084.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 251,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 251,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "1525a808c7fc986cd1a2a2115892dc30d9d77065028c422843ef59c3b6756e9f",
+        "file": "controlled/constant_085.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 254,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 254,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "66c9669cf306a055b6eb26e7d1bd2ae61aa29149421da71f26fefab5116ef3fd",
+        "file": "controlled/constant_086.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 257,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 257,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e9205a349cd6d5fd10b80fd71f3e6b33f3282e914d7c7f5063e72bc3ac12998a",
+        "file": "controlled/constant_087.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 260,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 260,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "df13c28598685ad09259e55be9ff3b8491308c3ce43b2faeecca977bd7a27219",
+        "file": "controlled/constant_088.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 263,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 263,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "ea75fa17390145bd96f4ab82c4bd0aeba258e13315f6f382dc51382bfc5754bf",
+        "file": "controlled/constant_089.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 266,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 266,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "6719e3284e33a9861015e04a220613160567b85f40ddbafeaff16bc68526b20e",
+        "file": "controlled/constant_090.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 269,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 269,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "bfa7e33ff6b60a996cfc6e6d6174190f449fd9784ba6babf77632e8ddf74447d",
+        "file": "controlled/constant_091.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 272,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 272,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "94ad4933f51002da9438bb8b29cfdcd633b2c74a512874b071b92268341bcdac",
+        "file": "controlled/constant_092.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 275,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 275,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "153546f6e612e3c4cd82404461b98fd4c4436523ead767eae50099b0bb20c1e9",
+        "file": "controlled/constant_093.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 278,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 278,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "c46a006346f32fa9d489bcb5a54e16d70f8c66e207f5a8bb690e4616a9845cc0",
+        "file": "controlled/constant_094.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 281,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 281,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "aec65be281de81aaeecf442b22cda8ef14fd1e17cef53ed66396121b5997589c",
+        "file": "controlled/constant_095.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 284,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 284,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b8294a6b08d919fad00b793e9b59a16fa059f3e41db9f55ed469fdd7c8be0f7f",
+        "file": "controlled/constant_096.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 287,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 287,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "14d18bd72a8f6c6b1a41ff28548534f97ede261e2c4a100f29e83c25f6dc797f",
+        "file": "controlled/constant_097.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 290,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 290,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "3b845c6b186746b2c0fb86d6ff7855d29883a3ae861ab37eb8f4273600a571ef",
+        "file": "controlled/constant_098.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 293,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 293,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "2718bc7103a662ca46e3e3e02071e1075c0dcc60df0863bdcb30d39390ec7d3f",
+        "file": "controlled/constant_099.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 296,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 296,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "35225a577b52045c92ebc5c8266035542371b713027703c79c34b19deaebc2e8",
+        "file": "controlled/constant_100.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 299,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 299,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "d823d182a1e3375708d632fdbe37657d05b96f3cce1ff360ab1f6b5f272db2e0",
+        "file": "controlled/constant_101.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 302,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 302,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e185bac99392a6710f030c70870bb7dc75c244152d6024953f2e6d53812ce2d7",
+        "file": "controlled/constant_102.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 305,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 305,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "ac9beb7fc0eb144b1a35bbf0c85137455122c51833702b52483b8530ff092114",
+        "file": "controlled/constant_103.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 308,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 308,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "52684f94826d69abe95eae00d7e5c0210a6f4da7b9a78118f80789ea7a721593",
+        "file": "controlled/constant_104.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 311,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 311,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "1a0b2a15b7e114fd8b63b48889ee7e4871fd0c784d4976f99cdcb5c40c3f98e5",
+        "file": "controlled/constant_105.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 314,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 314,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "4f1bdb1089d6dd4ea2cc126cccd446d0a95137303881322d2186efd510ab2096",
+        "file": "controlled/constant_106.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 317,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 317,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "d7acaec69ab672ae2ce0251695082e885d6b622bb606b297daf1e48a1c643e46",
+        "file": "controlled/constant_107.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 320,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 320,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "8f54625f6bd8e77e3f3c4a132f0eff99740fbce3002f4d3c2da942ecad3bf4ab",
+        "file": "controlled/constant_108.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 323,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 323,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "23e804cf9a493547c0cfd43523a8e613698a27a5abf7221ec1656adf810921a5",
+        "file": "controlled/constant_109.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 326,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 326,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "d45a378c8d404755f5a9259db2f9d0cbdc312d8001d6c10d88a108c999db8c32",
+        "file": "controlled/constant_110.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 329,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 329,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "979d8b77bbf749a6a46fa591567bc4ea4efd77b75f8d6bd6b9a252bd7a2232c9",
+        "file": "controlled/constant_111.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 332,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 332,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e61241a86391616884101d00cbb5f7d91550c53d51ae172bf3014065dfb16cc1",
+        "file": "controlled/constant_112.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 335,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 335,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "404d9051f1353c53cddca0b29c7393d42e71b2e57d4e92d981f1762eafa53a84",
+        "file": "controlled/constant_113.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 338,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 338,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "0808208bd31000bdeecaca9e487ec27208129a66b4dd7e564d0a48222259dc4f",
+        "file": "controlled/constant_114.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 341,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 341,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "81dafbf5122a42c858b2b6a6701a42aaee285b212970bfc4b3afad7ef9dbfa0b",
+        "file": "controlled/constant_115.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 344,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 344,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "44f500f127929879f64b1470906e8621d3d380b9aa8997488f90d150745e00f2",
+        "file": "controlled/constant_116.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 347,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 347,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "4acd4b955cca98970c172963f034a98172c6a9380e8b7f99d6625d2e094ba7be",
+        "file": "controlled/constant_117.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 350,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 350,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "c90e7757e17d08229bd6cdc8299b2977fb4777454bb6d7025973cb8e9d71afb6",
+        "file": "controlled/constant_118.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 353,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 353,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "963822cbcae51b0344373309251de70aa882d90c0b4ace89a63ccdf4d8c0ead8",
+        "file": "controlled/constant_119.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 356,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 356,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "ff15881ff4e9ea0038ff8659d96289c1a9d297bc089deb9c6eba76f51d38708e",
+        "file": "controlled/constant_120.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 359,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 359,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "2c80bc901c9d8dab33cea0b66912473e212c3081ec7e356be04d93db91beebb9",
+        "file": "controlled/constant_121.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 362,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 362,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "0caff6cc8df69b46076f34e88730cd973f4ca7367a443ec0134b22b1c4115876",
+        "file": "controlled/constant_122.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 365,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 365,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "2756fadf09836e9c70d62ab7acc09c29e8e133da8919505f0f316d8c19d7eb62",
+        "file": "controlled/constant_123.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 368,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 368,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "78ad6f94018d994807fe26f143b051bc110cd536fffc41fdacfdb0adc8c1f18d",
+        "file": "controlled/constant_124.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 371,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 371,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "456e83dd04e7e975121b2fd15d318d59587115ec5e35fa47aa5d7910c5264084",
+        "file": "controlled/constant_125.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 374,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 374,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e3081b17a20ef8874a70aa6ec2781fb223dab6b5edc9cd1c8a3f55f2cf419b65",
+        "file": "controlled/constant_126.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 377,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 377,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "3a56b7f8122a4f054ea02daf0d041a8e8bdd86225a17a6ddf654590364d467c5",
+        "file": "controlled/constant_127.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 380,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 380,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "3c59e14f7037bcef206197d0fa2b41be20bd54baea90cbeaf41e5b6c17ae992c",
+        "file": "controlled/constant_128.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 383,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 383,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "51b1925b8c45b1091ae42f45b5136563ac25ba03c0090d261c2c33b3964586b0",
+        "file": "controlled/constant_129.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 386,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 386,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e5417c2f6e8be55e8163037a98df1565662938c271f10009e2c915eb53affa7f",
+        "file": "controlled/constant_130.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 389,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 389,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "ff164863d80acb8f2e4d3df7836226a687a6ae521d5a269a10b297b58e7c5792",
+        "file": "controlled/constant_131.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 392,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 392,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "bfad97c88d1bbc70c8db8be2670c9c76f23c23a3722a71dad5a613a0bbfe113d",
+        "file": "controlled/constant_132.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 395,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 395,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "948a260e82714f645776df9b375e6a95fa5a1599e52c644e115b8b6247624468",
+        "file": "controlled/constant_133.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 398,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 398,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "f08dce1049ed94545d23a1eea9b19c4e5f3ade825617ac2d54053f8f7056c649",
+        "file": "controlled/constant_134.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 401,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 401,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "ef6c86a79af55be6fc664000e2298ba833ce25e185d7836946aaad90109a997b",
+        "file": "controlled/constant_135.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 404,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 404,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "003c5bca2b70d5f2da5e79ef2135abd5834acfe40afd6fc6df82cc9f1b9aa641",
+        "file": "controlled/constant_136.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 407,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 407,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "cbe12d5a28cdcba029563e047f05c52103981a0823e14c60e8a3e884431b0b79",
+        "file": "controlled/constant_137.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 410,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 410,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "055082a6f8e779bdb9d83584cb160dc46b997a98c661fdf6c5b10fa5aedd44ef",
+        "file": "controlled/constant_138.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 413,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 413,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "9798464f551a69de1c5ad3715b31e4bdd29e24c93a9c049a15e70dca23c0b119",
+        "file": "controlled/constant_139.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 416,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 416,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "562013a38d53ba0cdc46776974a5b573e451e700a785f69492dce544bb255c1e",
+        "file": "controlled/constant_140.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 419,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 419,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "70dceded47ed8745762817ae72b94aeb7f66c9a3fdd084bc6e2ace0da81e243c",
+        "file": "controlled/constant_141.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 422,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 422,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "96c61f9a13822b25d121f80247fa6e8edf9d20f0e26b4f38d62585e69cc767f5",
+        "file": "controlled/constant_142.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 425,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 425,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "494f83681d2783fd2dc510aeceabc3353bc944cfc2d9f22524152756c42223d2",
+        "file": "controlled/constant_143.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 428,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 428,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "104eedcb9ac712e0130dd9c039c415d6efb9be52f9d4eb3e8b1dc5d5310ff09e",
+        "file": "controlled/constant_144.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 431,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 431,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "8b9078532a60250a7e8261eb685f00d7c8e6875e322c5109b38c23bbb013a98e",
+        "file": "controlled/constant_145.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 434,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 434,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "75f0a4cd00aeed295f7158e1cee335ed63b6d0ee0c862319fe9a3137196e3c11",
+        "file": "controlled/constant_146.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 437,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 437,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "c9b7101c7bbc736d212f9071f61f3701fc021ed4aee0d47736e6a0d6767f4030",
+        "file": "controlled/constant_147.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 440,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 440,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "2bf194b4ac95509dbc38cc482f5878fe1e213d0211b53df3674e4d3f6531ed49",
+        "file": "controlled/constant_148.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 443,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 443,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "4d2cfa2dead0fa29a101dca9e4598a333ade66906694a5e9350a600950a5bc12",
+        "file": "controlled/constant_149.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 446,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 446,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "cc6c536695d29a0253c72c7e66799583c725594cb11a4faab840d19204b3c105",
+        "file": "controlled/constant_150.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 449,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 449,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "1da7d725dbca0fb835bc201a17d5df51a8d982e381e95226286999ae5a7cff7c",
+        "file": "controlled/constant_151.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 452,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 452,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "cc189c02a0ad7d3a50c556202312d131ccca2137a207cf739fb2165d33960d96",
+        "file": "controlled/constant_152.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 455,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 455,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "332c0f7c69aee4b632df6f613ed603444f2f56caecd7752683777266cc83c3c4",
+        "file": "controlled/constant_153.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 458,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 458,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "42f64f310668deed1f5971f1e46e12b49bb883c4f43421796d7234ad7c851932",
+        "file": "controlled/constant_154.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 461,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 461,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "85e84c1a67c114a845210895ac5ecd8a139df5b91234326c3809d0152714092e",
+        "file": "controlled/constant_155.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 464,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 464,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "09ab3b93457256453d389ad9b0e34ff12348a60e8209159b72be75f7c6af7632",
+        "file": "controlled/constant_156.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 467,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 467,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "fdf4bb53a14e659c01fb7ebf42fe1883f6e25a8904d17d0fb308806b732c6dd3",
+        "file": "controlled/constant_157.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 470,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 470,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "5945ed51abe4a613c741c63e627916f9ff356165ae431fb283c1a52b9fc4a59a",
+        "file": "controlled/constant_158.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 473,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 473,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "d97537dcd7837a7c1558a92add4583df3b01bb3839982c86371467473b34145b",
+        "file": "controlled/constant_159.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 476,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 476,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "a7d5631714a973fde8f75af8c704001d62336c5f60522c136e8b0537f497c2ee",
+        "file": "controlled/constant_160.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 479,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 479,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "9f2c9d16dd244dabb5bd06117858a2c88c02ce81bc86dbe35a0aef26c73491c8",
+        "file": "controlled/constant_161.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 482,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 482,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b9fa6eca9d76164170f8ceb71418e2ed2a82da509dcf69cbb91b14dee56f40f4",
+        "file": "controlled/constant_162.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 485,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 485,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e9b8d15fda18047169bb2bd56390dbddfa81509a2cadddda1ec022670ea8d39f",
+        "file": "controlled/constant_163.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 488,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 488,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "cfdc50e78169020107782ecc3a5f73d4f0916629490567066d6ab2ba0adb2829",
+        "file": "controlled/constant_164.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 491,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 491,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "590d268ab7d875e28575a25144e9799523eb7065e561e833f9ec8198992de642",
+        "file": "controlled/constant_165.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 494,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 494,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e41c79e9d3cb48e5708425d5deeb137fde85608f774e73ad145ea70540ae13de",
+        "file": "controlled/constant_166.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 497,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 497,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "d82da4854f21abc273dc83c3841bf9642800c6105236569ef9875c1bbf6a359c",
+        "file": "controlled/constant_167.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 500,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 500,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e8204d6f88b0cdab8c2393d9098f5797b8704a462bc45511347e039b14803dc1",
+        "file": "controlled/constant_168.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 503,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 503,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "5e5ec8a49e91af84acebdb66a4c45f90895f30d623350c49753fc5037aad829a",
+        "file": "controlled/constant_169.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 506,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 506,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "dce9ac65b2b0fd3d96335a9d11c5c8f8f906c9d6215c176f739e08a529b6e1c7",
+        "file": "controlled/constant_170.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 509,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 509,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "7b1fe850710836f731a31e573b01a5cd4caa5ab33914f04a34fd02110610f623",
+        "file": "controlled/constant_171.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 512,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 512,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "53aa1acc07b22984a977475821dc39931c9f5195f72ac5d56dde3fc2845a322a",
+        "file": "controlled/constant_172.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 515,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 515,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "76e913f76393d7ae39d9589a71d4d135b2529037eb45547ec49b3d21bf751dd1",
+        "file": "controlled/constant_173.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 518,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 518,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "7493da9c74d95662b49ed7a2c45e937bd4561fe40a1cdddc714e7011db61e7ab",
+        "file": "controlled/constant_174.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 521,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 521,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b0d7c52739a2b5d3c7ea168bafef19049acd5930dc54aa36364a9646f0b45e14",
+        "file": "controlled/constant_175.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 524,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 524,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "417cefba7ac2682fd6abd4ece6d36d3edae12d58c755e670179c9001e4fa44cb",
+        "file": "controlled/constant_176.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 527,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 527,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "46ee40a9addaf1f50da00fe9ed0e45b2a509e8ecb303f08c96783d5069387a82",
+        "file": "controlled/constant_177.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 530,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 530,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "78b023347e495f2d0992a3ea361177157956cbf1211d9fa2511910d42d59e7cc",
+        "file": "controlled/constant_178.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 533,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 533,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "62275eaa31d1a40a571ec6b9ac132d5ac80aec11c6a3c1d41f68f1d5f0656f39",
+        "file": "controlled/constant_179.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 536,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 536,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "2098c64fafab991f81e31cfb0b52bc5d1c2343ed61567e26741dc2a44ad50100",
+        "file": "controlled/constant_180.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 539,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 539,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "174db04edbd738181ae1d90ee86d6b7173aa5b3aee78f8bca6ea2f223066c8c6",
+        "file": "controlled/constant_181.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 542,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 542,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "d744a58052d36f7df514eae5f364ce7cd8dc6ed9aaac0d46c46f0933d5027b9d",
+        "file": "controlled/constant_182.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 545,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 545,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "6278803bc93e9d3aa51334f0cfd8296624767fde277abd3373126dfbe08286d5",
+        "file": "controlled/constant_183.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 548,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 548,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "ec1bcc659e26c470d6a2657a3a26d4cd25d7650de0abc7f7875c8f9c1807c629",
+        "file": "controlled/constant_184.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 551,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 551,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "d66080c7e734c2b4784e65ad7815d683b2d36a5302220c6ecaefcad18cd477c9",
+        "file": "controlled/constant_185.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 554,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 554,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "6dd4ba94b98b0ac8b4c47748af60620625c6c046fb0fd0de17f77780994bc7d6",
+        "file": "controlled/constant_186.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 557,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 557,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "7f7cf1accfd8ca71fa408adea42c0049ee2f005663bdd928e4cee0bf2d1e85d9",
+        "file": "controlled/constant_187.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 560,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 560,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e8cf651f1d3bb49c8f5b4b13888391004701c255601023b658b9cb8dd4290975",
+        "file": "controlled/constant_188.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 563,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 563,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "9374cbc47b2cdff741d5035461b99bf68d7de2ee4684073a0ccb75aa50abf200",
+        "file": "controlled/constant_189.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 566,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 566,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "0432f6e87d80320e22f42815785cdba911f75b29e220b57ce1e1aeee7f427e17",
+        "file": "controlled/constant_190.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 569,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 569,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "1f6982d073c5198759d00ae422eca926a3275139db99a76459476c644fe07226",
+        "file": "controlled/constant_191.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 572,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 572,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "c0d1d369ab443ff125594813d77690d56f3614ed6128d1f049d7a5fd0baaa8e2",
+        "file": "controlled/constant_192.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 575,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 575,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "978bbdb716e8416e2563d58a1763bacd96566330d0835a78a9307b6a3559a5c5",
+        "file": "controlled/constant_193.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 578,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 578,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b4ba43469d809be1374e45c541956a0cf444d20901fa6f5965fdc02bdc76e2e1",
+        "file": "controlled/constant_194.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 581,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 581,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "3a4a40a257a953462b426042f34470b46864d0d9e0e75dc060b9465414499cdf",
+        "file": "controlled/constant_195.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 584,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 584,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "1d954c11643197537a0d06b5c074c1242a5a670e84bd47ec237781c8620aefaf",
+        "file": "controlled/constant_196.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 587,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 587,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "a937dfc1fc861b7dfcbbbf28eddca55c0480bf2e012ea5be20866a69a4490434",
+        "file": "controlled/constant_197.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 590,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 590,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "df6778585f1bf69a7d530d1be9eae520f9f397540a14002b99464a9e53394478",
+        "file": "controlled/constant_198.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 593,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 593,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "3ed5dcdf4259f7addaba0407bd800e3839b43e06e86bf52a4a6c27b20d394229",
+        "file": "controlled/constant_199.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 596,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 596,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "caf0b0f82415b313ea6f162a4ab0f6baabdbcc943d09631d72f443d45f20fbd7",
+        "file": "controlled/constant_200.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 599,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 599,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b31622443a15c7b80473af9991ce747ffd4701fb97c8050978953407ecca348c",
+        "file": "controlled/constant_201.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 602,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 602,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "862de2e0f892d474f133d3292d0a9841d86e184a4d0736ae0acbe0f8f75ce5e8",
+        "file": "controlled/constant_202.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 605,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 605,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e48649082ffe1f79ac6856989084163c7a9824aaf2f98117cf61ad7cb6b69ec6",
+        "file": "controlled/constant_203.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 608,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 608,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "f947be4880f5cd326ec8ef10399bbc60dafbac48a92492d88594f51cf76ce1d0",
+        "file": "controlled/constant_204.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 611,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 611,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "a7b630121b42b21f332d97e469b060461b2ee4f64bfbe3016cab8eade83d89d3",
+        "file": "controlled/constant_205.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 614,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 614,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b357e4ab20162f5ab0765541eec9292720916783fb5c492f68e26831bceb67a1",
+        "file": "controlled/constant_206.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 617,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 617,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "af31d400d990cbe0e0ce5553eabd4ffe89317843730ba115b3c8c49543efd337",
+        "file": "controlled/constant_207.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 620,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 620,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "3638a10d5861030e839f0a3beb7002d6b93fdaed4e6297812eb37f6c63aef93b",
+        "file": "controlled/constant_208.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 623,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 623,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "3c5b3ac3272cb718c5546733fe82b70eea5f8b5c1f80e97406986c0a88f3187c",
+        "file": "controlled/constant_209.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 626,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 626,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "7167118ca0c7abd84ea066f03d04c6b8d812d57f1768760ca363eeb57e6dc2ec",
+        "file": "controlled/constant_210.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 629,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 629,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "a2777fbe5622305d609c3d78a01e13b19e59f0c80741d76c6e64a950eaa97ca9",
+        "file": "controlled/constant_211.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 632,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 632,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "9d5d7897d8e86e80f03f4226e4be31ec41f8520e59f95a141441121412611421",
+        "file": "controlled/constant_212.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 635,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 635,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "58cf4b03235bb2a5872200f825f8b7e22a4fcd1024e3a50bcca7a64b5fe15bd6",
+        "file": "controlled/constant_213.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 638,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 638,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "a203144ddfe3afd97e3cb7d3c16f7b0652bbcd95054c0eaf452e3c7b2fc9d140",
+        "file": "controlled/constant_214.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 641,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 641,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "32f7bfd1fa62aa058c8d06b70ec0ccbc9ff17bc12f8befdd6344f65556fe7884",
+        "file": "controlled/constant_215.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 644,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 644,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "5b22fea4de1a2528c659191f7e59acb2393bfb65788b88a58579f874ba3cf18b",
+        "file": "controlled/constant_216.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 647,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 647,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "faf72e3a1a53e26421bb40ae7a924a913982c0ebfe2f0bc58bd337e90de4d4ef",
+        "file": "controlled/constant_217.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 650,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 650,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "4aaf13f2bcc90d1e9b7fe77b8b79a2b9fa1ac2715ad2449875237dd6b9889a16",
+        "file": "controlled/constant_218.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 653,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 653,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "50f98456d2f999ac49beff9d76115ab0f58de61e311273225d8422fa18c5d825",
+        "file": "controlled/constant_219.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 656,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 656,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "60c73d08ede9153852c619d8c9d4ccb7f2b317bf918d5ab879f8b3bf6f7a39cb",
+        "file": "controlled/constant_220.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 659,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 659,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "1855f8e56d5e84e82d402e0c3822025cc4947b100c80d4ca50301531f8dc09bf",
+        "file": "controlled/constant_221.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 662,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 662,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "0b7f8aa04135326198b519921f975a48eae8c489cfad5c9ecedba21d0e688f63",
+        "file": "controlled/constant_222.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 665,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 665,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "4bc5fea9fe23dc50bdf66ecb93d08ef9dd2be4bc9abcea19fdd06e4271674100",
+        "file": "controlled/constant_223.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 668,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 668,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "a6ad2e900f1874c9e823d95fbb1a92c2426ac60f1f839c65a337e67b70e2702d",
+        "file": "controlled/constant_224.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 671,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 671,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "cd22fd805a32e3e9693b7c7eea35c4c85f74db5c647a2605e9bacc1b87b76eb4",
+        "file": "controlled/constant_225.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 674,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 674,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "30ab307614a26a2571bea794a2802588d2483bbdadda4b81f39337da1dfc8e27",
+        "file": "controlled/constant_226.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 677,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 677,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "29ef2863a23e6416aa7e849f7e455a9ce8b311321211c784dc1dec126cb3bdce",
+        "file": "controlled/constant_227.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 680,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 680,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b111698a82fca5dc83a6519acb87336131c85d17329147042d79d8da00fa96be",
+        "file": "controlled/constant_228.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 683,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 683,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e5ed3abf2b80c47468409bcdd43688001c3cac960f598f7ab2c4d103cc96aa63",
+        "file": "controlled/constant_229.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 686,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 686,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "2a1adf1c6e87bbd74c4312a9da5187c7c6bc3625f58d59c8361c2634d98294dd",
+        "file": "controlled/constant_230.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 689,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 689,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "2b388e2cdb8d47ae4e51a6d555a587add9135c0b5fce14da058607addb6069f1",
+        "file": "controlled/constant_231.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 692,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 692,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "9375d7fa0316924d16bf643f9f5a1f45846b4765b3247185b3acbfcc307d21db",
+        "file": "controlled/constant_232.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 695,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 695,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "77c6adf8733af68649e543c213500f302ab9553b8db9ede65160e08c57a7ae28",
+        "file": "controlled/constant_233.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 698,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 698,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "902398354ccff4152b519b1772c3496b06bba0f4dd10580b840daa89a35e42be",
+        "file": "controlled/constant_234.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 701,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 701,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "b4a6246a5a77739a35e055f99bb1bf2ec737a6c92a755d463d3d3318b643820b",
+        "file": "controlled/constant_235.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 704,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 704,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "a3b9922b78a4fd468b0940ab566f2a4951a9bcb3cd0dccc01e6eb48a57c90231",
+        "file": "controlled/constant_236.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 707,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 707,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "e5886c48038cea662a7d5f18807ca793089e6c3f358f735030c04e356851223c",
+        "file": "controlled/constant_237.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 710,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 710,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "95393449b23e7050923db5a073de73cc2f01755c99969f0f9797a904d7dfa08f",
+        "file": "controlled/constant_238.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 713,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 713,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "95c8677208886f1080bc1c41e808d4139659b978d2037965295220de72d757df",
+        "file": "controlled/constant_239.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 716,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 716,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "53b38e11df3506b3b9c91e884795ceaf84b9e30ccaca951fade7b6010e00c42c",
+        "file": "controlled/constant_240.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 719,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 719,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "124188663983ba9116b750872b0cbfa5926dc66e18733458d626f017503ec378",
+        "file": "controlled/constant_241.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 722,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 722,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "bfa08a397c4ce7ee12ac09f6c15da3993813861707405df695686d64f03dec22",
+        "file": "controlled/constant_242.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 725,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 725,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "61914d2a176d1483a15494c07ed585c413a93b7ce535150ce77dc771bb2ccc38",
+        "file": "controlled/constant_243.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 728,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 728,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "f1b15f56324245fe55c65c87c586ac1545f7b71dcb108d8fa666716ec608a962",
+        "file": "controlled/constant_244.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 731,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 731,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "78633bd18e9681e5e292d2d168b11de62e916b78759817a13e4e371da9a3a1cc",
+        "file": "controlled/constant_245.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 734,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 734,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "0e61ebeffc6826aba18cdd25985b9d2f2841e0f5171d329c0125b9097a7019a2",
+        "file": "controlled/constant_246.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 737,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 737,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "3516a6347c7481fbe17ea03bb1e589a26a7bdfda0544fb5aa8c3b6d2e699ebc9",
+        "file": "controlled/constant_247.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 740,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 740,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "36fdadb3b78d7fc969328c11b3fd7e6c63491c7ff7e82ae17e395037778acf0a",
+        "file": "controlled/constant_248.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 743,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 743,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "779fa65a6a4a9262d1f9424b9679a67339f8a85c812d4bdf346aac4ca785d442",
+        "file": "controlled/constant_249.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 746,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 746,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "528bfe464fba2a32f6892edba8dc547eedd6cc02cbca68554562d381a579fb84",
+        "file": "controlled/constant_250.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 749,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 749,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "4b252bc92cb48e9e27e749e684f0c26410b9cb56131a5bb73d33383fdad51f3b",
+        "file": "controlled/constant_251.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 752,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 752,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "df8dcc1c24051226446b7cd7003e5aa0686cb60cc95eed1079eb3f075e02cd5a",
+        "file": "controlled/constant_252.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 755,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 755,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "6ef5aa7e47d05a0228902109209d78f42c528d74da743ec7da921cba88587bc7",
+        "file": "controlled/constant_253.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 758,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 758,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "7ec9f66f1ba44e0b7913cd386fc7d05d74468e1b5a97521e3fdb5f543dd1b4ae",
+        "file": "controlled/constant_254.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 761,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 761,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "c8ea4813568c64f62e39e8a7e5ba5db5c698901036d58da105132947b9114529",
+        "file": "controlled/constant_255.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 764,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 764,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "d4e2c56ffff1b6ff29abc382e6beb5de921001819d54408c31bc2c8512c5efb5",
+        "file": "adversarial/base.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 4294967295,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 4294967295,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "7097838e1f83f9eed4cf6bbd4a38b9d8b55698579f16efb0fa276d8390fd7ff6",
+        "file": "adversarial/reordered.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 4294967291,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 4294967291,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "5bba7a535ef15f9bedba2d84917824c334bd87507ed60d0cf5fee1fd8583c8a4",
+        "file": "adversarial/multiplicity.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 4294967293,
+            "steps": 10
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 4294967293,
+            "steps": 10
+          }
+        }
+      },
+      {
+        "code_sha256": "62d21daa941e0db9189955e463454e20eff9f14688bb1dfa588fec3f6fe293e7",
+        "file": "adversarial/condition_equal.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 0,
+            "constant": 2,
+            "steps": 9
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 1,
+            "steps": 8
+          }
+        }
+      },
+      {
+        "code_sha256": "43ffc23545698e0c7dfb2811e8e6db42931276879c6a040afeea8f5d24f8199a",
+        "file": "adversarial/condition_unequal.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 0,
+            "constant": 1,
+            "steps": 8
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 2,
+            "steps": 9
+          }
+        }
+      },
+      {
+        "code_sha256": "e34d4ba38803cda2a7e000c17fa3a30fd6fb4f7a05016a6707e7638b6594eaee",
+        "file": "adversarial/nop_41.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 4294967295,
+            "steps": 41
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 4294967295,
+            "steps": 41
+          }
+        }
+      },
+      {
+        "code_sha256": "1c84aed5f0c6bd52b591ada70af8bf191d4d028d8a0de51afa01294bb949cc3b",
+        "file": "adversarial/nop_42.exe",
+        "returns": {
+          "x!=0": {
+            "coefficient": 3,
+            "constant": 4294967295,
+            "steps": 42
+          },
+          "x=0": {
+            "coefficient": 0,
+            "constant": 4294967295,
+            "steps": 42
+          }
+        }
+      }
+    ],
+    "routines": 263
+  },
+  "verifier_sha256": "239ac4ab0294e5ab7f0de803be6572815744201879bcdebcce0137ffa3920a5c"
+}

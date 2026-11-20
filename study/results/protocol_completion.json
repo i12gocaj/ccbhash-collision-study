@@ -1,0 +1,91 @@
+{
+  "checks": [
+    {
+      "evidence": "verification.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "audit/summary.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "extensions_verification.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "contracts.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "integration/summary.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "adversarial/summary.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "strata/summary.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "interpreter_check.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "compiled/verification.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "large_model_verification.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "large_reference_verification.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "large/verification.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "publication_audit.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "large/summary.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "controlled/summary.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "fresh_corpus/summary.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "fresh_corpus_6.0.4-wasi/summary.json",
+      "status": "passed"
+    },
+    {
+      "evidence": "core/summary.json",
+      "status": "passed"
+    }
+  ],
+  "input_accounting": {
+    "cfg_records": 7665460,
+    "functions_with_diagnostics": 425659,
+    "included": 7224074,
+    "input_functions": 26086571,
+    "missing_cfg": 11757088,
+    "missing_variables": 441379,
+    "original_filter": 6664030,
+    "serialization_diagnostics": 576704
+  },
+  "original_source_unchanged": true,
+  "pending_protocol_tests": [],
+  "scope": "Every campaign in PROTOCOL.md, including the compiled family and the complete primary archive",
+  "status": "passed",
+  "unexpected_valid_input_execution_failures": []
+}

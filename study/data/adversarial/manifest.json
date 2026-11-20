@@ -1,0 +1,51 @@
+[
+  {
+    "assembly": "mov eax, ecx; add eax, 0; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; ret",
+    "code_hex": "89c883c00031d201d06bc00383e80283c80083e0ff83c001c3",
+    "file": "base.exe",
+    "instructions": 10,
+    "sha256": "99e41165b4453e861339121359b5c1ed488880b5729b8df00fb0b0b354726d22"
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 0; xor edx, edx; add eax, edx; sub eax, 2; imul eax, eax, 3; or eax, 0; and eax, -1; add eax, 1; ret",
+    "code_hex": "89c883c00031d201d083e8026bc00383c80083e0ff83c001c3",
+    "file": "reordered.exe",
+    "instructions": 10,
+    "sha256": "7d18d5990be385342c9646ebfa68f4019ac7f80df8a406be4b03acb3de7fb7c0"
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 0; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; sub eax, 1; ret",
+    "code_hex": "89c883c00031d201d06bc00383e80283c80083e0ff83e801c3",
+    "file": "multiplicity.exe",
+    "instructions": 10,
+    "sha256": "1df225252492ec7c625eff33534316f736d1fdad51af3b5853ebddee1cfae1da"
+  },
+  {
+    "assembly": "mov eax, 1; xor edx, edx; add edx, 0; cmp ecx, 0; je take; mov eax, 2; or eax, 0; add eax, 0; ret; take: and eax, -1; sub eax, 0; ret",
+    "code_hex": "b80100000031d283c20083f900740cb80200000083c80083c000c383e0ff83e800c3",
+    "file": "condition_equal.exe",
+    "instructions": 13,
+    "sha256": "f390914bfee908b426dd0717144a9044d3663b3afd9aed49f41716e0e5828274"
+  },
+  {
+    "assembly": "mov eax, 1; xor edx, edx; add edx, 0; cmp ecx, 0; jne take; mov eax, 2; or eax, 0; add eax, 0; ret; take: and eax, -1; sub eax, 0; ret",
+    "code_hex": "b80100000031d283c20083f900750cb80200000083c80083c000c383e0ff83e800c3",
+    "file": "condition_unequal.exe",
+    "instructions": 13,
+    "sha256": "3a328fe95f6301daea581e30962f62ca4b6ab1f1b20d883c05f9e08d9fb290d4"
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 0; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; ret",
+    "code_hex": "89c883c00031d201d06bc00383e80283c80083e0ff83c00190909090909090909090909090909090909090909090909090909090909090c3",
+    "file": "nop_41.exe",
+    "instructions": 41,
+    "sha256": "4b0b2c6640367fc092d910d04da785a15953d3b8bd48da88da232379d6c6f5c9"
+  },
+  {
+    "assembly": "mov eax, ecx; add eax, 0; xor edx, edx; add eax, edx; imul eax, eax, 3; sub eax, 2; or eax, 0; and eax, -1; add eax, 1; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; ret",
+    "code_hex": "89c883c00031d201d06bc00383e80283c80083e0ff83c0019090909090909090909090909090909090909090909090909090909090909090c3",
+    "file": "nop_42.exe",
+    "instructions": 42,
+    "sha256": "0303190409504f00beee981450fdaaadca8ea0cce1c450c3eec026563a540fa7"
+  }
+]

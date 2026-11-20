@@ -1,0 +1,50 @@
+[
+  {
+    "binary": "git_2-47-1.exe",
+    "binary_sha256": "f668c4ba88417ecdf29470b3af92d576a701cc0f76dd083b13d032f4b3f1f247",
+    "cfg_records": 2,
+    "info_records": 68,
+    "json_sha256": {
+      "cfg": "1ff3229c02df5885857477e898b59c1723e80d521a5db0abbee4cbc9ac16d3f6",
+      "cg": "53d90d64e440259c9b7f3111fd21f2fc6292f39531062707337c3160487ab0dc",
+      "finfo": "b80b39f21b9748c59a95bad7c0148e40e755564f0c8c90165baf1428cc17da4d",
+      "fvars": "99c433b313f972f67ce63f52ff5acac4aa5d6e982cfe7d7b4c11f225e1ae5c0c"
+    }
+  },
+  {
+    "binary": "libpng16.so.16.43.0",
+    "binary_sha256": "29896eea00b1567c55044ff497ebd7a8bd5594ac3e0b5a52fbcda619ce8badc2",
+    "cfg_records": 310,
+    "info_records": 407,
+    "json_sha256": {
+      "cfg": "a1f7d6727280342fcbec88bc54eb7e81d4ec939b9a6e6356c5cbbc141cd60f57",
+      "cg": "8966ac37e3bd7d1b0e71068f909efabf545ecdbfc9dda4693e92ede39595671e",
+      "finfo": "0acca797fc61d21f6a690b91b91ab6cd1125583348296444af1770702f180cdd",
+      "fvars": "e739497ac0b8b17fe8e8f6c3a88821d77a42cf912a874aa83a213b9a08fc2b3e"
+    }
+  },
+  {
+    "binary": "vlc_3-0-20",
+    "binary_sha256": "1fbb0287954bfb1669927eb8542e82af01508b1fd96cce0cf1ada05a6980bb43",
+    "cfg_records": 40,
+    "info_records": 43,
+    "json_sha256": {
+      "cfg": "e4fa07acb452fbde9ec693edd6d976d7a2777babeb617f63e7a74c9260ad53c5",
+      "cg": "5c734d8d2a3d2eedfc42d47112ce7d1f2cb03c2e9f9379a60508473fc6898e36",
+      "finfo": "31f1336dee11a3040f0fc83732f8105dae2aaa518ee3a13ee05889509587dab9",
+      "fvars": "7847151374c38ff796848f78539cd9523c00e8211fc24e93dd2bb8c2b10fd85f"
+    }
+  },
+  {
+    "binary": "zlib1_1-2-3.dll",
+    "binary_sha256": "e96b397b499d9eaa3f52eaf496ca8941e80c0ad1544879ccadf02bf2c6a1ecfc",
+    "cfg_records": 82,
+    "info_records": 131,
+    "json_sha256": {
+      "cfg": "fb41aa7d44371c67467c0ba7b18490bec4fe56e4d24dbfefe433a9a6a3439b1c",
+      "cg": "b20fd8c7236804432fbeed6b2fe6fab4231288463a18d28ce2fabd25534ef3b9",
+      "finfo": "771f650c3c6de80798ce28abf27c437d0cf23ced8275a75aad3cad0879b207a9",
+      "fvars": "e07353d35e199e96d6f64329f8f4c691ab82a5522af099332acead32af84f487"
+    }
+  }
+]

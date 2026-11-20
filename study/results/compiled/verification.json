@@ -1,0 +1,8 @@
+{
+  "all_pairs": 818560,
+  "calibration_precedes_test": true,
+  "emulated_cases": 20480,
+  "raw_functions": 1280,
+  "status": "passed",
+  "thresholds_checked": 202
+}

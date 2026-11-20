@@ -1,0 +1,402 @@
+[
+  {
+    "architecture": "x64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "x86_64-linux-musl",
+      "-O0",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\x64_O0.o"
+    ],
+    "file": "x64_O0.o",
+    "optimisation": "O0",
+    "sha256": "eda110a1dcb86d258a95c3f04163eaf58347d7042786ab0d900cb084b06025a1"
+  },
+  {
+    "architecture": "x64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "x86_64-linux-musl",
+      "-O1",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\x64_O1.o"
+    ],
+    "file": "x64_O1.o",
+    "optimisation": "O1",
+    "sha256": "f98b32df1fac568ad2763dc149c267738ac2e26a321a2e6c4c4e179f6bb636e7"
+  },
+  {
+    "architecture": "x64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "x86_64-linux-musl",
+      "-O2",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\x64_O2.o"
+    ],
+    "file": "x64_O2.o",
+    "optimisation": "O2",
+    "sha256": "f98b32df1fac568ad2763dc149c267738ac2e26a321a2e6c4c4e179f6bb636e7"
+  },
+  {
+    "architecture": "x64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "x86_64-linux-musl",
+      "-O3",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\x64_O3.o"
+    ],
+    "file": "x64_O3.o",
+    "optimisation": "O3",
+    "sha256": "f98b32df1fac568ad2763dc149c267738ac2e26a321a2e6c4c4e179f6bb636e7"
+  },
+  {
+    "architecture": "x64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "x86_64-linux-musl",
+      "-Os",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\x64_Os.o"
+    ],
+    "file": "x64_Os.o",
+    "optimisation": "Os",
+    "sha256": "239f011c13954f559e292179c52963a1750b569d6a5cc52bf4338ed689e7cca8"
+  },
+  {
+    "architecture": "arm32",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "arm-linux-musleabihf",
+      "-O0",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arm32_O0.o"
+    ],
+    "file": "arm32_O0.o",
+    "optimisation": "O0",
+    "sha256": "8e8b5ad7246c70c7d5f14827fa8bbc1cd6361232430879eecaffe9bdbd1348e8"
+  },
+  {
+    "architecture": "arm32",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "arm-linux-musleabihf",
+      "-O1",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arm32_O1.o"
+    ],
+    "file": "arm32_O1.o",
+    "optimisation": "O1",
+    "sha256": "e0929cda7bc489458486982a55c2a6dfb7340772a5461da888fc7cb7cb66978f"
+  },
+  {
+    "architecture": "arm32",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "arm-linux-musleabihf",
+      "-O2",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arm32_O2.o"
+    ],
+    "file": "arm32_O2.o",
+    "optimisation": "O2",
+    "sha256": "e0929cda7bc489458486982a55c2a6dfb7340772a5461da888fc7cb7cb66978f"
+  },
+  {
+    "architecture": "arm32",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "arm-linux-musleabihf",
+      "-O3",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arm32_O3.o"
+    ],
+    "file": "arm32_O3.o",
+    "optimisation": "O3",
+    "sha256": "e0929cda7bc489458486982a55c2a6dfb7340772a5461da888fc7cb7cb66978f"
+  },
+  {
+    "architecture": "arm32",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "arm-linux-musleabihf",
+      "-Os",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arm32_Os.o"
+    ],
+    "file": "arm32_Os.o",
+    "optimisation": "Os",
+    "sha256": "45d9972ba63bd450661db8ea8d77817078a69a161be157f8c6977f0704b0a2d3"
+  },
+  {
+    "architecture": "arm64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "aarch64-linux-musl",
+      "-O0",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arm64_O0.o"
+    ],
+    "file": "arm64_O0.o",
+    "optimisation": "O0",
+    "sha256": "6664ad2d25b6dcddf9bd5df5247687d178d24829dcf91cf671c659e5673a4cd3"
+  },
+  {
+    "architecture": "arm64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "aarch64-linux-musl",
+      "-O1",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arm64_O1.o"
+    ],
+    "file": "arm64_O1.o",
+    "optimisation": "O1",
+    "sha256": "321750492291483fee8b5bd0037ab28a741fd23d6956283ebafe8d40a0c87ed9"
+  },
+  {
+    "architecture": "arm64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "aarch64-linux-musl",
+      "-O2",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arm64_O2.o"
+    ],
+    "file": "arm64_O2.o",
+    "optimisation": "O2",
+    "sha256": "321750492291483fee8b5bd0037ab28a741fd23d6956283ebafe8d40a0c87ed9"
+  },
+  {
+    "architecture": "arm64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "aarch64-linux-musl",
+      "-O3",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arm64_O3.o"
+    ],
+    "file": "arm64_O3.o",
+    "optimisation": "O3",
+    "sha256": "321750492291483fee8b5bd0037ab28a741fd23d6956283ebafe8d40a0c87ed9"
+  },
+  {
+    "architecture": "arm64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "aarch64-linux-musl",
+      "-Os",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arm64_Os.o"
+    ],
+    "file": "arm64_Os.o",
+    "optimisation": "Os",
+    "sha256": "f66a813b4d3340b66f165dba8973af7f55484271515f07e5caf5cd13149613ec"
+  },
+  {
+    "architecture": "riscv64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "riscv64-linux-musl",
+      "-O0",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\riscv64_O0.o"
+    ],
+    "file": "riscv64_O0.o",
+    "optimisation": "O0",
+    "sha256": "3a3a2eb20512fc0c9b69ddc9c5669c2d515bbc5af5c1ad0da2b14d6e4fdaaf23"
+  },
+  {
+    "architecture": "riscv64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "riscv64-linux-musl",
+      "-O1",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\riscv64_O1.o"
+    ],
+    "file": "riscv64_O1.o",
+    "optimisation": "O1",
+    "sha256": "ed1612de87965da521e22093ad9995834610f19dfa18de43f3c6a09a911e682f"
+  },
+  {
+    "architecture": "riscv64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "riscv64-linux-musl",
+      "-O2",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\riscv64_O2.o"
+    ],
+    "file": "riscv64_O2.o",
+    "optimisation": "O2",
+    "sha256": "ed1612de87965da521e22093ad9995834610f19dfa18de43f3c6a09a911e682f"
+  },
+  {
+    "architecture": "riscv64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "riscv64-linux-musl",
+      "-O3",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\riscv64_O3.o"
+    ],
+    "file": "riscv64_O3.o",
+    "optimisation": "O3",
+    "sha256": "ed1612de87965da521e22093ad9995834610f19dfa18de43f3c6a09a911e682f"
+  },
+  {
+    "architecture": "riscv64",
+    "command": [
+      "C:\\Users\\user\\Desktop\\ccbhash\\.tools\\zig\\0.14.1\\zig-x86_64-windows-0.14.1\\zig.exe",
+      "cc",
+      "-target",
+      "riscv64-linux-musl",
+      "-Os",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-inline",
+      "-c",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\arithmetic.c",
+      "-o",
+      "C:\\Users\\user\\Desktop\\ccbhash\\study\\data\\compiled\\riscv64_Os.o"
+    ],
+    "file": "riscv64_Os.o",
+    "optimisation": "Os",
+    "sha256": "139a35e6fc3f2a64cca67c3ef44594d43124deca2e384241c1a55ac93bc02bc7"
+  }
+]

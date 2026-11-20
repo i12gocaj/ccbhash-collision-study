@@ -1,0 +1,7 @@
+{
+  "manuscript_sha256": "d92c0d307b6d42fb8a61f54ad45ec5da1acd1fb275956f1a7a3cbbd23b830495",
+  "quantitative_tables_checked": 9,
+  "scope": "Reported result tables checked against JSON; prose additionally reviewed",
+  "status": "passed",
+  "tables_checked": 11
+}

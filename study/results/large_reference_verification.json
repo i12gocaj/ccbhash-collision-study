@@ -1,0 +1,6 @@
+{
+  "callgraph_cases": 66476,
+  "source": "All four-node directed graphs and all included functions in both fresh extractions",
+  "status": "passed",
+  "verifier_sha256": "1d9ebf7891fe454ffcee1c5af796b6e3a11823e5b84f85567d27facf412d7299"
+}

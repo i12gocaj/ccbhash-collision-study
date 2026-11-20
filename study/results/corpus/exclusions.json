@@ -1,0 +1,1702 @@
+[
+  {
+    "id": "git_2-47-1.exe/entry0",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll___set_app_type",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002ca0",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002cb0",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001e30",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.1400023e0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll___wgetmainargs",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002030",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002ce0",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001e40",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_malloc",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcslen",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_memcpy",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001be0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001c60",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002cc0",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001b70",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002fd0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll__cexit",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll__initterm",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_exit",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll__amsg_exit",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcschr",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_memmove",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcsstr",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_realloc",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_fwprintf",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcscpy",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001430",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.1400017e0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.1400019a0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002cf0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll___iob_func",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_fprintf",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_fwrite",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_vfprintf",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_abort",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002980",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002ac0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001e50",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002a00",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002c60",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001ec0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_signal",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_calloc",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_free",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.1400025c0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_strlen",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_strncmp",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.1400017c0",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcsncmp",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcsncpy",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001920",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll__wcsdup",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.1400014e0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001710",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcscmp",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcsncat",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_fgets",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_fclose",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcscat",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll__wcsicmp",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001a00",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_strcpy",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001870",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcsspn",
+    "reason": "original_filter"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll__wcsnicmp",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.free",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.abort",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.__errno_location",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.remove",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.inflate",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.ferror",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.fread",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.inflateReset2",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.strtod",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.crc32",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.pow",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.fclose",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.strlen",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.__stack_chk_fail",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.modf",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.deflateReset",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.deflate",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.memset",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.fputc",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.deflateInit2_",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.memcmp",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.frexp",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp._setjmp",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.__memcpy_chk",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.memcpy",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.inflateEnd",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.adler32",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.malloc",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.fflush",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.deflateEnd",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.fopen",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.inflateInit2_",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.gmtime",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.floor",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.inflateReset",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.fwrite",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.__fprintf_chk",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.strerror",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/entry0",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_mem_ptr",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_save_uint_32",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_chunk_cache_max",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_libpng_ver",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_error",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_image_height",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_sBIT",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_create_read_struct_2",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_invalid",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_chunk_benign_error",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_chunk_error",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0000c680",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_eXIf",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_io_state",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_text_compression_mem_level",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_read_user_chunk_fn",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_oFFs",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_filter_heuristics_fixed",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_init_io",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_sPLT",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_bit_depth",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_swap",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_reset_zstream",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_save_int_32",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_bKGD",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_create_read_struct",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_user_transform_ptr",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_compression_type",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_rowbytes",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_text_compression_strategy",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_flush",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_free_default",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_error_fn",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_y_offset_inches",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0000cec0",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_access_version_number",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_interlace_type",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_compression_level",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_calloc",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_rgb_to_gray_status",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_convert_from_time_t",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_convert_from_struct_tm",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_chunk_malloc_max",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_uint_16",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_color_type",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_rows",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_channels",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_io_chunk_type",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_compression_strategy",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_chunk_malloc_max",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_palette_max",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_progressive_ptr",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_bgr",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_chunk_cache_max",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_error_ptr",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_create_write_struct_2",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_write_fn",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_copyright",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_write_user_transform_fn",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_benign_errors",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_current_row_number",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_permit_mng_features",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_progressive_read_fn",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_filter_type",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_user_width_max",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_write_status_fn",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_invert_alpha",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_text_compression_level",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_packing",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_check_for_invalid_index",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_read_user_transform_fn",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_user_limits",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_user_chunk_ptr",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_x_offset_inches",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_unknown_chunks",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_packswap",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_save_uint_16",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_uint_31",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_int_32",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_uint_32",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_create_write_struct",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_image_width",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_invert_mono",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_pHYs",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_swap_alpha",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_progressive_combine_row",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_write_chunk_start",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_current_pass_number",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_read_status_fn",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_filter_heuristics",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_compression_mem_level",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_eXIf",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_mem_fn",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_shift",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_header_version",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_signature",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_user_height_max",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_header_ver",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_io_ptr",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_text",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_process_data_skip",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_interlace_handling",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000052a0",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00005520",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000055e0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00005290",
+    "reason": "original_filter"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00005820",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00006130",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00005900",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00006f10",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00006830",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00006220",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00006d50",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000149a0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00005690",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00015d20",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00014a40",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000059a0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00009400",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00009600",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000076f0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000089e0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0000c880",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0000c960",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001ce90",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00018d90",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00019170",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001cb70",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001a680",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00019a30",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00019510",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001bc80",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00019370",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001bec0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001c200",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001c3a0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001c6f0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001c080",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001a9e0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00019810",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001ac60",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001b4d0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00019d50",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001ca10",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001a280",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001b960",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00019f70",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001cfb0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001d330",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001d3e0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0000c6e0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000108d0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00005b40",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001cda0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00008a70",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00021ae0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00009f30",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00009e20",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00009550",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000140f0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00013ee0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000210f0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000214f0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000211d0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00021a70",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00021400",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00005f90",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00007b10",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00019070",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0002c190",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00018f10",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00006060",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00023210",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00008110",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000083c0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000084a0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000218a0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001b840",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0000b9c0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0000bbc0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00021c20",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00006e30",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000234a0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000235f0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00023eb0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000201f0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00024200",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00022c10",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0000b880",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.0001ffd0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00020050",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00027280",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00027610",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000298f0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00024460",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000245c0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00024980",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00023970",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00024a90",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00026770",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00020440",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.dlerror",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_get_changeset",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.pthread_sigmask",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.abort",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.__fprintf_chk",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.isatty",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_set_exit_handler",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_add_intf",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_get_version",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.__register_atfork",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_set_app_id",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.geteuid",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_new",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.__vfprintf_chk",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.pthread_kill",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.pthread_self",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.sigaction",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_set_user_agent",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.signal",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.alarm",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.sigaddset",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_playlist_play",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.__stack_chk_fail",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_release",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.flockfile",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.funlockfile",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.sigemptyset",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.dlsym",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.fwrite",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.sigdelset",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.sigwait",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.memcpy",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.fflush",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/entry0",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "vlc_3-0-20/entry.init1",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/fcn.00001240",
+    "reason": "original_filter"
+  },
+  {
+    "id": "vlc_3-0-20/fcn.00001910",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "vlc_3-0-20/fcn.00001a10",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "vlc_3-0-20/fcn.00001a60",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "vlc_3-0-20/fcn.00001ba0",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_DllGetVersion",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll__dist_code",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll__length_code",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_compress",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_compressBound",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_deflateInit_",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b871b0",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_memset",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_deflateTune",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_get_crc_table",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_gzdirect",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_gzdopen",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_sprintf",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_gzflush",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_gzgetc",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_gzopen",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_gzputc",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_gzputs",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_strlen",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_gztell",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_memcpy",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_inflateInit_",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_inflateReset",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_zError",
+    "reason": "missing_variables"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_zcalloc",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_zcfree",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_free",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_zlibCompileFlags",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_zlibVersion",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b90410",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b810b0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b90ab0",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b90520",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b904b0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll__errno",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fflush",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll___dllonexit",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b90870",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fwrite",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fread",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fclose",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b85000",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b83ee0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b90a30",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll__vsnprintf",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b85820",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b90340",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fputc",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_strcpy",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_strcat",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_strerror",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll__fdopen",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b903d0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fgetpos",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fprintf",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b844b0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fopen",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b88020",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b881c0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b89a00",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b89d60",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b8a2e0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b8a410",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b894a0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b89970",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b89a80",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b8a6e0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b899d0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fsetpos",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll__filelengthi64",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b81110",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.KERNEL32.dll_FindAtomA",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b90590",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b90740",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b907f0",
+    "reason": "missing_cfg"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_abort",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.KERNEL32.dll_AddAtomA",
+    "reason": "original_filter"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.KERNEL32.dll_GetAtomNameA",
+    "reason": "original_filter"
+  }
+]

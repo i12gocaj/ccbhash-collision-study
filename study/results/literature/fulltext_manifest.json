@@ -1,0 +1,21 @@
+{
+  "consulted_date": "2026-10-06",
+  "sources": [
+    {
+      "file": "Bridging_the_compilation_gap_2026.pdf",
+      "sha256": "83ddac2feb1dacea0a4fe39b0247be5d2ac1fe95cc31a2eb46bb48476f76cea3",
+      "bytes": 3126897,
+      "url": "https://pureadmin.qub.ac.uk/ws/portalfiles/portal/706016442/Bridging_the_compilation_gap_2026.pdf",
+      "license": "CC BY 4.0, stated on the institutional cover",
+      "consulted": "Taxonomy/characterisation, methodology, source-data construction, filtering, results and conclusions"
+    },
+    {
+      "file": "On_the_Limitations_of_Fuzzy_Hashing_for_Uncovering_Code_Homologies_An_Analysis_of_Vulnerable_Code_Detection_in_Malware.pdf",
+      "sha256": "074baad468b4f064cf5a35d12e85f15f9dd98205c08798b11daf26c865ba6589",
+      "bytes": 794424,
+      "url": "https://pureadmin.qub.ac.uk/ws/portalfiles/portal/656106814/On_the_Limitations_of_Fuzzy_Hashing_for_Uncovering_Code_Homologies_An_Analysis_of_Vulnerable_Code_Detection_in_Malware.pdf",
+      "license": "CC BY 4.0, stated on the institutional cover",
+      "consulted": "Taxonomy/characterisation, methodology, source-data construction, filtering, results and conclusions"
+    }
+  ]
+}

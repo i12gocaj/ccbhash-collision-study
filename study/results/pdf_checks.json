@@ -1,0 +1,48 @@
+{
+  "characters": 45339,
+  "font_note": "Rebuilt on macOS: Georgia and Consolas as in the original; Arial replaces Segoe UI, which is not installed there.",
+  "manuscript_sha256": "d92c0d307b6d42fb8a61f54ad45ec5da1acd1fb275956f1a7a3cbbd23b830495",
+  "pages": 20,
+  "pdf_sha256": "d37406ba9b5bf9b1912be3d1b25eda8ef427867e0470fa64c4fedd15ffe3aa68",
+  "raster_render_dpi": 60,
+  "rendered_pages": 20,
+  "text_extraction": "passed",
+  "used_fonts": [
+    "/AAAAAA+Arial-BoldMT",
+    "/AAAAAA+ArialMT",
+    "/AAAAAA+Consolas",
+    "/AAAAAA+Georgia",
+    "/AAAAAA+Georgia-Bold",
+    "/AAAAAA+Georgia-Italic"
+  ],
+  "used_fonts_embedded": true,
+  "visual_checks": [
+    "All pages inspected on a contact sheet",
+    "Annex hashes rendered at 110 dpi",
+    "No clipping, overlaps or missing glyphs observed",
+    "References begin on a dedicated page"
+  ],
+  "visual_review": "passed",
+  "visual_review_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ]
+}

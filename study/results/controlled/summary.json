@@ -1,0 +1,63 @@
+{
+  "adapted_attempted": 256,
+  "adapted_worker_errors": [],
+  "distinct_feature_vectors": {
+    "collision_groups": 1,
+    "collision_pairs": 32640,
+    "excess": 255,
+    "max_group": 256,
+    "n": 256,
+    "unique": 1
+  },
+  "elapsed_seconds": 87.0944470000004,
+  "emulation": {
+    "all_passed": true,
+    "checks": 8192,
+    "functions": 256,
+    "inputs_per_function": 32
+  },
+  "hashes": {
+    "2": {
+      "collision_groups": 1,
+      "collision_pairs": 32640,
+      "excess": 255,
+      "max_group": 256,
+      "n": 256,
+      "unique": 1
+    },
+    "4": {
+      "collision_groups": 1,
+      "collision_pairs": 32640,
+      "excess": 255,
+      "max_group": 256,
+      "n": 256,
+      "unique": 1
+    },
+    "8": {
+      "collision_groups": 1,
+      "collision_pairs": 32640,
+      "excess": 255,
+      "max_group": 256,
+      "n": 256,
+      "unique": 1
+    }
+  },
+  "native_probes": [
+    {
+      "attempted": 256,
+      "empty": 256,
+      "nonempty": 0,
+      "version": "5.8.8",
+      "worker_errors": 0
+    },
+    {
+      "attempted": 0,
+      "note": "not counted as a CCBHash extraction failure or collision",
+      "startup_exit_code": 3221225725,
+      "status": "radare_runtime_unavailable",
+      "stderr": "",
+      "version": "6.0.4"
+    }
+  ],
+  "successful_functions": 256
+}

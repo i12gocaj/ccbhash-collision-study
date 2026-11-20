@@ -1,0 +1,396 @@
+{
+  "components": {
+    "args": {
+      "introduced_pairs": 0,
+      "mechanism": "compression",
+      "processed": {
+        "collision_groups": 8,
+        "collision_pairs": 56641,
+        "excess": 417,
+        "max_group": 330,
+        "n": 428,
+        "unique": 11
+      },
+      "raw": {
+        "collision_groups": 8,
+        "collision_pairs": 56641,
+        "excess": 417,
+        "max_group": 330,
+        "n": 428,
+        "unique": 11
+      }
+    },
+    "callgraph": {
+      "introduced_pairs": 0,
+      "mechanism": "compression",
+      "processed": {
+        "collision_groups": 22,
+        "collision_pairs": 17308,
+        "excess": 279,
+        "max_group": 182,
+        "n": 428,
+        "unique": 149
+      },
+      "raw": {
+        "collision_groups": 22,
+        "collision_pairs": 17308,
+        "excess": 279,
+        "max_group": 182,
+        "n": 428,
+        "unique": 149
+      }
+    },
+    "cc": {
+      "introduced_pairs": 1139,
+      "mechanism": "quantization",
+      "processed": {
+        "collision_groups": 15,
+        "collision_pairs": 6530,
+        "excess": 413,
+        "max_group": 45,
+        "n": 428,
+        "unique": 15
+      },
+      "raw": {
+        "collision_groups": 32,
+        "collision_pairs": 5391,
+        "excess": 379,
+        "max_group": 45,
+        "n": 428,
+        "unique": 49
+      }
+    },
+    "cfg": {
+      "introduced_pairs": 0,
+      "mechanism": "compression",
+      "processed": {
+        "collision_groups": 27,
+        "collision_pairs": 1307,
+        "excess": 145,
+        "max_group": 36,
+        "n": 428,
+        "unique": 283
+      },
+      "raw": {
+        "collision_groups": 27,
+        "collision_pairs": 1307,
+        "excess": 145,
+        "max_group": 36,
+        "n": 428,
+        "unique": 283
+      }
+    },
+    "indegree": {
+      "introduced_pairs": 38,
+      "mechanism": "quantization",
+      "processed": {
+        "collision_groups": 14,
+        "collision_pairs": 20731,
+        "excess": 412,
+        "max_group": 164,
+        "n": 428,
+        "unique": 16
+      },
+      "raw": {
+        "collision_groups": 14,
+        "collision_pairs": 20693,
+        "excess": 400,
+        "max_group": 164,
+        "n": 428,
+        "unique": 28
+      }
+    },
+    "locals": {
+      "introduced_pairs": 0,
+      "mechanism": "compression",
+      "processed": {
+        "collision_groups": 17,
+        "collision_pairs": 33843,
+        "excess": 393,
+        "max_group": 241,
+        "n": 428,
+        "unique": 35
+      },
+      "raw": {
+        "collision_groups": 17,
+        "collision_pairs": 33843,
+        "excess": 393,
+        "max_group": 241,
+        "n": 428,
+        "unique": 35
+      }
+    },
+    "name": {
+      "introduced_pairs": 3,
+      "mechanism": "compression",
+      "processed": {
+        "collision_groups": 6,
+        "collision_pairs": 6,
+        "excess": 6,
+        "max_group": 2,
+        "n": 428,
+        "unique": 422
+      },
+      "raw": {
+        "collision_groups": 3,
+        "collision_pairs": 3,
+        "excess": 3,
+        "max_group": 2,
+        "n": 428,
+        "unique": 425
+      }
+    },
+    "nblocks": {
+      "introduced_pairs": 2782,
+      "mechanism": "quantization",
+      "processed": {
+        "collision_groups": 14,
+        "collision_pairs": 7776,
+        "excess": 413,
+        "max_group": 63,
+        "n": 428,
+        "unique": 15
+      },
+      "raw": {
+        "collision_groups": 42,
+        "collision_pairs": 4994,
+        "excess": 362,
+        "max_group": 63,
+        "n": 428,
+        "unique": 66
+      }
+    },
+    "ninstrs": {
+      "introduced_pairs": 645,
+      "mechanism": "quantization",
+      "processed": {
+        "collision_groups": 76,
+        "collision_pairs": 1712,
+        "excess": 310,
+        "max_group": 38,
+        "n": 428,
+        "unique": 118
+      },
+      "raw": {
+        "collision_groups": 74,
+        "collision_pairs": 1067,
+        "excess": 265,
+        "max_group": 18,
+        "n": 428,
+        "unique": 163
+      }
+    },
+    "nvars": {
+      "introduced_pairs": 327,
+      "mechanism": "quantization",
+      "processed": {
+        "collision_groups": 16,
+        "collision_pairs": 10469,
+        "excess": 412,
+        "max_group": 97,
+        "n": 428,
+        "unique": 16
+      },
+      "raw": {
+        "collision_groups": 22,
+        "collision_pairs": 10142,
+        "excess": 399,
+        "max_group": 97,
+        "n": 428,
+        "unique": 29
+      }
+    },
+    "opcodes": {
+      "introduced_pairs": 0,
+      "mechanism": "compression",
+      "processed": {
+        "collision_groups": 57,
+        "collision_pairs": 1231,
+        "excess": 202,
+        "max_group": 34,
+        "n": 428,
+        "unique": 226
+      },
+      "raw": {
+        "collision_groups": 57,
+        "collision_pairs": 1231,
+        "excess": 202,
+        "max_group": 34,
+        "n": 428,
+        "unique": 226
+      }
+    },
+    "outdegree": {
+      "introduced_pairs": 118,
+      "mechanism": "quantization",
+      "processed": {
+        "collision_groups": 16,
+        "collision_pairs": 20940,
+        "excess": 412,
+        "max_group": 182,
+        "n": 428,
+        "unique": 16
+      },
+      "raw": {
+        "collision_groups": 16,
+        "collision_pairs": 20822,
+        "excess": 400,
+        "max_group": 182,
+        "n": 428,
+        "unique": 28
+      }
+    },
+    "stackframe": {
+      "introduced_pairs": 1278,
+      "mechanism": "quantization",
+      "processed": {
+        "collision_groups": 14,
+        "collision_pairs": 17094,
+        "excess": 414,
+        "max_group": 164,
+        "n": 428,
+        "unique": 14
+      },
+      "raw": {
+        "collision_groups": 27,
+        "collision_pairs": 15816,
+        "excess": 374,
+        "max_group": 164,
+        "n": 428,
+        "unique": 54
+      }
+    }
+  },
+  "included_records": 428,
+  "note": "These are descriptive rates of this convenience corpus, not semantic false-positive rates. Pair observations are dependent.",
+  "pair_metrics": {
+    "all": {
+      "compression_crosses_0.5": 0,
+      "compression_crosses_0.75": 0,
+      "compression_crosses_0.9": 0,
+      "compression_crosses_1.0": 0,
+      "compression_inflated_pairs": 3,
+      "excluded_equal_recovered_code": 1,
+      "full_collisions": 2,
+      "pairs": 91377,
+      "score_ge_0.5": 1499,
+      "score_ge_0.75": 306,
+      "score_ge_0.9": 252,
+      "score_ge_1.0": 2
+    },
+    "between_binary": {
+      "compression_crosses_0.5": 0,
+      "compression_crosses_0.75": 0,
+      "compression_crosses_0.9": 0,
+      "compression_crosses_1.0": 0,
+      "compression_inflated_pairs": 0,
+      "full_collisions": 2,
+      "pairs": 36557,
+      "score_ge_0.5": 83,
+      "score_ge_0.75": 3,
+      "score_ge_0.9": 3,
+      "score_ge_1.0": 2
+    },
+    "within_binary": {
+      "compression_crosses_0.5": 0,
+      "compression_crosses_0.75": 0,
+      "compression_crosses_0.9": 0,
+      "compression_crosses_1.0": 0,
+      "compression_inflated_pairs": 3,
+      "excluded_equal_recovered_code": 1,
+      "full_collisions": 0,
+      "pairs": 54820,
+      "score_ge_0.5": 1416,
+      "score_ge_0.75": 303,
+      "score_ge_0.9": 249,
+      "score_ge_1.0": 0
+    }
+  },
+  "raw_vectors": {
+    "collision_groups": 2,
+    "collision_pairs": 2,
+    "excess": 2,
+    "max_group": 2,
+    "n": 428,
+    "unique": 426
+  },
+  "signatures": {
+    "2": {
+      "collision_groups": 2,
+      "collision_pairs": 2,
+      "excess": 2,
+      "max_group": 2,
+      "n": 428,
+      "unique": 426
+    },
+    "4": {
+      "collision_groups": 2,
+      "collision_pairs": 2,
+      "excess": 2,
+      "max_group": 2,
+      "n": 428,
+      "unique": 426
+    },
+    "8": {
+      "collision_groups": 2,
+      "collision_pairs": 2,
+      "excess": 2,
+      "max_group": 2,
+      "n": 428,
+      "unique": 426
+    }
+  },
+  "witnesses": [
+    {
+      "added_compression_weight": 0.01,
+      "classification": "different recovered code; semantics not established",
+      "compressed_fields": [
+        "name"
+      ],
+      "full_collision": false,
+      "id_a": "libpng16.so.16.43.0/fcn.0000c680",
+      "id_b": "libpng16.so.16.43.0/fcn.000245c0",
+      "score": 0.07
+    },
+    {
+      "added_compression_weight": 0.01,
+      "classification": "different recovered code; semantics not established",
+      "compressed_fields": [
+        "name"
+      ],
+      "full_collision": false,
+      "id_a": "libpng16.so.16.43.0/sym.png_set_sCAL",
+      "id_b": "libpng16.so.16.43.0/sym.png_get_x_offset_pixels",
+      "score": 0.08
+    },
+    {
+      "added_compression_weight": 0,
+      "classification": "different recovered code; semantics not established",
+      "compressed_fields": [],
+      "full_collision": true,
+      "id_a": "libpng16.so.16.43.0/entry.init0",
+      "id_b": "vlc_3-0-20/entry.init0",
+      "score": 1.0
+    },
+    {
+      "added_compression_weight": 0,
+      "classification": "different recovered code; semantics not established",
+      "compressed_fields": [],
+      "full_collision": true,
+      "id_a": "libpng16.so.16.43.0/entry.fini0",
+      "id_b": "vlc_3-0-20/entry.fini0",
+      "score": 1.0
+    },
+    {
+      "added_compression_weight": 0.01,
+      "classification": "different recovered code; semantics not established",
+      "compressed_fields": [
+        "name"
+      ],
+      "full_collision": false,
+      "id_a": "zlib1_1-2-3.dll/sym.zlib1.dll_gzgetc",
+      "id_b": "zlib1_1-2-3.dll/sym.zlib1.dll_inflateInit_",
+      "score": 0.55
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "compatible_native_api_cases": 5,
+  "complete_vector_hash_checks": 4260,
+  "numeric_values": 70007,
+  "python": "3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)]",
+  "scope": "Python 3.9.0 original source parity against Python 3.12 campaign; radare2 5.8.8 API probes",
+  "status": "passed",
+  "text_digests": 243363
+}

@@ -1,0 +1,114 @@
+{
+  "emulated_cases": 224,
+  "proof": "Arithmetic: returns 3x-1, 3x-5, 3x-3 modulo 2^32 differ for every x; inverted conditional returns 1 versus 2 for every x; inserting NOP leaves the arithmetic result unchanged.",
+  "scope": "Seven actual PE64 routines; controlled witnesses, not an operational malware false-positive estimate",
+  "status": "passed",
+  "versions": {
+    "5.8.8": {
+      "all_passed": true,
+      "functions": 7,
+      "tested_pairs": [
+        {
+          "a": "base",
+          "b": "reordered",
+          "differing_features": [],
+          "full_collision": true,
+          "mechanism": "instruction order omitted",
+          "raw_features_equal": true,
+          "return_values_equal": false
+        },
+        {
+          "a": "base",
+          "b": "multiplicity",
+          "differing_features": [],
+          "full_collision": true,
+          "mechanism": "instruction multiplicities omitted",
+          "raw_features_equal": true,
+          "return_values_equal": false
+        },
+        {
+          "a": "reordered",
+          "b": "multiplicity",
+          "differing_features": [],
+          "full_collision": true,
+          "mechanism": "order and multiplicities omitted",
+          "raw_features_equal": true,
+          "return_values_equal": false
+        },
+        {
+          "a": "condition_equal",
+          "b": "condition_unequal",
+          "differing_features": [],
+          "full_collision": true,
+          "mechanism": "branch condition normalized",
+          "raw_features_equal": true,
+          "return_values_equal": false
+        },
+        {
+          "a": "nop_41",
+          "b": "nop_42",
+          "differing_features": [
+            "ninstrs"
+          ],
+          "full_collision": true,
+          "mechanism": "NOP omission plus instruction-count quantization",
+          "raw_features_equal": false,
+          "return_values_equal": true
+        }
+      ]
+    },
+    "6.0.4-wasi": {
+      "all_passed": true,
+      "functions": 7,
+      "tested_pairs": [
+        {
+          "a": "base",
+          "b": "reordered",
+          "differing_features": [],
+          "full_collision": true,
+          "mechanism": "instruction order omitted",
+          "raw_features_equal": true,
+          "return_values_equal": false
+        },
+        {
+          "a": "base",
+          "b": "multiplicity",
+          "differing_features": [],
+          "full_collision": true,
+          "mechanism": "instruction multiplicities omitted",
+          "raw_features_equal": true,
+          "return_values_equal": false
+        },
+        {
+          "a": "reordered",
+          "b": "multiplicity",
+          "differing_features": [],
+          "full_collision": true,
+          "mechanism": "order and multiplicities omitted",
+          "raw_features_equal": true,
+          "return_values_equal": false
+        },
+        {
+          "a": "condition_equal",
+          "b": "condition_unequal",
+          "differing_features": [],
+          "full_collision": true,
+          "mechanism": "branch condition normalized",
+          "raw_features_equal": true,
+          "return_values_equal": false
+        },
+        {
+          "a": "nop_41",
+          "b": "nop_42",
+          "differing_features": [
+            "ninstrs"
+          ],
+          "full_collision": true,
+          "mechanism": "NOP omission plus instruction-count quantization",
+          "raw_features_equal": false,
+          "return_values_equal": true
+        }
+      ]
+    }
+  }
+}

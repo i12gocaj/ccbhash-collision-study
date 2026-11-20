@@ -1,0 +1,299 @@
+{
+  "scope": "Artificial distinct feature vectors; every numeric field fixed. No program-realizability or semantic false-positive interpretation.",
+  "status": "passed",
+  "strata": [
+    {
+      "inputs": 20000,
+      "seed": 20261100,
+      "shared_numeric_fields": [
+        "cc",
+        "outdegree",
+        "ninstrs",
+        "nvars",
+        "nblocks",
+        "indegree",
+        "stackframe"
+      ],
+      "shared_text_fields": [],
+      "signatures": {
+        "2": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        },
+        "4": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        },
+        "8": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        }
+      },
+      "varying_text_fields": [
+        "name",
+        "cfg",
+        "callgraph",
+        "opcodes",
+        "args",
+        "locals"
+      ]
+    },
+    {
+      "inputs": 20000,
+      "seed": 20261101,
+      "shared_numeric_fields": [
+        "cc",
+        "outdegree",
+        "ninstrs",
+        "nvars",
+        "nblocks",
+        "indegree",
+        "stackframe"
+      ],
+      "shared_text_fields": [
+        "cfg"
+      ],
+      "signatures": {
+        "2": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        },
+        "4": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        },
+        "8": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        }
+      },
+      "varying_text_fields": [
+        "name",
+        "callgraph",
+        "opcodes",
+        "args",
+        "locals"
+      ]
+    },
+    {
+      "inputs": 20000,
+      "seed": 20261102,
+      "shared_numeric_fields": [
+        "cc",
+        "outdegree",
+        "ninstrs",
+        "nvars",
+        "nblocks",
+        "indegree",
+        "stackframe"
+      ],
+      "shared_text_fields": [
+        "cfg",
+        "callgraph"
+      ],
+      "signatures": {
+        "2": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        },
+        "4": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        },
+        "8": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        }
+      },
+      "varying_text_fields": [
+        "name",
+        "opcodes",
+        "args",
+        "locals"
+      ]
+    },
+    {
+      "inputs": 20000,
+      "seed": 20261103,
+      "shared_numeric_fields": [
+        "cc",
+        "outdegree",
+        "ninstrs",
+        "nvars",
+        "nblocks",
+        "indegree",
+        "stackframe"
+      ],
+      "shared_text_fields": [
+        "cfg",
+        "callgraph",
+        "opcodes"
+      ],
+      "signatures": {
+        "2": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        },
+        "4": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        },
+        "8": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        }
+      },
+      "varying_text_fields": [
+        "name",
+        "args",
+        "locals"
+      ]
+    },
+    {
+      "inputs": 20000,
+      "seed": 20261104,
+      "shared_numeric_fields": [
+        "cc",
+        "outdegree",
+        "ninstrs",
+        "nvars",
+        "nblocks",
+        "indegree",
+        "stackframe"
+      ],
+      "shared_text_fields": [
+        "cfg",
+        "callgraph",
+        "opcodes",
+        "args"
+      ],
+      "signatures": {
+        "2": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        },
+        "4": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        },
+        "8": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        }
+      },
+      "varying_text_fields": [
+        "name",
+        "locals"
+      ]
+    },
+    {
+      "inputs": 20000,
+      "seed": 20261105,
+      "shared_numeric_fields": [
+        "cc",
+        "outdegree",
+        "ninstrs",
+        "nvars",
+        "nblocks",
+        "indegree",
+        "stackframe"
+      ],
+      "shared_text_fields": [
+        "cfg",
+        "callgraph",
+        "opcodes",
+        "args",
+        "locals"
+      ],
+      "signatures": {
+        "2": {
+          "collision_groups": 2507,
+          "collision_pairs": 3108,
+          "excess": 2797,
+          "max_group": 5,
+          "n": 20000,
+          "unique": 17203
+        },
+        "4": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        },
+        "8": {
+          "collision_groups": 0,
+          "collision_pairs": 0,
+          "excess": 0,
+          "max_group": 1,
+          "n": 20000,
+          "unique": 20000
+        }
+      },
+      "varying_text_fields": [
+        "name"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "callgraph_import_order": {
+    "a": [
+      {
+        "imports": [
+          "b",
+          "c"
+        ],
+        "name": "a"
+      },
+      {
+        "imports": [
+          "c"
+        ],
+        "name": "b"
+      },
+      {
+        "imports": [],
+        "name": "c"
+      }
+    ],
+    "b": [
+      {
+        "imports": [
+          "c",
+          "b"
+        ],
+        "name": "a"
+      },
+      {
+        "imports": [
+          "c"
+        ],
+        "name": "b"
+      },
+      {
+        "imports": [],
+        "name": "c"
+      }
+    ],
+    "text_a": "0:1,2;1:2;2:;",
+    "text_b": "0:3,2;3:;2:3;"
+  },
+  "callgraph_self_recursion": {
+    "input": [
+      {
+        "imports": [
+          "a"
+        ],
+        "name": "a"
+      }
+    ],
+    "text": "1:1;"
+  },
+  "cfg_block_order": {
+    "text_a": "0:1,2;1:;2:;",
+    "text_b": "0:;1:;2:1,0;"
+  },
+  "cfg_branch_labels": {
+    "a": [
+      {
+        "blocks": [
+          {
+            "fail": 48,
+            "jump": 32,
+            "offset": 16,
+            "ops": []
+          },
+          {
+            "offset": 32,
+            "ops": []
+          },
+          {
+            "offset": 48,
+            "ops": []
+          }
+        ]
+      }
+    ],
+    "b": [
+      {
+        "blocks": [
+          {
+            "fail": 32,
+            "jump": 48,
+            "offset": 16,
+            "ops": []
+          },
+          {
+            "offset": 32,
+            "ops": []
+          },
+          {
+            "offset": 48,
+            "ops": []
+          }
+        ]
+      }
+    ],
+    "text_a": "0:1,2;1:;2:;",
+    "text_b": "0:1,2;1:;2:;"
+  },
+  "cfg_translation": {
+    "text_a": "0:1,2;1:;2:;",
+    "text_b": "0:1,2;1:;2:;"
+  },
+  "opcodes_order_counts_operands": {
+    "a": [
+      {
+        "blocks": [
+          {
+            "offset": 16,
+            "ops": [
+              {
+                "opcode": "mov eax, 1",
+                "type": "mov"
+              },
+              {
+                "opcode": "add eax, 2",
+                "type": "add"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "b": [
+      {
+        "blocks": [
+          {
+            "offset": 16,
+            "ops": [
+              {
+                "opcode": "add eax, 999",
+                "type": "add"
+              },
+              {
+                "opcode": "mov ebx, 5",
+                "type": "mov"
+              },
+              {
+                "type": "mov"
+              },
+              {
+                "type": "nop"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "text_a": "add;mov;",
+    "text_b": "add;mov;"
+  },
+  "variable_multiplicity": {
+    "a": [
+      {
+        "bpvars": [
+          {
+            "kind": "arg",
+            "type": "int"
+          }
+        ],
+        "regpvars": [],
+        "spvars": []
+      }
+    ],
+    "b": [
+      {
+        "bpvars": [
+          {
+            "kind": "arg",
+            "type": "int"
+          },
+          {
+            "kind": "arg",
+            "type": "int"
+          }
+        ],
+        "regpvars": [],
+        "spvars": []
+      }
+    ],
+    "text_a": {
+      "args": "int;",
+      "vars": ""
+    },
+    "text_b": {
+      "args": "int;",
+      "vars": ""
+    }
+  }
+}

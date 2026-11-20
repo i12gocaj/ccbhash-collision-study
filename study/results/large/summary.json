@@ -1,0 +1,182 @@
+{
+  "all_pairs_counted_by_exact_grouping": true,
+  "architectures": {
+    "arm32": 1086725,
+    "arm64": 1109126,
+    "mips32": 1191663,
+    "mips64": 1217839,
+    "x64": 1164739,
+    "x86": 1453982
+  },
+  "binaries": 5489,
+  "collision_counts": {
+    "pre_digest": {
+      "all_equal_pairs": 31202521,
+      "collision_classes": 775684,
+      "distinct_recovered_code_collision_pairs": 25451630,
+      "equal_recovered_code_pairs": 5750891,
+      "excess": 2646151,
+      "functions": 7224074,
+      "max_class": 573,
+      "unique": 4577923
+    },
+    "raw": {
+      "all_equal_pairs": 30538415,
+      "collision_classes": 757433,
+      "distinct_recovered_code_collision_pairs": 24860645,
+      "equal_recovered_code_pairs": 5677770,
+      "excess": 2560968,
+      "functions": 7224074,
+      "max_class": 573,
+      "unique": 4663106
+    },
+    "s2": {
+      "all_equal_pairs": 31203109,
+      "collision_classes": 775728,
+      "distinct_recovered_code_collision_pairs": 25452152,
+      "equal_recovered_code_pairs": 5750957,
+      "excess": 2646301,
+      "functions": 7224074,
+      "max_class": 573,
+      "unique": 4577773
+    },
+    "s4": {
+      "all_equal_pairs": 31202521,
+      "collision_classes": 775684,
+      "distinct_recovered_code_collision_pairs": 25451630,
+      "equal_recovered_code_pairs": 5750891,
+      "excess": 2646151,
+      "functions": 7224074,
+      "max_class": 573,
+      "unique": 4577923
+    },
+    "s8": {
+      "all_equal_pairs": 31202521,
+      "collision_classes": 775684,
+      "distinct_recovered_code_collision_pairs": 25451630,
+      "equal_recovered_code_pairs": 5750891,
+      "excess": 2646151,
+      "functions": 7224074,
+      "max_class": 573,
+      "unique": 4577923
+    }
+  },
+  "collision_pair_partition": {
+    "pre_digest": {
+      "across_binaries": {
+        "all_equal_pairs": 31202521,
+        "distinct_recovered_code_collision_pairs": 25451630,
+        "equal_recovered_code_pairs": 5750891
+      },
+      "within_binary": {
+        "all_equal_pairs": 0,
+        "distinct_recovered_code_collision_pairs": 0,
+        "equal_recovered_code_pairs": 0
+      }
+    },
+    "raw": {
+      "across_binaries": {
+        "all_equal_pairs": 30538415,
+        "distinct_recovered_code_collision_pairs": 24860645,
+        "equal_recovered_code_pairs": 5677770
+      },
+      "within_binary": {
+        "all_equal_pairs": 0,
+        "distinct_recovered_code_collision_pairs": 0,
+        "equal_recovered_code_pairs": 0
+      }
+    },
+    "s2": {
+      "across_binaries": {
+        "all_equal_pairs": 31202955,
+        "distinct_recovered_code_collision_pairs": 25452040,
+        "equal_recovered_code_pairs": 5750915
+      },
+      "within_binary": {
+        "all_equal_pairs": 154,
+        "distinct_recovered_code_collision_pairs": 112,
+        "equal_recovered_code_pairs": 42
+      }
+    },
+    "s4": {
+      "across_binaries": {
+        "all_equal_pairs": 31202521,
+        "distinct_recovered_code_collision_pairs": 25451630,
+        "equal_recovered_code_pairs": 5750891
+      },
+      "within_binary": {
+        "all_equal_pairs": 0,
+        "distinct_recovered_code_collision_pairs": 0,
+        "equal_recovered_code_pairs": 0
+      }
+    },
+    "s8": {
+      "across_binaries": {
+        "all_equal_pairs": 31202521,
+        "distinct_recovered_code_collision_pairs": 25451630,
+        "equal_recovered_code_pairs": 5750891
+      },
+      "within_binary": {
+        "all_equal_pairs": 0,
+        "distinct_recovered_code_collision_pairs": 0,
+        "equal_recovered_code_pairs": 0
+      }
+    }
+  },
+  "compilers": {
+    "clang-3.5": 603534,
+    "clang-5.0": 771286,
+    "clang-7": 774592,
+    "clang-9": 768133,
+    "gcc-4.8": 1073025,
+    "gcc-5": 1106129,
+    "gcc-7": 1095259,
+    "gcc-9": 1032116
+  },
+  "counts": {
+    "cfg_records": 7665460,
+    "functions_with_diagnostics": 425659,
+    "included": 7224074,
+    "input_functions": 26086571,
+    "missing_cfg": 11757088,
+    "missing_variables": 441379,
+    "original_filter": 6664030,
+    "serialization_diagnostics": 576704
+  },
+  "mechanism_pairs": {
+    "added_by_quantisation": 590985,
+    "added_by_text_digest": {
+      "s2": 522,
+      "s4": 0,
+      "s8": 0
+    },
+    "representation": 24860645
+  },
+  "optimisations": {
+    "O0": 1685358,
+    "O1": 1370233,
+    "O2": 1401786,
+    "O3": 1394718,
+    "Os": 1371979
+  },
+  "pair_domains": {
+    "across_binaries": 26053637846830,
+    "all": 26093618966701,
+    "distinct_recovered_code": 26093606574499,
+    "equal_recovered_code": 12392202,
+    "within_binary": 39981119871
+  },
+  "projects": {
+    "clamav": 1235739,
+    "curl": 145944,
+    "nmap": 623613,
+    "openssl": 1045619,
+    "unrar": 75757,
+    "z3": 4025389,
+    "zlib": 72013
+  },
+  "raw_equality_key": "SHA-256 of canonical complete raw vector",
+  "recovered_code_equality_key": "SHA-256 of relative block layout and recovered instruction bytes",
+  "source": "Original CCBHash reducers/digests/weights; indexed equivalent callgraph; deposited r2 6.0.4 metadata with validated schema",
+  "status": "passed"
+}

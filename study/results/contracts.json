@@ -1,0 +1,194 @@
+{
+  "checks": [
+    {
+      "status": "passed",
+      "test": "determinism"
+    },
+    {
+      "status": "passed",
+      "test": "utf8_digest_1"
+    },
+    {
+      "status": "passed",
+      "test": "utf8_digest_2"
+    },
+    {
+      "status": "passed",
+      "test": "utf8_digest_4"
+    },
+    {
+      "status": "passed",
+      "test": "utf8_digest_8"
+    },
+    {
+      "status": "passed",
+      "test": "utf8_digest_64"
+    },
+    {
+      "expected_exception": "ValueError",
+      "status": "passed",
+      "test": "invalid_digest_size_0"
+    },
+    {
+      "expected_exception": "ValueError",
+      "status": "passed",
+      "test": "invalid_digest_size_65"
+    },
+    {
+      "status": "passed",
+      "test": "numeric_negative"
+    },
+    {
+      "status": "passed",
+      "test": "numeric_zero"
+    },
+    {
+      "status": "passed",
+      "test": "numeric_fractional"
+    },
+    {
+      "status": "passed",
+      "test": "numeric_nan"
+    },
+    {
+      "status": "passed",
+      "test": "numeric_inf"
+    },
+    {
+      "status": "passed",
+      "test": "unknown_field_is_ignored"
+    },
+    {
+      "status": "passed",
+      "test": "missing_variables"
+    },
+    {
+      "status": "passed",
+      "test": "empty_variables"
+    },
+    {
+      "status": "passed",
+      "test": "empty_left"
+    },
+    {
+      "status": "passed",
+      "test": "empty_right"
+    },
+    {
+      "status": "passed",
+      "test": "incomplete_left"
+    },
+    {
+      "expected_exception": "KeyError",
+      "status": "passed",
+      "test": "incomplete_right"
+    },
+    {
+      "status": "passed",
+      "test": "unmatched_control"
+    },
+    {
+      "status": "passed",
+      "test": "directed_mean"
+    },
+    {
+      "status": "passed",
+      "test": "many_to_one"
+    },
+    {
+      "status": "passed",
+      "test": "tie_order"
+    },
+    {
+      "pairs": 2016,
+      "status": "passed",
+      "test": "actual_pair_symmetry_and_entrypoints"
+    },
+    {
+      "patterns": 8192,
+      "status": "passed",
+      "test": "all_component_equality_patterns"
+    },
+    {
+      "after": "0:1,2;1:;2:;",
+      "before": "0:2,1;1:;2:;",
+      "input": [
+        {
+          "blocks": [
+            {
+              "fail": 256,
+              "jump": 240,
+              "offset": 16,
+              "ops": []
+            },
+            {
+              "offset": 240,
+              "ops": []
+            },
+            {
+              "offset": 256,
+              "ops": []
+            }
+          ]
+        }
+      ],
+      "status": "passed",
+      "test": "hex_address_translation_counterexample",
+      "translated": [
+        {
+          "blocks": [
+            {
+              "fail": 4352,
+              "jump": 4336,
+              "offset": 4112,
+              "ops": []
+            },
+            {
+              "offset": 4336,
+              "ops": []
+            },
+            {
+              "offset": 4352,
+              "ops": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "status": "passed",
+      "test": "self_recursion"
+    },
+    {
+      "status": "passed",
+      "test": "mutual_recursion"
+    },
+    {
+      "status": "passed",
+      "test": "duplicate_call_edges"
+    },
+    {
+      "status": "passed",
+      "test": "call_node_labels"
+    },
+    {
+      "status": "passed",
+      "test": "call_import_order_changes_text"
+    },
+    {
+      "status": "passed",
+      "test": "unreachable_nodes"
+    },
+    {
+      "status": "passed",
+      "test": "unicode_persistence"
+    },
+    {
+      "scope": "Artificial database names; not assumed to be legal Windows path components",
+      "status": "passed",
+      "test": "database_identifier_concatenation_collision"
+    }
+  ],
+  "seed": 20261010,
+  "status": "passed"
+}

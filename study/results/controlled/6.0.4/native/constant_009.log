@@ -1,0 +1,17 @@
+
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\ccbhash\study\run_controlled.py", line 101, in <module>
+    dump(args.output,worker(args.worker,args.version,args.native));sys.exit()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\ccbhash\study\run_controlled.py", line 40, in worker
+    result=ccb.calculate_ccbhash(str(file))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\ccbhash\ccbhash-src\ccbhash.py", line 261, in calculate_ccbhash
+    r2.cmd("aaa")
+  File "C:\Users\user\Desktop\ccbhash\.tools\python\r2pipe\open_base.py", line 278, in cmd
+    res = self._cmd(cmd, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\ccbhash\.tools\python\r2pipe\open_sync.py", line 160, in _cmd_process
+    raise RuntimeError(f"Process terminated unexpectedly trying to run the command {cmd}\n{self.process}")
+RuntimeError: Process terminated unexpectedly trying to run the command aaa
+<Popen: returncode: 3221225725 args: ['radare2.exe', '-q0', 'C:\\Users\\user...>

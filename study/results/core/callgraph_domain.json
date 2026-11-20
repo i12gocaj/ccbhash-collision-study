@@ -1,0 +1,6 @@
+{
+  "caveat": "includes unreachable nodes and relabelling; repeated texts do not all denote distinct rooted graph structures",
+  "distinct_texts": 32114,
+  "labelled_graphs": 65536,
+  "repeated_texts": 33422
+}

@@ -1,0 +1,96 @@
+{
+  "caveat": "Independent calculations within the same project and machine; not external peer replication.",
+  "checks": [
+    {
+      "check": "all_text_digests_and_counts",
+      "digest_widths": [
+        2,
+        4,
+        8
+      ],
+      "field": "args",
+      "records": 65536
+    },
+    {
+      "check": "all_text_digests_and_counts",
+      "digest_widths": [
+        2,
+        4,
+        8
+      ],
+      "field": "callgraph",
+      "records": 32114
+    },
+    {
+      "check": "all_text_digests_and_counts",
+      "digest_widths": [
+        2,
+        4,
+        8
+      ],
+      "field": "cfg",
+      "records": 14641
+    },
+    {
+      "check": "all_text_digests_and_counts",
+      "digest_widths": [
+        2,
+        4,
+        8
+      ],
+      "field": "name",
+      "records": 65536
+    },
+    {
+      "check": "all_text_digests_and_counts",
+      "digest_widths": [
+        2,
+        4,
+        8
+      ],
+      "field": "opcodes",
+      "records": 65536
+    },
+    {
+      "check": "all_numeric_bins_and_domain",
+      "fields": 7,
+      "values_per_field": 10001
+    },
+    {
+      "check": "all_corpus_signatures_and_pairs",
+      "folder": "corpus",
+      "functions": 224,
+      "pairs": 24976
+    },
+    {
+      "check": "all_corpus_signatures_and_pairs",
+      "folder": "fresh_corpus",
+      "functions": 468,
+      "pairs": 109277
+    },
+    {
+      "check": "all_corpus_signatures_and_pairs",
+      "folder": "fresh_corpus_6.0.4-wasi",
+      "functions": 472,
+      "pairs": 111155
+    },
+    {
+      "check": "controlled_binary_uniqueness_hashes_and_emulation",
+      "emulated_cases": 8192,
+      "files": 256
+    },
+    {
+      "check": "all_birthday_witnesses_and_stopping_times",
+      "trials": 200
+    },
+    {
+      "check": "all_full_compression_witnesses",
+      "witnesses": 18
+    },
+    {
+      "check": "source_immutable",
+      "sha256": "a1d7857c84b262ef50d84e068400e9e2b715e2ec13d1ce6357a12545dd0d1b45"
+    }
+  ],
+  "status": "passed"
+}

@@ -1,0 +1,164 @@
+[
+  {
+    "classification": "feature-level full-signature compression collision; no semantic claim",
+    "field": "opcodes",
+    "input_a": {
+      "args": "",
+      "callgraph": "",
+      "cc": 1,
+      "cfg": "0:;",
+      "indegree": 0,
+      "locals": "",
+      "name": "entry0",
+      "nblocks": 1,
+      "ninstrs": 10,
+      "nvars": 0,
+      "opcodes": "and;call;div;lea;load;",
+      "outdegree": 0,
+      "stackframe": 0
+    },
+    "input_b": {
+      "args": "",
+      "callgraph": "",
+      "cc": 1,
+      "cfg": "0:;",
+      "indegree": 0,
+      "locals": "",
+      "name": "entry0",
+      "nblocks": 1,
+      "ninstrs": 10,
+      "nvars": 0,
+      "opcodes": "call;mov;",
+      "outdegree": 0,
+      "stackframe": 0
+    },
+    "pair_indices": [
+      214,
+      260
+    ],
+    "score": 1.0,
+    "signature": {
+      "args": "b1fe",
+      "callgraph": "b1fe",
+      "cc": 1,
+      "cfg": "35a4",
+      "indegree": 0,
+      "locals": "b1fe",
+      "name": "346f",
+      "nblocks": 1,
+      "ninstrs": 3,
+      "nvars": 0,
+      "opcodes": "1e0f",
+      "outdegree": 0,
+      "stackframe": 0
+    }
+  },
+  {
+    "classification": "feature-level full-signature compression collision; no semantic claim",
+    "field": "opcodes",
+    "input_a": {
+      "args": "",
+      "callgraph": "",
+      "cc": 1,
+      "cfg": "0:;",
+      "indegree": 0,
+      "locals": "",
+      "name": "entry0",
+      "nblocks": 1,
+      "ninstrs": 10,
+      "nvars": 0,
+      "opcodes": "add;call;cmp;jmp;load;",
+      "outdegree": 0,
+      "stackframe": 0
+    },
+    "input_b": {
+      "args": "",
+      "callgraph": "",
+      "cc": 1,
+      "cfg": "0:;",
+      "indegree": 0,
+      "locals": "",
+      "name": "entry0",
+      "nblocks": 1,
+      "ninstrs": 10,
+      "nvars": 0,
+      "opcodes": "add;and;cmp;load;mov;",
+      "outdegree": 0,
+      "stackframe": 0
+    },
+    "pair_indices": [
+      173,
+      395
+    ],
+    "score": 1.0,
+    "signature": {
+      "args": "b1fe",
+      "callgraph": "b1fe",
+      "cc": 1,
+      "cfg": "35a4",
+      "indegree": 0,
+      "locals": "b1fe",
+      "name": "346f",
+      "nblocks": 1,
+      "ninstrs": 3,
+      "nvars": 0,
+      "opcodes": "313c",
+      "outdegree": 0,
+      "stackframe": 0
+    }
+  },
+  {
+    "classification": "feature-level full-signature compression collision; no semantic claim",
+    "field": "opcodes",
+    "input_a": {
+      "args": "",
+      "callgraph": "",
+      "cc": 1,
+      "cfg": "0:;",
+      "indegree": 0,
+      "locals": "",
+      "name": "entry0",
+      "nblocks": 1,
+      "ninstrs": 10,
+      "nvars": 0,
+      "opcodes": "and;call;cmp;div;lea;mov;",
+      "outdegree": 0,
+      "stackframe": 0
+    },
+    "input_b": {
+      "args": "",
+      "callgraph": "",
+      "cc": 1,
+      "cfg": "0:;",
+      "indegree": 0,
+      "locals": "",
+      "name": "entry0",
+      "nblocks": 1,
+      "ninstrs": 10,
+      "nvars": 0,
+      "opcodes": "and;cmp;jmp;lea;load;mov;",
+      "outdegree": 0,
+      "stackframe": 0
+    },
+    "pair_indices": [
+      350,
+      490
+    ],
+    "score": 1.0,
+    "signature": {
+      "args": "b1fe",
+      "callgraph": "b1fe",
+      "cc": 1,
+      "cfg": "35a4",
+      "indegree": 0,
+      "locals": "b1fe",
+      "name": "346f",
+      "nblocks": 1,
+      "ninstrs": 3,
+      "nvars": 0,
+      "opcodes": "31eb",
+      "outdegree": 0,
+      "stackframe": 0
+    }
+  }
+]

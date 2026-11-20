@@ -1,0 +1,17 @@
+{
+  "additional_targeted_graph_cases": 5,
+  "callgraph_cases": 66476,
+  "cfg_optional_destination_roundtrips": 1298,
+  "cfg_schema_source": "references/binrankbench/binrankbench/common/utils.py: ADDR_SENTINEL and is_address_placeholder",
+  "cfg_schema_source_sha256": "de3728641139307d3ca1e3b0ab0fe86c256eab17bdf79101af10ca3b99569ced",
+  "native_and_python_serializers_match_original": true,
+  "native_backend": {
+    "compiler": "Zig 0.14.1 / Clang 19.1.7",
+    "dll_sha256": "341e9d27689ee38e22935746cc6f722b7b7c5bc134cfa5c6b4b6cbe9f881009e",
+    "source_sha256": "58cbd5e9a958a38a5ae345aa50e45ad43b147ceed1a33087c4112b0ca45dde39",
+    "target": "x86_64-windows-gnu"
+  },
+  "status": "passed",
+  "storage_and_role_distinguished": true,
+  "variable_entries_roundtripped": 2659
+}

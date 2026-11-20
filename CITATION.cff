@@ -1,0 +1,49 @@
+cff-version: 1.2.0
+message: "Si utilizas este estudio, cítalo con estos metadatos."
+title: "Estudio de colisiones de CCBHash: mecanismos, ejemplos verificables y resultados sobre la implementación pública"
+type: software
+authors:
+  - family-names: "González Casares"
+    given-names: "Javier"
+repository-code: "https://github.com/i12gocaj/ccbhash-collision-study"
+version: "1.3"
+date-released: "2026-10-06"
+license: MIT
+keywords:
+  - fuzzy hashing
+  - CCBHash
+  - binary function similarity
+  - malware analysis
+  - hash collisions
+  - reproducibility
+references:
+  - type: article
+    title: "Malware similarity and a new fuzzy hash: Compound Code Block Hash (CCBHash)"
+    authors:
+      - family-names: Onieva
+        given-names: José Antonio
+      - family-names: Pérez Jiménez
+        given-names: Pablo
+      - family-names: López
+        given-names: Javier
+    journal: "Computers & Security"
+    volume: 142
+    year: 2024
+    doi: 10.1016/j.cose.2024.103856
+  - type: software
+    title: "CCBHash"
+    authors:
+      - family-names: Pérez Jiménez
+        given-names: Pablo
+    repository-code: "https://github.com/pblprz/ccbhash"
+    commit: fd40d49973f5129c171dc5849ec6a8bb5fdd88a0
+  - type: dataset
+    title: "Dataset for Bridging the compilation gap"
+    authors:
+      - family-names: Bucci
+        given-names: Valerio
+      - family-names: Olukoya
+        given-names: Oluwafemi
+      - family-names: Martínez del Rincón
+        given-names: Jesús
+    doi: 10.5281/zenodo.20439493

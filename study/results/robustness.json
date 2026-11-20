@@ -1,0 +1,213 @@
+[
+  {
+    "all_equal": true,
+    "status": "checked",
+    "test": "repeatability_1000"
+  },
+  {
+    "exception": "ValueError",
+    "message": "digest_size must be between 1 and 64 bytes",
+    "status": "raised",
+    "test": "digest_width_0"
+  },
+  {
+    "status": "returned",
+    "test": "digest_width_1",
+    "value": {
+      "name": "6b"
+    }
+  },
+  {
+    "status": "returned",
+    "test": "digest_width_2",
+    "value": {
+      "name": "ae1e"
+    }
+  },
+  {
+    "status": "returned",
+    "test": "digest_width_4",
+    "value": {
+      "name": "63906248"
+    }
+  },
+  {
+    "status": "returned",
+    "test": "digest_width_8",
+    "value": {
+      "name": "d8bb14d833d59559"
+    }
+  },
+  {
+    "status": "returned",
+    "test": "digest_width_64",
+    "value": {
+      "name": "ba80a53f981c4d0d6a2797b69f12f6e94c212f14685ac4b74b12bb6fdbffa2d17d87c5392aab792dc252d5de4533cc9518d38aa8dbf1925ab92386edd4009923"
+    }
+  },
+  {
+    "exception": "ValueError",
+    "message": "digest_size must be between 1 and 64 bytes",
+    "status": "raised",
+    "test": "digest_width_65"
+  },
+  {
+    "status": "returned",
+    "test": "numeric_negative",
+    "value": {
+      "cc": 0
+    }
+  },
+  {
+    "status": "returned",
+    "test": "numeric_zero",
+    "value": {
+      "cc": 0
+    }
+  },
+  {
+    "status": "returned",
+    "test": "numeric_fractional",
+    "value": {
+      "cc": 1
+    }
+  },
+  {
+    "status": "returned",
+    "test": "numeric_nan",
+    "value": {
+      "cc": 0
+    }
+  },
+  {
+    "status": "returned",
+    "test": "numeric_infinity",
+    "value": {
+      "cc": 15
+    }
+  },
+  {
+    "status": "returned",
+    "test": "unknown_feature",
+    "value": {}
+  },
+  {
+    "exception": "Exception",
+    "message": "Error to get variables",
+    "status": "raised",
+    "test": "missing_variables_key"
+  },
+  {
+    "exception": "Exception",
+    "message": "Error to get variables",
+    "status": "raised",
+    "test": "empty_variables_list"
+  },
+  {
+    "status": "returned",
+    "test": "incomplete_left_signature",
+    "value": [
+      {
+        "x": [
+          0.25,
+          "y"
+        ]
+      },
+      0.25
+    ]
+  },
+  {
+    "exception": "KeyError",
+    "message": "'name'",
+    "status": "raised",
+    "test": "incomplete_right_signature"
+  },
+  {
+    "exception": "TypeError",
+    "message": "descriptor 'encode' for 'str' objects doesn't apply to a 'int' object",
+    "status": "raised",
+    "test": "non_string_text_feature"
+  },
+  {
+    "exception": "IndexError",
+    "message": "list index out of range",
+    "status": "raised",
+    "test": "empty_cfg"
+  },
+  {
+    "status": "returned",
+    "test": "empty_callgraph",
+    "value": ""
+  },
+  {
+    "status": "returned",
+    "test": "self_recursive_callgraph",
+    "value": "1:1;"
+  },
+  {
+    "status": "returned",
+    "test": "mutually_recursive_callgraph",
+    "value": "2:1;1:2;"
+  },
+  {
+    "status": "returned",
+    "test": "duplicate_call_edges",
+    "value": "0:1;1:;"
+  },
+  {
+    "status": "returned",
+    "test": "distinct_call_labels_same_topology",
+    "value": [
+      "0:1;1:;",
+      "0:1;1:;"
+    ]
+  },
+  {
+    "status": "returned",
+    "test": "empty_file_left",
+    "value": [
+      null,
+      null
+    ]
+  },
+  {
+    "status": "returned",
+    "test": "empty_file_right",
+    "value": [
+      {
+        "x": [
+          0,
+          ""
+        ]
+      },
+      0
+    ]
+  },
+  {
+    "status": "returned",
+    "test": "same_function_comparison",
+    "value": {
+      "family/file/x": 1.0000000000000002
+    }
+  },
+  {
+    "all_equal": true,
+    "outer_json_type": "str",
+    "status": "checked",
+    "test": "database_roundtrip"
+  },
+  {
+    "domain": "edge outside extracted function",
+    "log": "[!!] Failed to get callgraph. From node 0x10 to node 0x20\n",
+    "status": "returned",
+    "test": "external_cfg_target_32",
+    "value": "0;"
+  },
+  {
+    "domain": "edge outside extracted function",
+    "log": "[!!] Failed to get callgraph. From node 0x10 to node 0x30\n",
+    "status": "returned",
+    "test": "external_cfg_target_48",
+    "value": "0;"
+  }
+]

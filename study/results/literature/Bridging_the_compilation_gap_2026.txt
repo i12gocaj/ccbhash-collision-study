@@ -1,0 +1,2778 @@
+PAGE 1
+Bridging the compilation gap: a taxonomy and evaluation of fuzzy
+hashes for binary function similarity analysis
+Bucci, V., Olukoya, O., & Martinez-del-Rincon, J. (2026). Bridging the compilation gap: a taxonomy and
+evaluation of fuzzy hashes for binary function similarity analysis. Computers & Security , 171(December), Article
+105077. Advance online publication. https://doi.org/10.1016/j.cose.2026.105077
+Published in:
+Computers & Security
+Document Version:
+Publisher's PDF, also known as Version of record
+Queen's University Belfast - Research Portal:
+Link to publication record in Queen's University Belfast Research Portal
+Publisher rights
+Copyright 2026 the authors.
+This is an open access article published under a Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/),
+which permits unrestricted use, distribution and reproduction in any medium, provided the author and source are cited.
+General rights
+Copyright for the publications made accessible via the Queen's University Belfast Research Portal is retained by the author(s) and / or other
+copyright owners and it is a condition of accessing these publications that users recognise and abide by the legal requirements associated
+with these rights.
+Take down policy
+The Research Portal is Queen's institutional repository that provides access to Queen's research output. Every effort has been made to
+ensure that content in the Research Portal does not infringe any person's rights, or applicable UK laws. If you discover content in the
+Research Portal that you believe breaches copyright or violates any law, please contact openaccess@qub.ac.uk.
+Open Access
+This research has been made openly available by Queen's academics and its Open Research team.  We would love to hear how access to
+this research benefits you. – Share your feedback with us: http://go.qub.ac.uk/oa-feedback
+Download date:06. 10月. 2026
+
+PAGE 2
+ 
+Contents lists available at ScienceDirect
+Computers & Security
+journal homepage: www.elsevier.com/locate/cose  
+Full length article
+Bridging the compilation gap: A taxonomy and evaluation of fuzzy hashes for 
+Binary Function Similarity Analysis
+Valerio Bucci
+ ∗, Oluwafemi Olukoya
+ , Jesús Martínez del Rincón
+Centre for Secure Information Technology, Queen’s University Belfast, United Kingdom
+A R T I C L E  I N F O
+Dataset link: Bridging the compilation gap: A ta
+xonomy and evaluation of fuzzy hashes for Bin
+ary Function Similarity Analysis (Original data
+)
+Keywords:
+Binary function similarity analysis
+Cross-platform binary analysis
+Fuzzy hashing
+Semantic gap
+Reverse engineering
+Malware attribution
+Vulnerability detection
+Binary diffing
+Code reuse detection
+Function fingerprinting
+ A B S T R A C T
+Fuzzy hashing can identify source code duplication in compiled binary functions, with applications ranging 
+from vulnerability detection to malware attribution, where the source code is not available. However, 
+its application across the compilation gap has not been systematically studied. This paper studies fuzzy 
+hashes applied to cross-compiled Binary Function Similarity Analysis (BFSA). We first propose the Stratified 
+Abstraction Model, a taxonomy that maps how platform divergence affects binary artefacts across six analysis 
+layers. Then, we use it to classify existing approaches, ranging from learned embeddings to fuzzy hashes. 
+Then, we evaluate the effect of divergence across compilers, optimisation settings, bitness, and architectures 
+to reframe what Machine Learning techniques should be expected to achieve.
+We conduct a large-scale evaluation of state-of-the-art fuzzy hashes, including Catalog1, Function-
+SimSearch, Machoke, and CCBHash. We evaluate these techniques against uncompressed byte signatures 
+(Position Independent Code), using a ground truth of cross-compiled functions, comprising 2.8 M targets and
+4.3 M distractors. Under cross-architecture divergence (XA), the single-modality fuzzy hashes FCatalog and
+Machoke reach 8.57E−4 and 0.0978 in Mean Reciprocal Rank at 10 (MRR@10). Conversely, the weighted 
+multi-modal algorithms, CCBHash and FunctionSimSearch, achieve 0.4671 and 0.4720 in the same 
+scenario. Under optimisation divergence (XO), CCBHash reaches the highest values, between 0.6271 with 
+feature weights and 0.6865 with naive, unweighted features. Our results show that fuzzy hashes may be used 
+to detect code duplication in cross-compiled binaries, where the original source code is not available. They 
+cannot, however, detect different source implementations with shared intent. This second gap defines where 
+learned representations become necessary.
+1. Introduction
+Binary code is the compiled output of human-readable source code 
+and the ground truth of a program’s behaviour. Comparing compiled 
+machine instructions without access to source code, a field known as 
+Binary Code Similarity Analysis (BCSA), is a critical task in software 
+security (Haq and Caballero, 2021; Marcelli et al., 2022; Kim et al., 
+2023).
+Modern vulnerability research (Pei et al., 2023; Wang et al., 2024a; 
+Yang et al., 2021; Dullien, 2018) and malware attribution (Amalan 
+et al., 2026; Rahat et al., 2026; Lee et al., 2020) require BCSA on 
+cross-compiled binaries (Haq and Caballero, 2021). The challenge lies 
+in the compilation gap: the divergence in low-level machine instructions 
+produced from the same source code when compiled with different 
+compilers, optimisation levels, or target architectures (Haq and Ca-
+ballero, 2021; Marcelli et al., 2022; Ren et al., 2021). Similarly, the 
+ISA and OS impose Application Binary Interfaces (ABIs) and calling 
+conventions that binary analysis must account for Pang et al. (2021).
+∗ Corresponding author.
+E-mail address: vbucci01@qub.ac.uk (V. Bucci).
+Analysis techniques must therefore look past compiler noise and 
+platform-specific artefacts to recover the underlying program logic. 
+Recent literature has gravitated towards Machine Learning (ML) tech-
+niques for this task. However, ML approaches are not exempt from 
+these challenges. These approaches frequently lift machine code into In-
+termediate Representations (IRs) to overcome out-of-vocabulary degra-
+dation (Wang et al., 2024a; Collyer et al., 2023; He et al., 2024). While 
+an IR provides a unified vocabulary, it leaves trained models exposed 
+to out-of-distribution degradation (Wang et al., 2024a; Collyer et al., 
+2023; Marcelli et al., 2022; Xu et al., 2023). Furthermore, platform 
+evolution and temporal concept drift compound additional shifts in 
+feature distributions, degrading malware classification performance in 
+ML models after deployment (Ma et al., 2021; Yang et al., 2021a,b). 
+Malware binaries are harder to analyse by design. Threat actors de-
+feat classifiers with perturbations (Demetrio et al., 2021; Uhm et al., 
+2026) or bypass analysis environments with anti-debugging techniques 
+https://doi.org/10.1016/j.cose.2026.105077
+Received 29 May 2026; Received in revised form 8 July 2026; Accepted 23 July 2026
+Computers & Security 171 (2026) 105077 
+Available online 30 July 2026 
+0167-4048/© 2026 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY license ( http://creativecommons.org/licenses/by/4.0/ ). 
+
+PAGE 3
+V. Bucci et al.
+(Afianian et al., 2019). The impact is survivorship bias and imbalanced 
+distributions in ground truth datasets, leaving ML models exposed to 
+spurious correlations and complicating the training of effective classi-
+fiers across the full threat landscape (Botacin et al., 2021; Bulazel and 
+Yener, 2017; Arp et al., 2024).
+Compounding these challenges, there is the need for continuous la-
+belling and retraining of ML classifiers to maintain accuracy as malware 
+evolves (Pendlebury et al., 2019). Furthermore, they are systematically 
+evaluated under biased synthetic conditions that overstate their prac-
+tical viability (Arp et al., 2024). Concretely, models trained on one 
+organisation’s corpus reflect that organisation’s threat distribution and 
+may learn dataset-specific patterns rather than transferable security 
+signals (Arp et al., 2024).
+In those edge cases where ML techniques may struggle, fuzzy hashes 
+offer a promising alternative, hashing features into a universal vo-
+cabulary that is agnostic to training-induced concept drift (Onieva 
+et al., 2024; Dullien, 2018; ANSSI, 2015; xorpd, 2026). Given a fixed 
+reverse-engineering toolchain that recovers consistent features, the 
+same binary will always produce the same hash. This determinism does 
+not apply equally in ML models. Namely, after model retraining, deep 
+learning embeddings must be kept up to date with the model weight 
+parameters by regenerating the complete dataset (Gagnon et al., 2025). 
+Furthermore, studies have shown that simpler approaches can match 
+the accuracy of these models, proving that BCSA researchers require 
+meaningful baselines to measure ML progress (Marcelli et al., 2022; 
+Kim et al., 2023; Saul et al., 2024). These advantages, however, may 
+come at the cost of lower performance, as they often tie the hash to 
+compilation-induced noise and boilerplate that misleads code similarity 
+detection efforts.
+However, in those edge cases where ML does not have sufficiently 
+representative training datasets, such as zero-day or cross-compiled 
+malware, fuzzy hashing approaches have demonstrated preliminary 
+potential (Costin et al., 2014; Tan, 2021; Onieva et al., 2024). De-
+spite this, the following question remains unanswered: To what extent 
+do traditional fuzzy hashes support binary code similarity analysis on 
+cross-compiled binaries?
+To the best of our knowledge, this question has not been system-
+atically studied. We formalise our research objectives as five research 
+questions in Section 2. We emphasise that this paper does not seek to 
+compare the performance of fuzzy hashing versus ML-based approaches 
+or argue for the superiority of either. Instead, our objective is to 
+investigate the capabilities and limitations of fuzzy hashing in cross-
+compiled settings and to examine how it can complement ML-based 
+representations.
+1.1. Contributions
+This paper studies fuzzy hashing and empirically evaluates its vi-
+ability for Binary Function Similarity Analysis (BFSA) tasks in cross-
+compiled settings. We also propose the Stratified Binary Abstraction 
+Model, which maps how compiler, Operating System (OS), and architec-
+tural divergences mutate the artefacts recovered at different depths of 
+analysis. We design this model to apply to any BFSA technique beyond 
+fuzzy hashes.
+Next, we conduct the first large-scale evaluation of modern fuzzy 
+hashes in cross-compiled settings, utilising radare2 to maximise re-
+producibility. We infer that compiler divergence affects features across 
+abstraction layers differently, explaining why CCBHash recall rates 
+surpass FunctionSimSearch.
+This paper makes the following contributions:
+• The Stratified Binary Abstraction Model: We propose a layered 
+taxonomy that categorises features extracted from binary analysis 
+artefacts, mapping how divergence affects feature recovery at each 
+layer of abstraction. (Section 3)
+• Review of BFSA algorithms: We review the literature, classifying 
+existing approaches with the Stratified Binary Abstraction Model to 
+highlight constraints across the vulnerability search and malware 
+attribution domains. (Section 4)
+• BinRankBench Framework: We release our evaluation frame-
+work with the pre-processed binary artefacts, features, and fuzzy-
+hash database. (Section 6.2)
+• Fuzzy Hashing Evaluation: We provide the first large-scale eval-
+uation of function-level fuzzy hashes, measuring their recall and 
+robustness across the compilation gap. (Section 7)
+2. Preliminaries and problem domain
+Problem formulation. The reconstruction of binary code logic is not 
+a monolithic task but a stratified process of semantic recovery. Be-
+cause human-readable languages are translated into executable bina-
+ries through compilation, the resulting sequential stream of low-level 
+machine instructions suffers from a significant loss of information.
+When the compiler processes high-level abstractions such as original 
+code structure, comments, variables, and function names, the resulting 
+executable is transformed substantially depending on the execution 
+environment and compiler settings, obscuring the original logic.
+In the absence of source code, such as in proprietary software or 
+malware, opaque binary representations are the only available source 
+of information. Consequently, the semantic comparison of a program’s 
+original logic becomes a multi-stage pipeline: reconstructing artefacts 
+through reverse engineering, normalising divergent features, and dis-
+tilling them into compressed, comparable, and accurate fingerprints.
+Research objectives. This paper systematises the divergence of compiled 
+binary artefacts and reviews the available techniques for analysing 
+the similarity of cross-compiled binaries when the source code is not 
+available. The wider literature uses the term ‘‘cross-platform’’ to denote 
+binary code divergence across Instruction Set Architectures (ISAs) and 
+OSs, while the term ‘‘cross-compiler’’ normally envelops the choice of 
+compiler toolchains and compilation settings.
+We adopt the term ‘‘cross-compilation’’ to describe all sources of 
+binary code divergence, arising both from the compilation environment 
+(choice of compiler and optimisation settings) and the target system 
+(ISA or OS1). Binaries that exhibit this divergence are referred to as
+cross-compiled throughout.
+Research questions. Having identified compilation divergence as our 
+focus, we outline the following research questions:
+RQ1. How does compilation divergence propagate across the features 
+recovered from binary code? (Section 3)
+RQ2. What are the different techniques to process and compress bi-
+nary features for BFSA? (Section 4)
+RQ3. How do binary-function hashes extend their design beyond the 
+scope of traditional fuzzy hashes? (Section 5)
+RQ4. Can binary-function fuzzy hashes approximate similarity across 
+the compilation gap? (Section 7.1)
+RQ5. How does the computational efficiency of binary-function fuzzy 
+hashes measure in terms of digest footprint and practical
+throughput? (Section 7.2).
+1 While our evaluation focuses on Linux binaries, we suggest that cross-OS 
+analysis is also relevant in this context because of diverging calling conventions 
+and system library interfaces.
+Computers & Security 171 (2026) 105077 
+2 
+
+PAGE 4
+V. Bucci et al.
+Fig. 1. The Stratified Binary Abstraction Model. The central spine shows the hierarchy of binary artefacts. Lateral paths (right) denote abstraction bypasses, such 
+as heuristics. Dashed loops (left) denote iterative refinements, where higher-layer analysis resolves lower-layer ambiguities.
+Table 1
+Summary of the Stratified Abstraction Model for binary artefacts, detailing the primary features and challenges across domains.
+ Layer Domain Primary Artefacts Primary Challenges
+ L0: Surface Lexical Bytes, Headers, Strings Metadata stripping, Packing, OS/Arch variance 
+ L1: Syntax Mnemonics, Operands ISA dependence, Code-data aliasing  
+ L2: Topology Structural CFG, Basic Blocks Loop unrolling, CISC vs. RISC  
+ L3: Scope CG, Call Sites Function inlining, Boundary detection  
+ L4: Logic Operational IR, AST, DFG Lifting fidelity, Optimisation divergence  
+ L5: Behaviour Traces, Syscalls, Memory Path explosion, OS/Environment divergence  
+3. The stratified abstraction of binary artefacts
+Cross-platform BCSA approaches vary widely in both feature se-
+lection and similarity approximation strategy. The accuracy of any 
+given approach is constrained by the fidelity of the selected features 
+in representing the underlying program logic.
+To address RQ1, we propose the Stratified Binary Abstraction Model, 
+summarised in Table  1 and illustrated in Fig.  1. This framework cat-
+egorises recoverable binary artefacts from the raw file surface (L0) to 
+dynamic behaviour (L5). At the same time, we mapped the primary 
+drivers of compilation divergence to the specific layers where they man-
+ifest as analytical challenges, covering compiler toolchain, optimisation 
+settings, architecture family, and bitness (Cooper and Torczon, 2012).
+Cross-compiled code similarity approximation extends beyond the 
+design assumptions of traditional fuzzy hashing algorithms matching 
+general byte sequences and files (Kornblum, 2006; Oliver et al., 2013; 
+Raff and Nicholas, 2018; Roussev, 2011, 2010). Binary code is more 
+nuanced: raw bytes encode low-level instructions that computers pro-
+cess deterministically, while following a structural and logical flow that 
+is influenced by the machine state during live execution. Therefore, 
+we argue that understanding how raw bytes can be analysed to infer 
+execution behaviour is essential for designing effective BCSA strategies. 
+In particular, fuzzy hashes must bridge the compilation gap without 
+relying on representation learning approaches.
+This model systematises the artefacts recovered from binary code 
+to provide a descriptive framework of features and their resilience 
+to the compilation gap without pinning a specific BFSA technique or 
+reverse-engineering algorithm. Sections 4 and 7 use it to place heuristic 
+signatures, ML embeddings, and fuzzy hashes on a shared analytical 
+footing.
+Fig.  1 groups reverse-engineered features into three domains: Lexi-
+cal, Structural, and Operational, sharing similar representations, such as 
+linear sequences, graphs, or state-transformation models, respectively. 
+This high-level grouping provides a rationale for feature selection based 
+on data modality and the depth of execution recovery.
+We align the BCSA paradigms covered in this review with their 
+choice of features and required depth of analysis. The procedural 
+nuances and heuristics involved in binary analysis vary widely across 
+toolchains. For a comprehensive review of these algorithmic challenges, 
+we refer the reader to the work by Pang et al. (2021).
+We present our model linearly to reflect increasing computational 
+and abstraction costs, with the central spine representing feature hi-
+erarchy. To reflect the heuristic and iterative nature of real-world 
+Computers & Security 171 (2026) 105077 
+3 
+
+PAGE 5
+V. Bucci et al.
+binary code analysis, we explicitly account for abstraction bypasses 
+(indicated by blue paths) and refinements (indicated by red dashed 
+paths), where high-layer semantic insights are used to resolve lower-
+layer ambiguities. We further describe the domains of binary artefacts 
+and their corresponding abstraction layers below.
+3.1. Lexical domain
+The Lexical domain encompasses the statically observable proper-
+ties of the binary before any structural grouping. It consists of the 
+Surface (L0) and Syntax (L1) layers, which share a sequential modality.
+In this domain, the binary is treated as a linear stream of atomic 
+symbols, such as bytes or mnemonics (L0, L1). These layers are suitable 
+for the rapid extraction of features and subsequent analysis with Nat-
+ural Language Processing (NLP)-inspired methods (Ding et al., 2019; 
+Saul et al., 2024), albeit at the cost of ignoring logic flow.
+L0: Surface. The Surface layer treats the binary as a structured data 
+container, governed by specifications such as Portable Executable (PE) 
+and Executable Linkable Format (ELF) (Levine, 1999). Artefacts in-
+clude raw byte sequences, file headers, and metadata such as exported 
+symbols or embedded strings.
+While computationally trivial and suitable for rapid byte-level sig-
+nature matching, L0 is highly brittle: metadata is routinely stripped 
+in production binaries. Compiler optimisations and packing compress 
+code into surface data with high Shannon entropy.
+L0 is also highly sensitive to cross-OS and architectural divergence. 
+Artefacts such as header configurations and system library interfaces 
+(ABIs) differ across OS environments, while bitness and data models 
+(e.g. x86 vs. x64) alter memory addressing limits and pointer sizes, 
+causing immediate byte-level divergence for identical logic.
+L1: Syntax. At the Syntax layer, raw streams are translated into ma-
+chine instructions via disassembly, consisting of mnemonics, operands, 
+and immediate values. This represents the binary as a sequence of 
+atomic operations mandated by the specific ISA. The primary limitation 
+here is the total lack of cross-architecture transferability. Because the 
+vocabulary is bound to the ISA, syntactically divergent streams rou-
+tinely express identical intent. For example, a single multi-effect Com-
+plex Instruction Set Computer (CISC) instruction may express the same 
+intent as multiple simpler load/store operations in a Reduced Instruc-
+tion Set Computer (RISC) ISA. Additionally, differing compiler instruc-
+tion selection heuristics tile operations into diverse machine instructions 
+(Cooper and Torczon, 2012, Ch. 11).
+Beyond architecture divergence, the challenge of code-data disam-
+biguation remains, causing disassemblers to misinterpret inline data 
+as junk instructions (Andriesse et al., 2016). This layer also relies 
+entirely on identifying the correct Original Entry Point (OEP). The use 
+of packers and ‘‘stolen bytes’’ in malware hides this starting point, 
+often tricking L1 tools into decoding the unpacking stub rather than 
+the actual malicious payload (Kim et al., 2019).
+3.2. Structural domain
+The Structural domain moves beyond linear sequences to model the 
+connectivity and the logical boundaries of the code, encompassing the 
+Topology (L2) and Scope (L3) layers. The rationale for this grouping is 
+the shift towards relational modality.
+In this domain, the primary features are represented as graphs, 
+where the edges reflect possible execution paths. Specifically, nodes 
+represent either basic blocks (sequences of branch-free instructions) to 
+form an intra-procedural Control Flow Graph (CFG), or entire functions 
+to reconstruct the global Call Graph (CG) of the binary file (L2, L3).
+L2: Topology. The Topology layer abstracts the instruction stream 
+into a local graph-based representation, typically the CFG or the 
+inter-procedural CFG (ICFG), which model flow between basic blocks 
+(maximal-length sequences of branch-free instructions).
+However, this structure is also affected by optimisation and archi-
+tectural divergence (Andriesse et al., 2016). Compilers aggressively pri-
+oritise execution efficiency by altering the CFG via dead code elimina-
+tion, loop unrolling, and code motion, which redistributes instructions 
+across basic blocks (Cooper and Torczon, 2012, Ch. 10).
+Differing condition models (e.g. status flags and predicated exe-
+cution) and micro-architectural instruction scheduling further mutate 
+the CFG (Cifuentes and Van Emmerik, 2000; Hennessy and Patterson, 
+2017). For instance, predicated execution allows compilers to eliminate 
+branch instructions, collapsing multiple conditional paths into a single 
+basic block and altering the topological structure of nodes and edges.
+L3: Scope. The Scope layer partitions the global graph into discrete 
+functional units and their inter-procedural relationships, described by 
+a CG. The inter-procedural CFG represents the global program graph
+before functional decomposition. Recovering the function boundaries 
+that partition the Inter-procedural Control Flow Graph (ICFG) into in-
+dividual CFGs is itself a Scope-layer operation. Approaches that model 
+inter-procedural call edges as explicit features operate at L3.
+This layer captures modular intent but is highly susceptible to 
+structural rearrangements and boundary detection failures (Rosen-
+blum et al., 2008). Optimisation divergence heavily fragments the 
+CG through procedure cloning (specialising functions for specific con-
+texts) and function inlining (dissolving procedure boundaries entirely) 
+(Cooper and Torczon, 2012, Ch. 8). Furthermore, varying compiler 
+linkage implementations and ABIs, such as differing prologue/epilogue 
+generation and tail-call optimisations, obscure the boundary between 
+intra-procedural topology and inter-procedural scope.
+3.3. Operational domain
+The Operational domain closes the gap between platform-specific 
+binary code and the underlying machine operations it encodes by mod-
+elling execution semantics, consisting of the Logic (L4) and Behaviour 
+(L5) layers. These layers address a shared objective: to isolate the func-
+tional ‘‘truth’’ of the code from its lexical and structural manifestations. 
+Unlike previous domains, the Operational domain focuses on state-
+transformation modality. Artefacts describe how a program transforms 
+processor state, rather than what its code looks like structurally or 
+lexically.
+Within this domain, the boundary between L4 and L5 is determined 
+by whether the binary is executed. L4 arises from static analysis: 
+lifting instructions to an architecture-neutral IR, constructing Data Flow 
+Graphs (DFGs), or applying symbolic execution to enumerate possible 
+states through constraint solving; all without running the binary. L5 
+arises when instructions are executed, whether on bare metal, in a vir-
+tual machine, or in an emulation engine. Concolic execution straddles 
+both: the concrete execution component generates runtime values (L5) 
+that seed and prune the symbolic constraint solver (L4).
+This execution boundary also governs how dynamically derived ana-
+logues of lower-layer artefacts are classified. Raw bytes and instruction 
+sequences from dynamic execution, such as memory dumps and micro-
+traces, are L5 rather than L0 or L1, as they capture a path-dependent 
+subset of the binary’s instruction vocabulary rather than its complete 
+view. Conversely, graph-structured artefacts such as dynamic basic 
+block coverage or function call traces are L5 rather than L2 or L3, as 
+they reflect only the paths traversed during a specific run rather than 
+the complete topology of the binary.
+Computers & Security 171 (2026) 105077 
+4 
+
+PAGE 6
+V. Bucci et al.
+L4: Logic. The Logic layer decouples features from the underlying 
+architecture by lifting instructions into semantically richer represen-
+tations. This layer spans a wide abstraction spectrum: at the lower 
+end, low-level IRs such as Evaluable Strings Intermediate Language 
+(ESIL), VEX-IR, and P-Code model per-instruction state transitions 
+(hidden flag updates, register side-effects, memory semantics) inde-
+pendently of the ISA (Shoshitaishvili et al., 2016). At the higher end, 
+decompiled representations such as Abstract Syntax Trees (ASTs) and 
+DFGs recover program-level logical structure. All artefacts in this layer 
+share architecture-neutral representations and are recovered without 
+executing the binary.
+While IRs normalise the ISA, they do not resolve compiler di-
+vergence. Differing register allocation strategies and IR philosophies, 
+such as Static Single Assignment (SSA) and Register Transfer Language 
+(RTL), dictate the initial structure and memory traffic, with varying 
+register pressure affecting the frequency of stack ‘‘spill code’’ generated 
+(Cooper and Torczon, 2012, Ch. 5, 13).
+Compiler optimisations, such as constant folding, strength reduc-
+tion, and redundancy elimination, also substantially alter the resulting 
+structure. As a result, identical constructs lower into vastly different IR 
+patterns depending on both the compiler toolchain and optimisation 
+flags. To reach a unified semantic state, higher abstractions such as 
+concrete and symbolic (concolic) execution are used to enrich symbolic 
+program logic (L4) with concrete program states (L5) (Godefroid et al., 
+2005; Sen et al., 2005).
+L5: Behaviour . The Behaviour layer represents the highest level of 
+abstraction, derived from observing the program’s effects during execu-
+tion. Methodologies here range from capturing memory dumps during 
+virtualised or bare-metal execution to extracting dynamic IR traces via 
+emulation and solving path constraints through concolic execution.
+While capturing what the code concretely does improves resilience 
+to compiler optimisations and static obfuscation (Song et al., 2008), 
+L5 features are not immune to platform divergence. Artefacts such 
+as dynamic execution traces and system call sequences vary sharply 
+across platforms; an identical high-level operation will yield a POSIX-
+compliant system call trace on Linux but invoke a completely distinct
+Win32 or NTAPI sequence on Windows. Similarly, architectural diver-
+gence in bitness and data models significantly affects memory mutation 
+patterns.
+The choice of L5 methodology also bifurcates based on the an-
+alytical objective, introducing further variability into the recovered 
+artefacts. In malware clustering and attribution, analysts frequently 
+encounter dynamic evasion tactics, where malicious binaries alter or 
+halt their execution upon detecting debuggers or artificial analysis 
+environments. These scenarios typically require high-fidelity methods 
+like hardware-in-the-loop or bare-metal execution. Conversely, cross-
+compiled vulnerability discovery rarely contends with intentional en-
+vironment evasion. Therefore, analysts carry out these tasks with emu-
+lation or concolic execution. While susceptible to anti-analysis tactics, 
+these techniques facilitate the verification of bugs through exhaustive 
+state-space exploration and path constraint solving. Thus, L5 analy-
+sis recovers artefacts inaccessible to static analysis. Dynamic insights 
+gained here, such as indirect jump targets resolved with emulation, are 
+fed back to lower layers to refine the entire reconstruction process.
+3.4. Cross-layer dynamics
+As shown in Fig.  1, real-world analysis often employs non-linear 
+paths. Abstraction Bypasses (blue) represent streamlining heuristics, 
+such as using byte-level patterns to identify function prologues (L0 to 
+L3) or employing native execution traces to bypass complex static graph 
+reconstruction.
+Conversely, Iterative Refinements (red) facilitate feedback loops 
+that resolve ambiguity. For example, resolving computed jump targets 
+at the Logic layer (L4) or via Behavioural emulation (L5) can populate 
+previously ‘‘opaque’’ edges in the Topology (L2). This feedback loop is 
+essential for code-data disambiguation, where dynamic syntax recovery 
+feeds code unpacked at runtime back into the analysis pipeline to 
+maximise coverage.
+The accuracy of recovered binary artefacts depends on the choice 
+of extraction toolchains and recovery settings, producing coverage-vs-
+correctness trade-offs. Pang et al. (2021) discuss code interpretation er-
+rors and coverage shortcomings across reverse-engineering algorithms 
+in detail.
+3.5. Relationship between fuzzy hashing and the proposed taxonomy
+The stratified binary abstraction model is not limited to fuzzy 
+hashes; rather, it is a framework for categorising features recovered by 
+disassemblers (known as artefacts) based on their sensitivity to compi-
+lation divergence. Large-scale Binary Code Similarity Analysis (BCSA), 
+whether focused on function-level or program-level similarity, relies 
+on various methods, such as fuzzy hashes, tensor-based embeddings, 
+or representation-learning approaches (Marcelli et al., 2022; Haq and 
+Caballero, 2021; Wang et al., 2024b). These methods have traditionally 
+used simple features such as call graphs, edge counts from control flow 
+graphs, and other features that capture the rich semantics of binary 
+data.
+Certain features, particularly structure-based ones, can be signifi-
+cantly affected by different compilation environments and variants of 
+the same binary program, whether it is benign or malicious software 
+(Ding et al., 2019; Liu et al., 2025). Recently, fuzzy hashing algorithms 
+have found applications in cross-architecture binary search, cross-build 
+binary datasets, as well as in evaluating code similarity across differ-
+ent optimisation and compiler environments, using features that have 
+been currently mapped to the proposed stratified abstraction layer 
+such as LLVM IR (Intermediate Representation), function call graphs, 
+bytes, Abstract Syntax Trees, strings, mnemonics and operands (Onieva 
+et al., 2024; Tan, 2021; Mahmoudyar et al., 2024; Yang et al., 2022; 
+Liu et al., 2026; Dullien, 2018). It is therefore important to deter-
+mine which features can enhance the effectiveness of fuzzy hashing 
+in cross-optimisation, cross-compiler, cross-architecture, and cross-OS 
+BCSA.
+Furthermore, traditional fuzzy hashing algorithms, such as SS-
+DEEP, TLSH, sdhash, and LZJD, were not originally designed for 
+cross-platform BCSA, motivating an investigation into which additional 
+features could be incorporated to extend their applicability beyond 
+their original scope. For instance, fuzzy hashing algorithms such as
+SSDEEP, TLSH, Permhash, ImpHash, and Telfhash are already 
+employed as baseline malware properties to provide similarity metrics 
+for threat-hunting investigations on VirusTotal (VirusTotal, 2020; Mar-
+tinez, 2023; Merces, 2020). Subsequent studies grounded in a binary 
+abstraction model could help clarify which features are most pertinent 
+to cross-platform malware similarity analysis and threat hunting across 
+heterogeneous devices and systems.
+3.6. Cross-platform BFSA and the original design assumptions of fuzzy 
+hashing
+While it is true that many classical fuzzy hashing algorithms were 
+not originally designed for cross-platform BCSA, most of the algorithms 
+examined in this study were developed to address compiler and optimi-
+sation divergence. Position Independent Code (PIC) strips away bytes 
+subject to address relocations, CCBHash was specifically designed to be 
+resilient against compiler optimisations, and FunctionSimSearch
+aimed to provide resilience against both optimisations and compil-
+ers. However, neither of these algorithms considered resilience across 
+different architectures and bitness.
+Moreover, existing literature has demonstrated the application of 
+classical fuzzy hashing algorithms in cross-platform analysis, high-
+lighting the need to evaluate fuzzy hashing as a means of bridging 
+Computers & Security 171 (2026) 105077 
+5 
+
+PAGE 7
+V. Bucci et al.
+the compilation gap. For instance, Tan (2021) lifted function code 
+into IRs and hashed these with classical fuzzy hashes (such as Min-
+Hash, SimHash, SSDEEP, and TLSH) to facilitate large-scale cross-
+architecture BFSA searches. Mahmoudyar et al. (2024) hashed function 
+call graphs using SSDEEP to cluster IoT malware across heterogeneous 
+architectures. Yang et al. (2023) studied ASTs hashes used as pre-filters 
+to enhance the scalability of deep-learning-based binary code similarity 
+detection. Similarly, at the 2025 Botnet & Malware Ecosystems Fighting 
+Conference (Berre and Pourcelot, 2025), researchers behind Machoke
+(ANSSI, 2015) introduced a proprietary algorithm, Zubat, capable of 
+identifying function matches between x86 and x64 architectures. Fuzzy 
+hashing has been employed to trace previously unknown vulnerabilities 
+in embedded system environments characterised by a heterogeneous 
+mix of devices, vendors, processor architectures, instruction sets, op-
+erating systems, and proprietary components (Costin et al., 2014). 
+Collectively, these efforts confirm that fuzzy hashing algorithms have 
+been evaluated under the considerably more demanding conditions of 
+cross-architecture semantic equivalence, providing validation for this 
+line of research.
+4. Cross-platform binary similarity analysis: Systematisation of 
+the state of the art
+The accuracy and scalability constraints of the domains BCSA serve 
+to define two distinct design spaces. This section addresses RQ2 by nar-
+rowing the scope of our review to function-level matching (Section 4.1) 
+and examining how domain-specific requirements influence the design 
+of vulnerability detection and malware attribution techniques (Sections 4.2
+and 4.3).
+4.1. Design constraints and review rationale
+Vulnerability detection vs. Malware attribution. The design of a BCSA 
+system is shaped by its target domain, which typically bifurcates into 
+software security and digital forensics. These domains are exemplified 
+by vulnerability detection and malware attribution, respectively. In 
+vulnerability detection, BCSA techniques seek high semantic precision 
+to identify N-day vulnerabilities across platforms, such as in cross-
+compiled Internet of Things (IoT) firmware. This requires scalable, 
+1-to-N retrieval mechanisms capable of abstracting away diverse ISAs 
+and compiler optimisations.
+Malware analysis, by contrast, operates in an adversarial space. 
+Rather than exact matches, these tasks rely on similarity metrics to 
+cluster obfuscated variants, allowing analysts to bypass intentional 
+structural mutations and reconstruct the evolutionary lineage of a 
+threat actor’s operations.
+The granularity vs. Scalability trade-off. Both domains operate under 
+the constraint of missing source code. Analysts must extract relational 
+patterns, reconstruct a program’s logic, and estimate similarity entirely 
+from machine code. This process is governed by the granularity of the 
+extracted features and the matching methodology (Javed et al., 2025).
+Features may range from high-level functional attributes, such as 
+variable counts and linkage dependencies, to atomic instruction-level 
+details like mnemonics and immediate values. Likewise, similarity ap-
+proximations can be calculated at the level of discrete functions or 
+across entire binary objects.
+Depending on the practical use case, the granularities of feature 
+selection and similarity estimation establish the trade-off between the
+depth of analysis and the scalability of comparison models. There-
+fore, practical constraints, such as the scale of analysis, determine the 
+different design choices of BCSA methods.
+Focus of this review. Given these constraints and the extensive pre-
+vious work covering broad BCSA domains (Ruan et al., 2024; Javed 
+et al., 2025), our review focuses on cross-compiled BFSA, a subset of 
+BCSA aiming to identify matches within discrete functional units of 
+executable files against large-scale ground truth databases.
+We select function-level granularity to strike a balance between 
+providing sufficient context to identify shared logic across diverse 
+binaries, while avoiding the computational bottleneck of precise, 1-to-1 
+analysis techniques (Google, 2011; Joxean, 2015).
+To this end, we consider two primary use cases of BFSA: (a) the 
+detection of vulnerable components to facilitate downstream patching 
+in cross-compiled environments (such as IoT firmware), and (b) the 
+attribution of binary samples to specific malware actors based on code 
+duplication arising from iterative development and plagiarism of public 
+repositories (Gamblin, 2016) (see Table  2 and Table  3).
+4.2. Vulnerability detection in cross-platform binaries
+The detection of known vulnerabilities within cross-compiled envi-
+ronments, such as IoT firmware, relies on functional matching against 
+a ground-truth dataset of binaries affected by known vulnerabilities.
+However, the implementation of these systems is dictated by the 
+underlying platform scope and the scale of binaries to be searched. The 
+primary challenge in this domain is balancing the semantic accuracy 
+required to see through compilation divergence with the computational 
+constraints of querying large-scale repositories.
+4.2.1. Accurate 1-to-1 diffing vs. Scalable 1-to-N indexing
+Heuristic diffing. Early approaches to vulnerability and patch analysis 
+spanned the Syntax (L1) and Structural (L2–L3) layers, relying on graph 
+isomorphism heuristics over disassembled code to identify differences 
+in CFGs and CGs.
+Tools such as BinDiff and Diaphora (Google, 2011; Joxean, 
+2015) excel at 1-to-1 comparison, providing highly accurate, localised 
+differences in disassembled code. However, the computational com-
+plexity of graph matching introduces a severe scalability bottleneck, 
+rendering these tools unviable for 1-to-N searches across large firmware 
+repositories.
+Scalable hashing. To achieve true 1-to-N scalability, initial repository-
+scale search engines were forced to drop down to the Lexical (L0–L1) 
+and Topology (L2) layers, prioritising rapid querying over semantic 
+depth by extracting byte-level signatures (Radare2 Team, 2014) or CFG 
+hashes (Ding et al., 2016).
+A seminal example of scalable topological indexing is the initial 
+iteration of the Kam1n0 engine, which introduced MapReduce, an 
+Locality-Sensitive Hashing (LSH) scheme operating on the assembly 
+code of CFG sub-graphs (L1–L2). Rendezvous (Khoo et al., 2013) tar-
+gets the same Topology layer (L2) through sub-graph canonicalisation. 
+We further discuss this canonicalisation technique in Section 5.1.3.
+Another influential approach to scalable retrieval is Function-
+SimSearch (Dullien, 2018). This tool adapts the SimHash algorithm 
+(Sadowski and Levin, 2007) to approximate the angular similarity 
+between binary functions. By projecting mnemonic trigrams (L1), im-
+mediate values (L1), and CFG graphlets (L2) into a compact 128-bit 
+hash, it enables extremely fast 1-to-N nearest-neighbour searches via 
+Hamming distance.
+FunctionSimSearch applies adaptive weighting, assigning
+higher importance to immediate values than to graphlets and mnemon-
+ics. This multi-modality improves resilience to cross-compiler diver-
+gence while maintaining the low computational overhead needed for 
+large-scale repositories. FuzzyBin (Kim et al., 2025) extends function-
+level fuzzy hashing to identify IoT firmware handling external user 
+input (border binaries) by comparing normalised assembly hashes 
+against a reference and applying bipartite matching to produce a 
+whole-binary similarity score.
+Computers & Security 171 (2026) 105077 
+6 
+
+PAGE 8
+V. Bucci et al.
+Table 2
+Systematisation of vulnerability search and discovery techniques by paradigm and binary abstraction layer.
+ Paradigm Technique Abstraction Layer
+ L0 L1 L2 L3 L4 L5  
+ 
+Scalable Hashing
+Position Independent Code (Radare2 Team, 2014; 
+Schwartz, 2024)
+• •  
+ Kam1n0 (Ding et al., 2016),
+FunctionSimSearch (Dullien, 2018),
+Rendezvous (Khoo et al., 2013)
+• •  
+ FuzzyBin (Kim et al., 2025) •  
+ 
+Sequential Embeddings
+SAFE (Massarelli et al., 2022) •  
+ Asm2Vec (Ding et al., 2019), jTrans (Wang 
+et al., 2022)
+• •  
+ Codee (Yang et al., 2022) • •  
+ FASER (Collyer et al., 2023) •  
+ VexIR2Vec (VenkataKeerthy et al., 2025) • • •  
+ Uhlig et al. (2023) •  
+ 
+Graph Embeddings
+Gemini (Xu et al., 2017), GMN (Li et al., 2019) • •  
+ DiscovRE (Eschweiler et al., 2016) • • • •  
+ Focus (Fu et al., 2022), VulSeeker (Gao et al., 
+2018), DGIS (Liu et al., 2022)
+• • •  
+ XBA (Kim et al., 2022) • • •  
+ Asteria (Yang et al., 2021) • •  
+ KYN (Collyer et al., 2024) • • • •  
+ 
+Execution Semantics
+TREX (Pei et al., 2023) •  
+ KEENHash (Liu et al., 2025) •  
+ HermesSim (He et al., 2024; Luo et al., 2017; 
+Pewny et al., 2015)
+• •  
+ 
+Hybrid Pre-filtering
+BinGo (Chandramohan et al., 2016), CrossDiff
+(Wang et al., 2019)
+• • • •  
+ CEBin (Wang et al., 2024a) • •  
+Sequential embeddings. At the lower abstraction layers, available fea-
+tures are heavily shaped by the syntactic divergence introduced by 
+different compiler toolchains. Therefore, Asm2Vec (Ding et al., 2019) 
+replaced hash-based indexing with a representation learning model 
+designed to capture the latent lexical semantics of assembly operations 
+via random walks on the CFG.
+Similarly, SAFE (Massarelli et al., 2022) adopts self-attentive neural 
+networks to generate function embeddings directly from disassembled 
+code, prioritising computational efficiency across different architec-
+tures. This paradigm was further advanced by jTrans (Wang et al., 
+2022), which employs a ‘‘jump-aware’’ Transformer to explicitly model 
+the structural relationships of the CFG alongside the semantics of 
+assembly instructions. Taking an unsupervised approach, Codee (Yang 
+et al., 2022) arranges per-block embeddings derived from network 
+representation learning of ICFG into a three-dimensional tensor and 
+applied truncated singular value decomposition to produce compact, 
+fixed-length function vectors without requiring labelled training data.
+While these models achieve semantic capture via deep representa-
+tion learning, they remain bound to the machine-level vocabulary of the 
+ISAs seen during training, making them susceptible to concept drift. As 
+digital systems continuously evolve, the limited availability of ground 
+truth for niche or emerging architectures leads to out-of-vocabulary 
+tokens and previously unseen sequences at the syntax layer that prevent 
+accurate generalisation to cross-compiled binaries.
+4.2.2. Embedding operational artefacts for semantic search
+Semantic embeddings. To resolve the vocabulary drift and architectural 
+dependence of syntax-bound methods, modern research has ascended 
+to the Logic layer (L4) through representation learning. The core inno-
+vation here is the decoupling of program logic from hardware-specific 
+implementations by lifting instructions into an architecture-neutral IR. 
+By normalising disparate ISAs into a unified intermediate language, 
+analysts can mitigate the variance introduced by mnemonic vocabular-
+ies and register allocation, narrowing the compilation gap that hinders 
+assembly-based models.
+Deep learning models transform IRs into dense numerical vectors 
+(embeddings), translating the computationally prohibitive task of graph 
+isomorphism into a scalable vector distance calculation, which enables 
+Approximate Nearest Neighbour (ANN) search for repository-scale re-
+trieval and improves accuracy across diverging platforms.
+For example, FASER (Collyer et al., 2023) demonstrates that lifting 
+binaries into an IR (Radare2’s ESIL) provides a standardised string 
+representation for Transformer-based models. Similarly, VexIR2Vec
+(VenkataKeerthy et al., 2025) uses VEX-IR to extract operational em-
+beddings, showing that L4 abstractions provide more reliable features 
+than L1 for cross-architecture matching.
+Graph embeddings. Sequential models provide some resilience to com-
+pilation divergence but ignore the structural semantics of code. Graph-
+based representation learning addresses this through a relational
+modality. This is primarily achieved through two distinct approaches.
+A substantial body of prior research represents functions as At-
+tributed Control Flow Graphs (ACFGs). These methods extract an ad-
+jacency matrix from the structural CFG (L2) and enrich individual 
+nodes with instruction-level statistics (L1), such as counts of arithmetic 
+operations, memory accesses, and branch instructions.
+Namely, DGIS (Dual-Granularity Interactive Semantic Learning),
+GMN (Graph-Matching Network), DiscovRE, Gemini, and
+VulSeeker (Liu et al., 2022; Li et al., 2019; Eschweiler et al., 2016; 
+Xu et al., 2017; Gao et al., 2018) survive aggressive compiler optimi-
+sations by grounding graph structures in numerical node attributes, 
+leveraging deep learning to recognise semantically equivalent binary 
+code. GMN explicitly follows FunctionSimSearch (Dullien, 2018) 
+Computers & Security 171 (2026) 105077 
+7 
+
+PAGE 9
+V. Bucci et al.
+in its feature selection, adopting the same L1–L2 combination of as-
+sembly instruction embeddings and CFG structure, while replacing the 
+hand-engineered graph hash with a learned graph matching network.
+Building upon this need for structural context, Collyer et al. (2024) 
+introduced the concept of Call Graphlets to capture the ‘‘neighbour-
+hood’’ context of a function. This approach characterises functions 
+using a multi-layered feature set including L1 instruction counts, L2 
+CFG edge density, L3 the function’s in-degree, out-degree, and callee 
+out-degree in the CG, and L4 the number of recovered local variables 
+and arguments.
+Subsequent work has extended the range of graph structures used 
+for function representation. Asteria (Yang et al., 2021) replaces the 
+L2 CFG with the L4 AST to encode hierarchical syntactic structure 
+independently of architecture-specific mnemonics. Kim et al. (2022) ab-
+stract binaries as Binary Disassembly Graphs (BDGs), encoding control-
+flow alongside contextual information such as external calls and refer-
+enced string literals, and formulate cross-compiled matching as a graph 
+alignment problem solved with Graph Convolutional Networks (GCNs).
+Focus (Fu et al., 2022) applies a Graph Neural Network (GNN) with 
+multi-head attention to identify discriminative structural features for 
+cross-architecture clone detection. Uhlig et al. (2023) treated fuzzy 
+hashes (TLSH, SSDEEP) computed from L0 raw file bytes as sequences 
+that can be tokenized and fed into a transformer network to improve 
+fragment-to-file matching in digital forensics.
+Execution semantics. While these sequential and graph-based represen-
+tations provide significant resilience against static variance, they still 
+operate on a reconstruction of the code. The state of the art has further 
+refined this by learning behavioural semantics directly from execution. 
+For instance, TREX (Pei et al., 2023) learns approximate execution 
+semantics from micro-traces (L5), capturing what the code actually does
+at the register and memory level rather than just how it is structured.
+Further approaches ground matching in semantic normalisation 
+or symbolic equivalence. Pewny et al. (2015) addressed the com-
+pilation gap by introducing one of the first bug search algorithms 
+for cross-architecture binaries. Their proposal involved translating as-
+sembly code into VEX representations (L4) to deduce semantically 
+equivalent expressions at basic-block granularity (L2), based on con-
+crete input/output behaviour. HermesSim (He et al., 2024) repre-
+sents functions as semantics-oriented graphs over a simplified IR (L4), 
+normalising away architecture-specific instruction vocabulary while 
+retaining the underlying CFG topology (L2). Luo et al. (2017) likewise 
+combine L2 basic-block topology with static L4 symbolic execution, 
+computing the longest common subsequence of basic blocks and testing 
+semantic equivalence via a constraint solver. KEENHash (Liu et al., 
+2025) generated LLM-based function embeddings from Ghidra pseu-
+docode and ASTs (L4), combined with a hashing scheme for efficient 
+large-scale binary-function similarity search.
+This logic anchoring allows analysts to see through minor obfusca-
+tions, such as the ones resulting from compiler divergence. However, 
+static analysis cannot overcome more aggressive packing techniques 
+like virtualisation. Moreover, the storage and execution time needed 
+to extract and compare symbolic execution traces across millions of 
+functions make direct searches over concrete operational features in-
+tractable at scale.
+Hybrid pre-filtering. To balance scalable searches and precise analysis, 
+previous work has adopted tiered pre-filtering. This hierarchical ap-
+proach has historical precedent in tools like BinGo (Chandramohan 
+et al., 2016), which pre-filtered candidates with lightweight features 
+(library call names, instruction type distributions) before applying sym-
+bolic expression extraction and Z3 constraint solving (L4) to compare 
+the input/output semantics of candidate functions.
+Another example is CrossDiff (Wang et al., 2019), which uses 
+architecture-neutral IRs (LLVM (Lattner and Adve, 2004)) to identify 
+identical L4 matches via cryptographic hashing and likely candidates 
+through SimHash pre-filtering, reserving expensive metrics like the 
+longest common sub-string for final confidence scoring.
+Similarly, CEBin (Wang et al., 2024a) lifts functions to BinaryNinja 
+Intermediate Language (Vector 35, 2026) and applies this L4 repre-
+sentation to both an embedding-based pre-filter and a fine-grained 
+pairwise comparison model, capturing structural relationships that a 
+single embedding might miss.
+Several L4 approaches share a common strategy: IR lifting for cross-
+ISA normalisation, followed by re-tokenisation of the resulting IR as an 
+assembly-like token vocabulary. CEBin and CIAO (Rahat et al., 2026) 
+both apply this approach: CEBin over Binary Ninja’s intermediate lan-
+guage, CIAO over Radare2’s ESIL. Both decouple the token vocabulary 
+from the target ISA whilst preserving instruction-level granularity.
+This tiered architecture allows systems to apply computationally ex-
+pensive comparison schemes without sacrificing the scalability required 
+for supply-chain vulnerability discovery.
+4.3. Malware clustering and authorship attribution
+While vulnerability detection typically seeks exact or near-exact 
+functional matches to patch known bugs, malware authorship attribu-
+tion operates in a highly adversarial space. Here, the primary objective 
+is to link unknown, obfuscated, or polymorphic samples to specific 
+threat actors, malware families, or known code bases.
+This domain imposes unique constraints on BCSA: the analysis must 
+see through intentional obfuscation strategies aimed at evading detec-
+tion (like packing and encryption) and provide explainable, forensic 
+evidence that two disparate payloads share a development lineage 
+based on reused components.
+4.3.1. Macroscopic malware detection and classification
+In practical incident response, analysts face large volumes of poly-
+morphic variants. Historically, triaging these samples has relied on 
+file-level indicators at the Surface layer (L0).
+Imports and permissions hashing. Algorithms such as ImpHash, Imp-
+Fuzzy, or TELFHash (Mandiant, 2014; JPCERT, 2017; Mercês and 
+Costoya, 2020) capture the external dependencies of a binary. Recently, 
+this Surface-layer heuristic approach has been expanded by frameworks 
+like Permhash, which hashes the declared permissions of Chromium-
+based browser extensions and Android Package Kit (APK) applications 
+to map out threat campaigns and cluster adversary toolkits (Wilson, 
+2023; Martinez, 2023).
+File byte hashing. Alongside these indicator hashes, file-level fuzzy 
+hashes like SSDEEP, TLSH, and SDHash (Kornblum, 2006; Oliver 
+et al., 2013; Roussev, 2010) evaluate the macroscopic byte structure. 
+More recent advances in this space, such as the Lempel-Ziv Jaccard 
+Distance (LZJD) (Raff and Nicholas, 2018), have emerged as highly 
+efficient alternatives. By representing a file as a set of sub-strings 
+and approximating Jaccard distance, LZJD provides significantly faster 
+comparison times and improved resistance to random noise insertion 
+and fragmentation. Khan and Al-Awami (2026) demonstrate that fixed-
+threshold classification with SSDEEP, TLSH, and LZJD can detect ELF 
+IoT malware with no model training and low memory footprint.
+ML-based classification. While malware analysis platforms like Virus-
+Total (VirusTotal, 2026) report on pure hashing metrics for broad 
+clustering, surface-level features have been applied to ML approaches. 
+Notably, EMBER features (Şandor et al., 2023) are widely used for static 
+malware detection and classification. Furthermore, traditional fuzzy 
+hashes have been processed as natural language for training malware 
+classification models (Microsoft Threat Intelligence, 2021).
+Computers & Security 171 (2026) 105077 
+8 
+
+PAGE 10
+V. Bucci et al.
+Table 3
+Systematisation of malware clustering and attribution techniques by paradigm and binary abstraction layer.
+ Paradigm Technique Abstraction layer
+ L0 L1 L2 L3 L4 L5 
+ Macroscopic Hashing ImpHash (Mandiant, 2014), TLSH (Oliver et al., 
+2013), SSDEEP (Kornblum, 2006), LZJD (Raff and 
+Nicholas, 2018), Permhash (Wilson, 2023; Khan 
+and Al-Awami, 2026)
+•  
+ Genetic Analysis Pfeffer et al. (2012) • • • •  
+ Ding et al. (2017) •  
+ Function Byte Hashing FCatalog (xorpd, 2026) •  
+ Pharos (Schwartz, 2024) • •  
+ Topological Hashing Machoke (ANSSI, 2015) •  
+ Partitioned Hashing CCBHash (Onieva et al., 2024) •† • • • •  
+ Cascading Heuristics Diaphora (Joxean, 2015) • • • • •  
+ Anomaly Detection DeepReflect (Downing et al., 2021) • • •  
+ 
+Contextual Logic
+CIMALIR (Rahat et al., 2024) • • •  
+ CIAO (Rahat et al., 2026) • • •  
+ Alrabaee et al. (2020) • • • •  
+ 
+Software Lineage
+Jang et al. (2013) • • •  
+ Ming et al. (2015) • • •  
+ Haq et al. (2018) • •  
+ Hybrid Clustering Cozzi et al. (2020) • • •  
+Section byte hashing. Between whole-file hashes and granular compo-
+nent analysis, researchers have proposed section-level similarity hash-
+ing. By splitting a Portable Executable (PE) file and generating a 
+similarity digest for each structural section (e.g. .text, .data), 
+analysts can better withstand trivial obfuscations (like appended data) 
+that would disrupt whole-file hashes. Shiel and O’Shaughnessy (2019) 
+demonstrated that section-level hashing yields more true positives for 
+variant classification than file-level equivalents. This methodology also 
+proved effective in identifying variants of the HermeticWiper mal-
+ware (Snoke and Jacobs, 2023). These techniques nonetheless remain 
+ill-suited for the scope of this systematisation. Evaluating the binary (or 
+its macroscopic sections) as a whole, they lack the granularity required 
+to answer the core attribution question: How can malicious code and its 
+proliferation be detected and traced?
+Genetic analysis. Genetic analysis treats software development as an 
+evolutionary process. Pfeffer et al. (2012) introduced this paradigm 
+with MAAGI, combining static byte features (L0), call graph analysis 
+(L3), and Cuckoo dynamic execution traces (L5) to cluster and recover 
+lineage graphs of malware samples.
+Ding et al. (2017) refined this at instruction granularity: MGeT
+runs samples inside a distributed hardware virtualisation environment 
+and extracts instruction behaviour sequences (L5), then identifies dis-
+criminative sub-sequences as malware genes for family classification. 
+Commercial platforms such as Intezer (Intezer, 2021) have since 
+followed this approach, matching function-level code against a genome 
+database of known malware to attribute samples to threat actors with-
+out relying on whole-file analysis. Establishing authorship, therefore, 
+requires moving beyond file and section-level hashes to function-level 
+analysis.
+4.3.2. Function fingerprints streamline forensic triage
+Function byte hashing. Function-level byte hashing has been adopted in 
+the industry for binary code clone detection and to bypass redundant 
+reverse-engineering. Namely, FCatalog (xorpd, 2026) compresses 
+shingles from L0 function byte sequences into 16 MinHash permuta-
+tions (Broder et al., 1998). This normalisation enables fuzzy matching 
+of known functions where code may have been slightly altered or 
+shuffled.
+To find exact matches in cross-compiled code, industrial frameworks 
+such as BinDiff, IDA Pro, and Pharos apply hashing to Position In-
+dependent Code (PIC) signatures. This approach masks volatile memory 
+addresses and relative offsets in CALL or JMP instructions in bytecode 
+(L0–L1), allowing for exact matches even when code is recompiled with 
+different binary addresses (Schwartz, 2024). However, experimental 
+evaluations suggest a syntactic limit to byte-level analysis: even with 
+optimal masking, instruction-level hashes struggle to identify equiva-
+lent functions when confronted with different compiler toolchains or 
+optimisation levels.
+Topological hashing. To overcome instruction mutations, analysts eval-
+uate local Topology (L2). A prominent example is Machoc (or Ma-
+choke), which generates a hash signature based on the graph layout 
+to provide stability even with diverging syntax (ANSSI, 2015).
+Partitioned hashing. CCBHash (Onieva et al., 2024), integrated into 
+frameworks such as r2inspect, generates a one-shot composite func-
+tion signature by combining features across L1–L4. For file-level mal-
+ware clustering, Onieva et al. (2024) apply this function hash asymmet-
+rically. Given two binaries 𝐴 and 𝐵 where 𝐵 contains 𝑘 > 𝑛 functions, 
+each function in 𝐵 is compared against all 𝑛 functions in 𝐴 and assigned 
+the highest resulting similarity score. Averaging these 𝑘 scores yields 
+one file-level similarity value.
+Because the comparison is 𝑘-to-𝑛 and the direction is determined 
+by function count, the score is not symmetric: computing (𝐵, 𝐴) can 
+yield a different value from (𝐴, 𝐵). When functions are filtered before 
+comparison, this asymmetry compounds further, as the filtered set 
+and its ordering affect the outcome. The technique is therefore best 
+understood as a heuristic for approximate clustering rather than a 
+precise pairwise metric.
+Cascading heuristics. In practice, forensic triage is often conducted 
+through a pipeline of heuristics. Tools like Diaphora (Joxean, 2015) 
+begin with exact raw-byte and PIC hashes.
+Next, deeper analysis is performed as the divergence between sam-
+ples increases, such as the function-level small primes product or 
+hashes of Strongly Connected Components (SCC) in the global CG based 
+on Tarjan’s algorithm (Tarjan, 1972). In case of heavily obfuscated 
+code, the analysis may even decompile the function to pseudo-C and 
+apply DeepToad (Joxean, 0000a, 2018), an archived SSDEEP-inspired 
+library, to fuzzy-hash the resulting text.2
+While hashing algorithms do not require training, most traditional 
+fuzzy hashes were designed for approximate matching of string or byte 
+2 DeepToad was not included in the BinRankBench evaluation due to 
+its dependency on the IDA Pro toolchain.
+Computers & Security 171 (2026) 105077 
+9 
+
+PAGE 11
+V. Bucci et al.
+sequences. Therefore, cross-architecture BFSA extends beyond their 
+original design assumptions. When confronted with binary code sam-
+ples, such as IoT malware targeting multiple platforms, fuzzy hashes 
+relying on byte-level (L0) features are not designed to address the 
+resulting compilation divergence.
+Anomaly detection. To streamline the localisation of functional com-
+ponents, unsupervised learning is used to filter out routine code. For 
+example, DeepReflect (Downing et al., 2021) employs an auto-
+encoder to model the structural representation of the benign library 
+CFGs (L2). By reconstructing binary functions and isolating regions 
+with high reconstruction errors, this technique flags anomalous, po-
+tentially malicious components without requiring prior ground truth 
+of specific malware code.
+4.3.3. Cross-compiled malware attribution
+As threat actors increasingly diversify their target environments to 
+maximise their attack surface, cross-compiled analysis has emerged 
+as a critical requirement for authorship attribution. This necessity is 
+underscored by the pervasive reuse of the Mirai source code across 
+heterogeneous IoT botnets (Anna-senpai, 2016; Gamblin, 2016; An-
+tonakakis et al., 2017), alongside the recent evolution of Advanced 
+Persistent Threats (APTs) deploying unified toolkits across multiple OS 
+platforms (Fakterman, 2025; Nelson, 2024; Health Sector Cybersecurity 
+Coordination Center (HC3), 2024).
+Contextual logic. To normalise diverse architectures and extract
+function-level intent, forensic analysis must ascend to the Operational 
+domain (L4). A prominent example is CIMALIR (Rahat et al., 2024), 
+developed specifically for clustering cross-architecture IoT malware 
+samples. The tool evaluates functions primarily via Ghidra high P-
+Code (L4), extracting ISA-independent features such as the number 
+of conditional control transfers, function parameters, and distinct data 
+types. To distinguish malware families with high code reuse, CIMALIR
+additionally extracts unique printable strings via disassembly (L1) and 
+refines ambiguous function matches by incorporating call graph context 
+(L3), comparing each function alongside its callers and callees.
+Building upon this, CIAO (Rahat et al., 2026) lifts instructions to 
+ESIL (L4) to produce architecture-neutral function embeddings, then 
+applies graph representation learning over a Function Call Graph (FCG) 
+(L3) to separate family-specific logic from reused library code. This 
+contextual approach allows analysts to isolate proprietary threat-actor 
+functions from shared third-party libraries that often cause false posi-
+tives in attribution.
+While these methodologies normalise feature representations across 
+ISAs, they remain anchored to the Logic layer (L4). As established in 
+our abstraction model, L4 reconstructions can still diverge significantly 
+due to variations in bitness and data models, which alter pointer sizes 
+and memory layouts even when the high-level logic is identical.
+To mitigate these compilation and structural variances before se-
+mantic extraction, Alrabaee et al. (2020) utilised a static binary rewriter 
+before lifting cross-compiled binaries to architecture-neutral IRs via 
+the angr framework. By extracting normalised features, such as ACFG 
+(L2), DFG and Graph of API-Keywords (L4), they subsequently applied 
+Latent Dirichlet Allocation (LDA) to generate architecture-independent 
+signatures for authorship characterisation.
+Software lineage. Software lineage inference treats version history as 
+a graph problem: given a set of binary releases, recover the ancestral 
+relationships between them. Jang et al. (2013) formalised this with
+ILINE, applying binary similarity metrics across abstraction layers 
+(L1–L2, with dynamic traces at L5 for malware) to infer lineage DAGs 
+automatically. Evaluated on 1777 goodware (legitimate software) bi-
+naries spanning 110 years of development history and 114 malware 
+samples with known lineage, ILINE achieves a mean accuracy above 
+84% for goodware and above 72% for malware, even without prior 
+knowledge of the dataset structure.
+Static binary similarity cannot always see through heavy obfus-
+cation. Ming et al. (2015) address this with symbolic execution and 
+constraint solving (L4–L5), identifying semantically equivalent basic 
+blocks between malware samples. To make the approach tractable, they 
+introduce memoization that caches previously computed equivalences, 
+reducing constraint solver invocations by a factor of three to six.
+Haq et al. (2018) take a different route, replaying PANDA execution 
+recordings (PANDA, 0000) to dynamically unpack malware samples 
+(L5), then applying function-level code hashing on the unpacked bi-
+naries to trace code reuse across versions. This combination of L5 
+unpacking with procedural function hashing allows them to infer the 
+lineage of packed malware families across samples. They explicitly 
+note, however, that cross-compiler analysis remains out of scope: dif-
+ferent compilers or optimisation settings alter the extracted operational 
+artefacts, causing the algorithm to fragment the lineage graph and 
+overestimate the number of distinct malware versions.
+Hybrid clustering. Scaling fine-grained function-level comparisons
+across large datasets of binary samples remains a critical challenge. 
+Cozzi et al. (2020) addressed this challenge in their monumental study 
+on the genealogy of IoT malware, mapping code reuse across hundreds 
+of thousands of samples. Because calculating a full similarity matrix 
+using the 1-to-1 diffing tool Diaphora (Joxean, 2015) was compu-
+tationally unviable, they adopted an approximate clustering strategy 
+using Hierarchical Navigable Small World (HNSW) graphs. This served 
+as a scalable pre-filtering mechanism, limiting pairwise comparisons to 
+the most likely nearest neighbours.
+However, while the study analysed malware across multiple archi-
+tectures, the authors ultimately had to segment their lineage trees by 
+ISA to maintain accuracy. This leaves a gap in true cross-architecture 
+lineage tracing, as the functional relationships between diverse archi-
+tectures (e.g. ARM vs. MIPS) remained disjointed. The sole exception 
+was their ARM lineage graph, which successfully traced the evolutionary 
+path of functions compiled in both THUMB and standard ARM modes; 
+for all other architectures, the lineage trees remained siloed.
+The review above establishes the design space of cross-compiled 
+BFSA. The next section examines the specific artefact extraction and 
+hashing mechanisms used in our evaluation.
+5. Binary artefacts processing and feature hashing
+In this systematisation, we restrict our scope to Binary Function 
+Similarity Analysis (BFSA). We refer to ‘‘artefacts’’ as the raw data 
+across the full Abstraction Model, recovered by a chosen reverse-
+engineering toolchain, such as Radare2 (Radare2 Team, 2024), Binary 
+Ninja (Vector 35, 2026), IDA Pro (Hex-Rays, 2026), or Ghidra (National 
+Security Agency, 2019). Conversely, the ‘‘features’’ are extracted from 
+artefacts and preprocessed as hashable inputs for signature generation 
+algorithms. The analysis algorithm and toolchain entail a compro-
+mise in the coverage and accuracy of recovered artefacts (Pang et al., 
+2021). Different toolchains can exhibit divergence both in the processed 
+features and in the quality of generated signatures.
+Processing recovered artefacts into features for subsequent hashing 
+involves clearing compilation noise and transforming artefacts based on 
+their morphology. This section addresses RQ3 by systematising these 
+two transformation phases.
+5.1. Artefact morphologies
+Before any similarity matching can occur, artefacts must be nor-
+malised to survive the variations introduced by cross-compiler heuris-
+Computers & Security 171 (2026) 105077 
+10 
+
+PAGE 12
+V. Bucci et al.
+Table 4
+Taxonomy of BFSA frameworks mapped by their extracted artefacts and feature conversion strategies.
+ Framework Morphology Layer Extracted artefacts Conversion strategy  
+ PIC Hash Sequences L0, L1 Block Bytes, PIC Mask Masking & Exact Match  
+ PIC Signature Sequences L0, L1 Block Bytes, PIC Mask Masking & Relaxed Match  
+ Catalog1 Sequences L0 Raw Byte Streams Shingling (n-grams)  
+ Machoke Graphs L2 Control Flow Graph Node Traversal Indexing  
+ FunctionSimSearch Sequences L1 Mnemonics, Immediates Weighted Vector Accumulation 
+ Graphs L2 Sub-graphs (Graphlets) Heuristic Canonicalisation  
+ 
+CCBHash
+Scalars L1–L4 Metric Counts, Complexity, Degrees, Stack Statistical Discretisation  
+ Sequences L0, L1, L4 Function Name, Opcode & Variable Types Frequency Ordering  
+ Graphs L2, L3 Control Flow Graph (CFG), Call Graph (CG) Node Traversal Indexing  
+tics and environmental shifts. Without normalisation, minor alterations, 
+such as a shifted memory address or a reordered basic block, will 
+completely alter the resulting hash. The morphology of the artefact then 
+dictates the mathematical transformations required to convert it into a 
+comparable feature.
+5.1.1. Scalar artefacts
+Scalar artefacts are integer metrics encoding numerical charac-
+teristics of a function, such as cyclomatic complexity, the function’s 
+indegree/outdegree, the total number of basic blocks, and the dedicated 
+stackframe size.
+Because raw scalar values are highly brittle, where a minor opti-
+misation might alter the instruction count, direct numeric comparisons 
+often fail. To convert scalars into resilient features, algorithms employ 
+quantisation strategies. For example, in the CCBHash algorithm, in-
+teger features are mapped and hashed to 4-bit representations based 
+on a statistical analysis of x86 malware families. Therefore, instead 
+of relying on arbitrary bounds, this quantisation technique is tied to 
+real-world discriminative power.
+5.1.2. Sequential artefacts
+Sequential artefacts are linear streams of data, spanning L0 raw byte 
+streams, L1 assembly mnemonics, and L4 local variable type sequences. 
+At the Surface and Syntax layers (L0/L1), hardcoded memory offsets 
+and address-dependent immediate values are susceptible to relocation; 
+register-held values are susceptible to spilling, causing compilers to 
+substitute stack references for register operands. PIC signatures, as 
+implemented in Radare2 Zignatures, counter this with bit-level masking 
+of raw byte sequences, zeroing out volatile fields so that only the 
+invariant opcode logic is hashed.
+Compiler optimisations may also reorder sequential artefacts across 
+layers. CCBHash counters this by sorting its normalised opcode type 
+vocabulary (L1) and local variable type sequences (L4) by their fre-
+quency of appearance, stripping away execution order. Because se-
+quences are also vulnerable to local reordering, hashing them globally 
+often produces brittle signatures. To build resilience, sequences are 
+broken into overlapping n-grams (shingling). For example, Catalog1
+extracts 4-byte sequential chunks from the raw byte stream. Given a 
+sequence 𝐴, the set of shingles 𝑆(𝐴) is defined as: 
+𝑆(𝐴) = { 𝐴[𝑖 ∶ 𝑖 + 4] ∣ 0 ≤ 𝑖 ≤ |𝐴| − 4 } (1)
+This conversion into sets preserves similarity even when chunks of code 
+have been locally reordered.
+5.1.3. Graph-structured artefacts
+Graph-structured artefacts capture the topological structure of a 
+program, primarily represented by the CFG at L2 and the CG at L3. 
+Because standard hashing algorithms require 1D inputs, graphs must 
+be flattened; and because basic block addresses are compiler-assigned, 
+they must be normalised before flattening; otherwise, two structurally 
+identical functions at different load addresses produce different hashes.
+• Node Traversal Indexing: Machoke flattens the CFG by traversing it 
+in a deterministic order, assigning each basic block an ordinal index 
+and serialising the result into a single-dimensional string (e.g. NUM-
+BER:[c,][DST, . . . ]; ), where [c,] denotes external calls 
+from that block. This erases memory layout dependencies while 
+preserving structural topology.
+CCBHash applies the same traversal indexing strategy while treat-
+ing the CFG and CG as separate artefacts, each serialised and 
+hashed independently. The [c,] notation is therefore absent from 
+its CFG serialisation: inter-function call relationships are captured 
+by the dedicated CG hash instead.
+• Sub-Graph Canonicalisation (Graphlets): Rather than flattening the 
+entire graph globally, other frameworks extract localised, con-
+nected sub-graphs of size 𝑘 (graphlets).
+To ensure permutation invariance, the sub-graph is mathematically 
+reduced to a canonical form before hashing, making structurally 
+identical sub-graphs yield the same hash regardless of how the 
+disassembler orders the nodes. This is typically achieved through 
+two paradigms:
+– Heuristic Sorting: FunctionSimSearch sorts the sub-graph’s 
+nodes based on structural properties (e.g. in-degree,
+out-degree) and encodes their edge relationships into a deter-
+ministic tuple or string.
+– Adjacency Matrices: Rendezvous (Khoo et al., 2013) converts 
+the sub-graph into a 𝑘 × 𝑘 adjacency matrix. The matrix is 
+then canonicalised by computing the minimum lexicographical 
+representation of all its possible permutations, generating a 
+deterministic integer feature.
+5.2. Fuzzy hashes and matching strategies
+We classify procedural BFSA approaches based on how their algo-
+rithms evaluate the similarity of these extracted features (see Table  4).
+5.2.1. Feature identity
+Techniques in this category demand exact Boolean matches of the 
+extracted artefacts, identifying similarity only when the underlying 
+features are perfectly preserved.
+Byte hashing. Operating entirely at the Surface layer (L0), these meth-
+ods evaluate the exact identity of raw byte streams. To survive minor 
+compiler variations, industrial tools often perform hashing on Position 
+Independent Code (PIC), which zeroes out volatile reference addresses 
+to find exact structural matches independently of code relocations.
+Masked identity scoring. Strict boolean identity is often too brittle, 
+prompting frameworks to introduce relaxed identity scoring. Fig.  2 
+illustrates the generation and comparison of masked byte signatures. 
+When tools like Radare2 evaluate byte-masked Signatures, they calcu-
+late a proportional similarity score. For a standard comparison between 
+a query 𝑄 and a target 𝑇 using a single binary mask 𝑀 (where 1 
+indicates an invariant bit), similarity derives from bitwise agreement: 
+Sim(𝑄, 𝑇 ) = 1 −
+∑((𝑄 ⊕ 𝑇 ) ∧ 𝑀)∑𝑀 (2)
+Computers & Security 171 (2026) 105077 
+11 
+
+PAGE 13
+V. Bucci et al.
+Fig. 2. Masked bytes signature generation and comparison.
+Fig. 3. Machoke hash generation.
+However, when matching two distinct signatures directly, both 
+sequences enforce their own masks (𝑀𝑄 and 𝑀𝑇 ). An effective inter-
+secting mask must first be calculated to isolate shared invariant bits 
+(𝑀𝑒𝑓 𝑓 = 𝑀𝑄 ∧ 𝑀𝑇 ). Intersecting differing masks reduces the total 
+number of invariant bits.
+While percentage-based masking thresholds might intuitively seem 
+like a solution for these sparse overlaps, they fail to guarantee the 
+entropy required to minimise collisions.
+This is especially evident when analysing heavily optimised, cross-
+compiled repositories, where varying register allocations and memory 
+relocations force significant portions of bytecode to be masked. Con-
+sequently, production-grade binary analysis frameworks universally 
+favour absolute byte-count minimums and structural heuristics. The 
+industry adopts the following operational standards:
+• Radare2 (Zignatures): Radare2 avoids ratio-based masking lim-
+its in favour of absolute length and complexity constraints. By 
+default, its zign.minsz configuration dictates a minimum sig-
+nature length of 16 bytes. To further guarantee entropy, it uses
+zign.mincc to require a minimum cyclomatic complexity of 10 
+before a signature is considered valid for matching.
+• IDA Pro (FLIRT): The Fast Library Identification and Recognition 
+Technology (FLIRT) engine bases its pattern-matching architecture 
+on an initial 32-byte root sequence. During the generation of these 
+patterns, functions containing fewer than six bytes of executable 
+instructions are dropped because they cannot generate a reliable 
+signature.
+• Automated Signature Generation: Empirical models designed for au-
+tomated signature generation at scale (such as the Hancock ar-
+chitecture (Griffin et al., 2009)) often bypass smaller atoms en-
+tirely. To ensure a near-zero false-positive rate when scanning large 
+datasets, these systems require a 48-byte minimum contiguous 
+sequence (Griffin et al., 2009).
+Topology hashing (Machoke). At L2, tools like Machoke enforce stricter 
+global identity, generating a single hash of the globally flattened CFG 
+string (Fig.  3). It indexes basic blocks, records their control flow 
+branches, and translates the graph into a normalised string. By hashing 
+this string, Machoke identifies identical CFG structures even if the 
+underlying machine code has diverged.
+Partitioned identity (CCBHash). Rather than demanding a monolithic 
+match, partitioned approaches extract multiple features across layers, 
+hash them independently, and aggregate the exact matches (Fig.  4).
+CCBHash generates a composite signature 𝑯 = ( ℎ1, … , ℎ13) from 
+13 distinct sub-hashes. These 13 features comprehensively capture the 
+function’s profile across all morphologies: scalar metrics (instruction, 
+basic block, and edge counts; cyclomatic complexity; indegree and 
+outdegree; and stackframe size), sequential streams (the function name, 
+ordered opcode types, and local variable data types), and structural 
+topologies (the flattened CFG and Call Graph).
+It evaluates the exact identity of each sub-hash to yield a match 
+vector 𝜹 = (𝛿1, … , 𝛿13): 
+𝛿𝑖 =
+{
+1, if ℎ𝐴
+𝑖 = ℎ𝐵
+𝑖 ,
+0, otherwise.
+(3)
+Overall similarity is computed as a weighted sum: 
+Sim( 𝐻 𝐴, 𝐻𝐵) =
+13∑
+𝑖=1
+𝑤𝑖 𝛿𝑖, (4)
+5.2.2. Feature presence
+Rather than requiring perfect monolithic matches, presence-based 
+techniques treat a function as an unordered set of constituent features. 
+Similarity is estimated based on the overlapping presence (intersection) 
+of these elements, typically by approximating Jaccard similarity.
+Catalog1 (MinHash). Catalog1 (Fig.  5) evaluates the presence of L0 
+byte shingles. MinHash processes members of 𝑆(𝐴) through 𝑘 pseudo-
+random hash functions ℎ𝑖 and retains the minimum values: 𝑚𝑖(𝐴) =
+𝑚𝑖𝑛 ℎ𝑖(∀𝑠 ∈ 𝑆(𝐴)). Similarity is estimated by counting the intersecting 
+minimums across 𝑘 trials: 
+̂Jaccard(𝐴, 𝐵) = 1
+𝑘
+𝑘∑
+𝑖=1
+[ 𝑚𝑖(𝐴) = 𝑚𝑖(𝐵) ] 1
+0 (5)
+Because it evaluates shingle presence rather than strict sequences,
+Catalog1 is resilient to instruction reordering. However, it fails in 
+cross-architecture scenarios because the instructions’ byte encoding 
+completely changes between ISAs.
+5.2.3. Feature frequency and weighted accumulation
+These techniques evaluate not just the presence of features, but their 
+relative frequency or weighted discriminative power, blending multiple 
+abstraction layers to form a signature.
+FunctionSimSearch (SimHash). FunctionSimSearch (Fig.  6) extracts 
+a heterogeneous set of features 𝐹 (𝐴), including L1 assembly mnemon-
+ics, L1 immediate values, and L2 CFG graphlets. Each feature 𝑓 is 
+Computers & Security 171 (2026) 105077 
+12 
+
+PAGE 14
+V. Bucci et al.
+Fig. 4. CCBHash signature comparison and similarity estimation.
+Fig. 5. Catalog1 signature computation and comparison.
+hashed to a 128-bit vector 𝜙(𝑓 ). An accumulator vector 𝐯 is updated 
+using specific pre-computed weights 𝑤(𝑓 ): 
+𝑣𝑗 ←
+{
+𝑣𝑗 + 𝑤(𝑓 ), if 𝜙(𝑓 )𝑗 = 1,
+𝑣𝑗 − 𝑤(𝑓 ), if 𝜙(𝑓 )𝑗 = 0.
+(6)
+Finally, the accumulator is thresholded into a binary fingerprint
+𝐻(𝑋) ∈ {0 , 1}128 and compared via Hamming distance.
+While the original implementation by Dullien (2018) assigns
+weights to specific feature hashes, adaptations by Marcelli et al. (2022) 
+apply hand-crafted weights to the feature type: 4.0 for immediates, 1.0 
+for graphlets, and 0.05 for mnemonics.
+Namely, because mnemonics outnumber CFG graphlets and imme-
+diate values, lower weights avoid drowning out uncommon signals.
+For two 128-bit digests 𝐻(𝑋) and 𝐻(𝑌 ), the Hamming distance 
+𝑑 = popcount( 𝐻(𝑋) ⊕ 𝐻 (𝑌 )) is an integer in [0, 128]. The standard 
+normalisation, h-sim, maps 𝑑 linearly to [0, 1]: 
+h-sim = 1 − 𝑑∕128. (7)
+Because the expected distance for two independent digests is 𝑑 =
+64, any h-sim ≤ 0.5 signifies a random chance collision. We apply
+Fig. 6. FunctionSimSearch signature computation and similarity search.
+kappa-normalised similarity to clip this floor to zero: 
+𝜅 = max(0, 64 − 𝑑)
+64 . (8)
+Therefore, if 𝑑 ≥ 64 then 𝜅 = 0 , whereas, if 𝑑 < 64, 𝜅 maps h-sim 
+from [0.5, 1] back to a [0, 1] interval that provides meaningful rankings. 
+We use 𝑑 for the efficiency experiments and 𝜅 to evaluate robustness 
+(Sections 7.2 and 7.1).
+6. Methodology
+6.1. Ground-truth dataset construction
+To evaluate the performance of fuzzy hashing across disparate archi-
+tectures, we use the Dataset-1 benchmark released by Marcelli et al. 
+(2022). This dataset is a recognised standard in the BFSA literature, 
+both for its coverage of analysed techniques (Le and Mikolov, 2014; Xu 
+et al., 2017; Eschweiler et al., 2016; Shalev and Partush, 2018; Ding 
+et al., 2019; Li et al., 2019; Massarelli et al., 2022; Pei et al., 2023) 
+and for its adoption in the subsequent literature for ML training and 
+evaluation (Collyer et al., 2023, 2024; Saul et al., 2024).
+The benchmark comprises 5489 binaries derived from seven diverse 
+open-source projects. For our evaluation, we processed these binaries 
+Computers & Security 171 (2026) 105077 
+13 
+
+PAGE 15
+V. Bucci et al.
+using the radare2 reverse-engineering framework. To automate fea-
+ture extraction at scale, we employed the Bin2ML project (Collyer, 
+2023). Our contributions to its repository allowed us to handle large 
+binaries,3 such as those found in the Z3 theorem prover, included in 
+this dataset.
+We distinguish between the raw artefacts extracted by the reverse-
+engineering toolchain and the features ingested by the fuzzy hashing 
+algorithms. A single artefact (e.g. a recovered CFG) may supply fea-
+tures to multiple distinct algorithms. To standardise this extraction, we 
+mapped specific radare2 commands to the abstraction layers defined 
+in Section 3:
+• Binary and Function Metadata (L0–L4): Extracted via the ij and
+afij commands, this includes global file attributes (format, bit-
+ness, hashes) and scalar function metrics (byte size, basic block 
+count, instruction count).
+• Relational Graphs (L2, L3): To capture structural topology, we ex-
+tract the global CG using aGf and the intra-procedural CFGs using
+agfj.
+• Linear Function Bytes (L0): Extracted using the p8 command based 
+on the function’s calculated size boundary. While faster for gen-
+erating Catalog1 signatures, this start-to-end linear extraction 
+may capture trailing padding or interspersed data in non-linear 
+functions.
+• Zignatures (L0–L4): Generated via the zg and zj commands. While 
+radare2 Zignatures natively capture a vast array of metadata, we 
+extract two feature subsets for our evaluation.
+– First, we extract the raw bytes (L0)4 and their correspond-
+ing PIC masks (L1) to isolate invariant opcodes from volatile 
+addresses. We use these masked byte signatures, which are na-
+tively capped at 500 bytes in radare2, to establish a baseline 
+illustrating the difficulty of cross-compiled matching.
+– Second, we extract high-level semantic attributes (L4), specif-
+ically local variable and argument types, which are necessary 
+to generate CCBHash fingerprints.
+6.2. BinRankBench: BFSA evaluation framework
+A significant challenge in large-scale BFSA is the immense computa-
+tional cost of the initial binary analysis. To facilitate this study, we de-
+veloped BinRankBench, a high-throughput, open-source framework 
+designed to automate the feature extraction from reverse-engineered 
+artefacts, the generation of binary function fingerprints, and their 
+comparison at scale. Even though we focus on fuzzy hashes, Bin-
+RankBench facilitates the evaluation of any BFSA benchmark dataset 
+and algorithm not included in this study, including ML approaches.
+Our framework decouples the Analysis phase from the Evaluation
+phase: using Bin2ML and radare2 (with the deep analysis setting 
+‘‘aaa’’), we extracted all function artefacts once and stored them for 
+reuse. The raw artefacts output by Bin2ML form a data lake of TAR
+and JSON files caching the extracted function artefacts for each binary. 
+These fuzzy hashes resulting from these artefacts were then ingested 
+into a PostgreSQL database alongside selected intermediate features 
+(such as Machoke strings) and skip-logs. Because this data extrac-
+tion and database ingestion pipeline requires weeks of computation, 
+we open source BinRankBench alongside all the binary artefacts, 
+database dump, and intermediate data used for our evaluation. The re-
+leased dataset is to reproduce our findings and evaluate new algorithms 
+without repeating the reverse-engineering process.
+3 https://github.com/valbucci/bin2ml.
+4 Unlike linear p8 extraction, this approach iterates through the CFG (L2) 
+to reconstruct function bytes from discrete basic blocks precisely.
+6.3. Overhauled baseline implementations
+To conduct our evaluation, we developed overhauled Python imple-
+mentations for the fuzzy hashing algorithms discussed in Section 5.2. 
+This ensures compatibility with the latest version of radare2 and 
+improves computational efficiency (e.g. FCatalog’s digest generation 
+throughput shown in Table  11). We verified via extensive regression 
+testing that our optimisations do not alter the generated fuzzy hashes; 
+these test suites are published in our repository.
+Machoke & CCBHash. While official implementations of Machoke and
+CCBHash are publicly available, they are no longer compatible with 
+radare2 and require live disassembly to generate signatures. We pro-
+vide overhauled Python implementations generating signatures directly 
+from cached data. For CCBHash, we evaluate two variants: CCBHash-
+U naively assigns equal weights to all sub-hashes; CCBHash-W applies 
+the feature weights from the original publication (Onieva et al., 2024), 
+optimised for clustering malware families in PE binaries.
+FCatalog. For FCatalog, we found the original proof-of-concept im-
+plementation to be ineffective with large functions, like the ones in the
+Z3 binaries, which spanned several megabytes. We provide a higher-
+performance implementation using the numba CPython library, which 
+substantially improves processing speed for large-scale byte shingling.
+Functionsimsearch. We evaluate three FunctionSimSearch vari-
+ants. FSS is Dullien’s original implementation (Dullien, 2018) with 
+uniform feature weights (𝑤=1.0); the original design’s 271,653 per-
+entry weights require one table lookup per hashed feature, making 
+them impractical for hashing at scale. FSSM is Marcelli et al.’s adap-
+tation (Marcelli et al., 2022) with uniform weights; FSSM-W uses 
+their published feature-type weights assigned to mnemonics and CFG 
+graphlets (𝑀=0.05, 𝐺=1.0).
+FunctionSimSearch provides Python bindings to the C++ im-
+plementation. To compile these bindings, it was necessary to up-
+date5 the legacy code. We publish pre-compiled Python wheels for 
+both implementations (Dullien, 2018; Marcelli et al., 2022) in Bin-
+RankBench. The original code also relies on an obsolete disassembler 
+(Dyninst), and the adaptation by Marcelli et al. (2022) depends on 
+the proprietary disassembler IDA Pro. To promote reproducibility with 
+free software, we developed a dedicated adapter to generate FSS hashes 
+from radare2 artefacts.
+ FSSM feature coverage We discovered that Marcelli et al.’s op-
+timisation of the regular expression matching immediate values was 
+bound to IDA Pro’s output, which reproduces ISA-specific assembly 
+syntax. The updated regular expression expected disassembled instruc-
+tions to follow the ARM syntax, requiring immediate values to have 
+a leading ‘#’ character. This constraint undermines Marcelli et al.’s 
+results: immediate values were only extracted from ARM, not from the 
+other ISAs, producing inconsistent digests and scores for Function-
+SimSearch.
+In our evaluation, radare2 does not replicate ARM assembly syn-
+tax, so FSSM and FSSM-W both run without immediate values; the 
+exclusion applies uniformly across all architectures. FSS is unaffected, 
+as it uses Dullien’s original implementation.
+6.4. Ground-truth formulation and dataset purity
+To evaluate fuzzy hashing algorithms in cross-compiled settings, we 
+must establish a reliable ground truth for positive and negative function 
+pairs. Following the foundational methodology of Marcelli et al. (2022), 
+we operate on the assumption that functions sharing identical sym-
+bol names across different compilation configurations originate from 
+identical source code.
+5 https://github.com/valbucci/functionsimsearch.
+Computers & Security 171 (2026) 105077 
+14 
+
+PAGE 16
+V. Bucci et al.
+Table 5
+Candidate pool attrition across the sequential filtration pipeline.
+ Stage Filter description # Functions % Initial 
+ Universal Filters (Tier 1 & Tier 2)
+ 0 Initial radare2 Extraction 25,844,744 100.00% 
+ 1 Structural Qualification 7,451,524 28.83%  
+ 2 Isolation (Unique to Parent Binary) 5,858,121 22.67%  
+ 3 PIC Signature Availability 5,858,121 22.67%  
+ 4 PIC-Hash Deduplication 4,329,268 16.75%  
+ 5 Algorithmic Artefact Coverage 4,278,822 16.56%  
+ Target-Specific Filter (Tier 1 Only)
+ 6 Persistence Thresholding 2,818,290 10.90%  
+Fig. 7. Breakdown of Dataset-1 functions with five or more basic blocks.
+Because fuzzy hashing algorithms are deterministic and require no 
+training phase, we bypass the Machine Learning data splits used by 
+previous literature. Instead, our study covers all the project repos-
+itories in Dataset-1 to maximise variance (see Fig.  7). To achieve 
+this while guaranteeing that our assumption of source-code equality 
+remains unbroken, we extract two candidate pools:
+• Tier 2 (The Universal Distractor Pool): A pool of unique func-
+tions, including stripped, nameless functions, used to sample 
+ground-truth negative pairs.
+• Tier 1 (The Target Pool): A subset of Tier 2, restricted solely to 
+named functions that possess cross-compiled variations, used to 
+sample ground-truth positive pairs.
+By making Tier 1 a subset of Tier 2, we guarantee dataset ho-
+mogeneity; a function that is eligible to be evaluated as a positive 
+match is drawn from the exact same underlying distribution as the 
+functions used to generate negative distractors. To populate these pools, 
+we applied a multi-stage filtration pipeline to the raw output of our
+radare2 extraction, intentionally prioritising dataset purity over raw 
+volume (see Table  5 and Table  6).
+Universal filters (applied to Tier 1 and Tier 2). The following filters were 
+applied to the monolithic dataset to establish the baseline Tier 2 pool:
+• Structural Qualification (Complexity Baseline): We parsed the 
+initial pool of recovered functions and immediately discarded those 
+containing fewer than five basic blocks (𝑁𝑏𝑏𝑠 < 5). This strips 
+away trivial ‘‘micro-functions’’ (e.g. simple getters, setters, or inline 
+assembly wrappers) that lack the structural complexity necessary 
+for meaningful algorithmic comparison.
+• Isolation and Code-Reuse Prevention: When evaluating a mono-
+lithic, multi-project dataset, relying solely on symbol names intro-
+duces a severe risk of collision. Open-source projects frequently 
+vendor identical third-party libraries (e.g., zlib or OpenSSL), 
+causing generic functions (e.g. deflate, main) to appear across 
+entirely disparate binaries. If left unfiltered, these cross-project 
+clones would be falsely labelled as negative pairs, penalising ac-
+curate hashing algorithms.
+Table 6
+Fuzzy hashes coverage and retention for the isolated candidate pool.
+ Algorithm Functions (#) Retention (%) 
+ Baseline (Stage 4) 4,329,268 100.00%  
+ Catalog1 4,329,267 >99.99%  
+ Machoke 4,278,822 98.83%  
+ FunctionSimSearch 4,278,822 98.83%  
+ CCBHash 4,278,822 98.83%  
+ Universal Pool (Stage 5) 4,278,822 98.83%  
+Fig. 8. Dataset distribution by basic-block size within qualified, negative, and 
+positive functions (stage 1, 5, and 6). Black bars show the interquartile range 
+(25%–75%). White dots show the median. Red dots show the 95th percentile. 
+The plot is truncated at the 99th percentile of qualified functions (≥5 blocks).
+To enforce ground-truth purity, we introduced a strict isolation
+filter: any function symbol appearing in more than one distinct 
+parent binary was categorically purged. Marcelli et al. (2022) 
+mitigated this effect by removing common names across their 
+training, validation, and testing splits. Because we evaluate the 
+dataset globally, we enforce this isolation requirement across all
+binaries simultaneously to eradicate static-linking inflation.
+• PIC-Hash Deduplication (Trivial Pair Removal): To prevent 
+benchmark inflation, we eliminated identical machine code vari-
+ations. Functions yielding identical PIC hashes were deduplicated. 
+Inherently, this process also acts as a prerequisite artefact filter: 
+any function lacking the necessary data to compute a valid PIC 
+signature was discarded, as its uniqueness could not be verified.
+This ensures the algorithms are evaluated on their ability to bridge 
+non-trivial divergence. We retain PIC signature scores in the eval-
+uation to highlight the complexity of each scenario: higher PIC 
+recall highlights a greater proportion of quasi-trivial pairs surviving 
+deduplication.
+• Algorithmic Artefact Coverage: Finally, the functions were con-
+strained to those where all necessary baseline artefacts (L0–L4) 
+could be successfully recovered for all four evaluated algorithms, 
+ensuring a level playing field.
+Target-specific filter (applied to Tier 1 only). Once the Tier 2 universal 
+pool was established, we applied a final filter to isolate the targets:
+• Persistence Thresholding: To formulate a positive pair, a target 
+function must be successfully compiled and recovered in multiple 
+configurations. We dropped functions that appeared in only one 
+compilation variant, as they offer no cross-compiled counterpart 
+for comparison. To qualify for Tier 1, functions were required to 
+possess at least two distinct intra-binary variations.
+After applying the isolation and deduplication filters, the universal 
+distractor pool (Tier 2), used to sample negatives, yielded over 4.27 
+million functions. Within this pool, the 2.82 million functions that 
+persisted across compiled configurations comprised the target pool, 
+used to sample positive pairs (Tier 1). While the isolation and dedu-
+plication filters improve experimental rigour by ensuring label quality, 
+Computers & Security 171 (2026) 105077 
+15 
+
+PAGE 17
+V. Bucci et al.
+Table 7
+Configuration matrix for cross-compiled evaluation scenarios.
+ Scenario Arch Bit Comp Ver Opt 
+ Single-variable isolation (1-to-1 Equivalence)
+ arch  # # # #  
+ bit #  # # #  
+ comp # #   #  
+ ver # # #  #  
+ opt # # # #   
+ Aggregated scenarios (1-to-N Ranking)
+ XO # # # #   
+ XC # #     
+ XA   # # #  
+ XC+XB #      
+ XA+XO   # #   
+ Stress test (Both Phases)
+ XZ       
+# Fixed   Divergent G # Free (Unconstrained).
+they also eliminate real-world code reuse arising from shared libraries 
+and boilerplate. To avoid inflating the measured performance, our 
+experiments favour pessimistic conditions such that the robustness of 
+fuzzy hashes is measured under non-trivial compilation divergence.
+Despite this trade-off, we show that our dataset distribution closely 
+resembles the initial conditions prior to such filtering. Fig.  8 shows 
+the function-size distributions throughout the 1st, 5th, and 6th filtering 
+stages, respectively. Smaller functions dominate the dataset, with a 
+long tail of larger functions that stretches to a maximum of 24,959 
+blocks. Qualified functions, distractors, and targets measure a median 
+of 11, 12, and 13 basic blocks. For the efficiency experiments (Sec-
+tion 7.2), we exclude extreme outliers by removing any function larger 
+than 276 blocks, which marks the upper 0.5% of the universal pool. 
+Conversely, in the robustness experiments (Section 7.1) we use the full, 
+unconstrained distribution.
+7. Evaluation
+7.1. Compilation gap robustness
+This section addresses RQ4 by measuring the robustness of binary-
+function fuzzy hashes across the compilation gap. Therefore, we struc-
+ture our evaluation around 1-to-N search and 1-to-1 similarity approx-
+imation tasks (see Table  7). To demonstrate the scalability of fuzzy 
+hashes, we expand our robustness evaluation to ten times the volume 
+of the original ML benchmark established by Marcelli et al. (2022), 
+utilising the millions of isolated functions preserved by our filtration 
+pipeline.
+7.1.1. Cross-compilation scenarios
+To map how different toolchains and environmental factors degrade 
+fuzzy hash reliability, we reproduce Marcelli et al.’s configuration 
+matrix based on five variables: architecture family, bitness, compiler, 
+compiler version, and optimisation level. Additionally, we reproduce 
+distinct evaluation scenarios tailored to our two evaluation phases.
+For the 1-to-N Ranking phase, we recreate and expand upon the ag-
+gregated configurations proposed by Marcelli et al. (2022) to simulate 
+practical reverse engineering tasks:
+• XA (Cross-Architecture): Varies the architecture and bitness, but 
+fixes the compiler toolchain. This configuration is highly rele-
+vant for IoT firmware analysis, where a unified build system 
+cross-compiles identical source code for diverse hardware targets 
+(e.g. ARM, MIPS, x86).
+• XC (Cross-Compiler): Varies the compiler, version, and optimi-
+sation, while holding the architecture and bitness constant. This 
+scenario mirrors supply-chain auditing and vulnerability discovery, 
+where an analyst must identify vulnerable open-source dependen-
+cies (e.g. OpenSSL) that different software vendors have compiled 
+using their own preferred toolchains (e.g. GCC vs. Clang).
+• XC+XB (Cross-Compiler+Bitness): Extends XC by also varying bit-
+ness within the same ISA family (e.g. x86 vs. x64). This is rele-
+vant for legacy code migration analysis and for tracking malware 
+evolution as threat actors port 32-bit payloads to 64-bit platforms.
+• XO (Cross-Optimisations): Varies only the optimisation level. This 
+simulates standard malware analysis and evasion tactics, where a 
+threat actor modifies compilation flags (e.g. from -O0 to -O3) to 
+alter the structural layout of a payload and bypass static signature 
+detection, while maintaining the same architecture and toolchain.
+• XA+XO (Cross-Architecture+Optimisations): Extends XA by also 
+varying the optimisation level, while fixing the compiler and com-
+piler version. Architecture, bitness, and optimisation all diverge. 
+Marcelli et al. (2022) motivate this with vulnerability search in IoT 
+firmware: a known-vulnerable function compiled for x86 must be 
+found in firmware where the same vendor toolchain produced ARM
+or MIPS binaries at a different optimisation level.
+• XZ (Total Divergence): We introduce an additional scenario where 
+every configuration variable (architecture, bitness, compiler, com-
+piler version, and optimisation) must differ simultaneously. XZ is 
+the union of XA (architecture and bitness divergence) and XC (com-
+piler, version, and optimisation divergence), combining their indi-
+vidual challenges into a single maximally adversarial test. It repre-
+sents the absolute worst-case for code matching, such as attributing 
+highly sophisticated, multi-platform APT campaigns.
+For the 1-to-1 Equivalence phase, aggregated scenarios obscure 
+the precise cause of feature degradation. We therefore generate five 
+controlled scenarios (arch, bit, comp, ver, and opt) where exactly one 
+variable differs, and the remaining four are fixed, plus the XZ scenario 
+to show performance when all variables diverge simultaneously.
+7.1.2. Search and ranking
+In practice, an analyst uses a target function to query a large 
+database of known software to identify potential codebase origins or 
+vulnerability matches. This requires a scalable pre-filtering phase to 
+rank the most likely candidates before heavier, manual analysis.
+To simulate this 1-to-N triage scenario, we evaluate the algorithms 
+using a 1-to-100 target-to-distractor ratio. For each of the six evalu-
+ated scenarios, we sampled 14,000 target functions (positive pairs) and 
+injected them into a scenario-specific haystack of 1,400,000 distractor 
+functions (negative pairs). In total, we query 84,000 targets against 8.4 
+million distractors across the ranking phase.
+Performance in this phase is measured using standard Information 
+Retrieval metrics: (a) Recall@K, evaluating if the true match appears 
+within the top 𝐾 returned results, and (b) Mean Reciprocal Rank (MRR), 
+evaluating the absolute ranking position of the first correct match.
+We evaluate the algorithms for 1-to-N triage via their Recall@K 
+curves (Fig.  9) and MRR@10 performance (Table  8).
+To visually assist the recall analysis, the plots are divided into 
+quadrants intersecting at 𝐾 = 50  and a Recall Rate of 50%. The
+top-left quadrant establishes the minimum threshold for operational 
+utility: an algorithm that enters this region achieves >50% recall within 
+50 candidates, meaning that inspecting fewer than 50 results gives 
+the analyst a better-than-even chance of recovering the true match. 
+An algorithm that fails to reach this quadrant offers no meaningful 
+reduction in triage effort over exhaustive search. The area under the 
+recall curve within the top-left quadrant then quantifies the degree of 
+that utility: a higher area indicates that correct matches surface earlier, 
+compressing the candidate list further. In XO, MRR scores range from 
+0.2713 to 0.6865, placing the correct match within the top 4 results on 
+average across all algorithms.
+Computers & Security 171 (2026) 105077 
+16 
+
+PAGE 18
+V. Bucci et al.
+Fig. 9. Comparison of the recall at different K values.
+Table 8
+Mean Reciprocal Rank at 𝐾=10 (MRR@10) across all six scenarios. 
+Algorithm XA XC XO XC+XB XA+XO XZ
+PIC Sig. 0.0095 0.1127 0.2713 0.0316 0.0092 0.0042
+Machoke 0.0978 0.0540 0.2994 0.0158 0.0319 0.0025
+FCatalog 0.0009 0.1718 0.5892 0.0390 0.0006 0.0006
+FSSM 0.1425 0.2127 0.5533 0.1065 0.0588 0.0326
+FSS 0.2280 0.2115 0.4714 0.1670 0.1123 0.0600
+FSSM-W 0.4720 0.1268 0.4121 0.0822 0.1881 0.0715
+CCBHash-U 0.2995 0.3602 0.6865 0.0902 0.1462 0.0647
+CCBHash-W 0.4671 0.2767 0.6271 0.1266 0.2263 0.0995
+Multi-modal dominance and top-rank confidence. Across most evaluated 
+configurations, the CCBHash variants dominate in ranking perfor-
+mance. CCBHash-U leads in XO (MRR 0.6865) and XC (MRR 0.3602);
+CCBHash-W leads in XA+XO (MRR 0.2263) and XZ (MRR 0.0995). 
+The exceptions are XA, where FSSM-W achieves marginally higher 
+MRR (0.4720 vs. 0.4671), and XC+XB, where FSS leads (0.1670 vs. 
+0.1266). By aggregating multiple feature modalities, both the FSS and 
+the CCBHash variants are consistently more resilient to compilation 
+divergence than the single-modality algorithms.
+Feature weighting induces scenario-specific bias. While multi-modal ap-
+proaches dominate globally, analysing the FSS family reveals that 
+weighting specific feature modalities creates measurable scenario bi-
+ases. The feature-weighted variant, FSSM-W, achieves the highest 
+absolute precision in cross-architecture queries, marginally surpass-
+ing CCBHash-W in rank-1 confidence. However, the same weighting 
+scheme heavily penalises the algorithm during cross-compiler shifts, 
+where its MRR collapses and its recall curve sags noticeably.
+In contrast, the uniform-weight FSS and FSSM variants prove more 
+resilient to compiler divergence (MRR 0.2115 and 0.2127), indicat-
+ing that down-weighting mnemonics can bridge architectural opcode 
+divergence but becomes counterproductive in single-architecture com-
+parisons, where compilation settings primarily affect CFG topology.
+Architectural shifts eradicate raw-byte precision. Algorithms relying
+heavily on raw byte or rigid structural equivalence fail to operate as 
+effective pre-filters.
+FCatalog, which hashes raw bytes, performs better than the FSS
+variants in the XO scenario (MRR 0.5892) because the underlying 
+machine code syntax remains consistent. In contrast, the moment the 
+architecture shifts (XA), FCatalog flatlines, failing to reach the 0.5 
+recall threshold at any 𝐾 value with an MRR collapse to 8.57e−4.
+Similarly, Machoke exhibits near-zero recall in cross-architecture 
+and cross-compiler scenarios. Across optimisations (XO) it achieves its 
+best performance, with MRR comparable to what can be achieved 
+with PIC signatures (0.2994 vs. 0.2713). However, both Machoke
+and the PIC signatures achieve low overall recall rates across all the 
+scenarios, confirming that neither exact CFG matching nor relaxed byte 
+signatures can survive compilation-induced mutations beyond minor 
+optimisations.
+Variable stacking and graceful degradation. Comparing the isolated XO
+scenario against the maximally constrained XZ scenario illustrates the 
+compound penalty of variable stacking. In XO, the top-performing 
+algorithms comfortably exceed 0.9 recall. However, when every con-
+figuration variable diverges simultaneously (XZ), all algorithms suffer 
+steep degradation. Yet, even under this absolute stress test, CCBHash-
+W and the weighted FSSM-W variant are the only algorithms to remain 
+within the target top-left quadrant.
+CCBHash-W degrades the most gracefully, maintaining a 0.5 re-
+call by 𝐾 = 45  and retaining the highest top-rank confidence (XZ
+MRR 0.0995). The survival of FSSM-W confirms that arbitrary fea-
+ture combinations, without domain-informed weighting, cannot sustain 
+extreme compilation divergence. For example, because diverging ar-
+chitecture families specify diverse assembly instructions, the severe 
+down-weighting of mnemonic features by FSSM-W allows the more 
+stable CFG-graphlet signals to dominate the overall fingerprint and, 
+consequently, the similarity score (M = 0.05; G = 1.0). In contrast, 
+the uniform-weight FSS and FSSM variants allow divergent mnemonic 
+Computers & Security 171 (2026) 105077 
+17 
+
+PAGE 19
+V. Bucci et al.
+Table 9
+Area under the receiver operating characteristic curve (ROC-AUC).
+Algorithm Opt Ver Comp Bit Arch XZ
+PIC Sig. 0.6455 0.6703 0.5899 0.5782 0.5001 0.4918
+Machoke 0.6484 0.6725 0.5293 0.6419 0.5493 0.5012
+FCatalog 0.8230 0.9341 0.6459 0.6401 0.4889 0.4875
+FSS 0.8269 0.8945 0.7195 0.8905 0.6831 0.5237
+FSSM-W 0.7687 0.8855 0.6353 0.9085 0.8419 0.5797
+FSSM 0.8704 0.9737 0.7910 0.8814 0.6608 0.5028
+CCBHash-U 0.9390 0.9827 0.8710 0.9245 0.9228 0.5064
+CCBHash-W 0.9346 0.9759 0.8660 0.9559 0.9395 0.6027
+features to pollute the final fingerprint, pushing them out of the target 
+quadrant, thus forcing analysts to sift through over 50 candidates just 
+to achieve a 50% chance of finding the correct match.
+7.1.3. Equivalence accuracy
+Once potential candidates are retrieved, analysts must perform 1-to-
+1 comparisons to verify semantic equivalence. In this phase, the rank of 
+the match is irrelevant; the system must produce a binary classification 
+(Match/No Match) based on a similarity threshold.
+We move to a balanced 1-to-1 target-to-distractor ratio. For each
+of our six isolated scenarios, we sampled 500,000 positive pairs and
+500,000 negative pairs, yielding 3 million positive and 3 million neg-
+ative pairs in total. We use the Area Under the Receiver Operating Char-
+acteristic Curve (ROC-AUC) to evaluate thresholding in each algorithm 
+on this pool.
+We also use this dataset to conduct a granular ablation study on
+CCBHash. For each sub-hash within the CCBHash fingerprint, we 
+measure the True Positive Rate (TPR) against the False Positive Rate 
+(FPR) (Youden’s J statistic) to isolate the predictive power of distinct 
+feature modalities across varying cross-compiled settings (see Table 
+10).
+The ROC-AUC metric measures an algorithm’s aggregate ability to 
+separate true positive pairs from negative pairs across all possible sim-
+ilarity thresholds (see Table  9). An Area Under the Curve (AUC) of 1.0 
+represents perfect classification, while 0.5 denotes random guessing.
+Multi-modal superiority. Corroborating the ranking phase, CCBHash
+establishes itself as the best candidate for reliable 1-to-1 compar-
+isons. It achieves an AUC exceeding 0.86 across every isolated variable 
+change, independently of feature-weight fine-tuning. Even more criti-
+cally, under the XZ total divergence stress test, CCBHash-W is the only 
+algorithm that maintains a functional classification threshold (0.6027), 
+whereas nearly every other algorithm collapses to random chance.
+The limitations of single-modality matchers. The arch isolation scenario 
+exposes the limitations of byte features and rigid matching. FCatalog, 
+which relies on raw byte sequences, drops to an AUC of 0.4889; mathe-
+matically indistinguishable from a coin toss. Machoke, which performs 
+exact matching on the CFG structure performs slightly better than 
+random chance at and AUC of 0.5493. This confirms that approximate 
+matching of raw bytes and exact matching of CFG topology offers no 
+reliable signal across ISA shifts.
+7.1.4. CCBHash component ablation analysis
+In this section, we evaluate CCBHash as a case study to understand 
+the relative importance of different feature modalities. As described in 
+Section 5, CCBHash adopts a rigid encoding of features into partitioned 
+sub-hashes. Consequently, since partitions must be identical to produce 
+a match, we can measure the Informedness (Youden’s J statistic) of 
+its internal sub-hashes (Table  10) to infer feature stability across the 
+compilation gap. Informedness calculates the True Positive Rate minus 
+the False Positive Rate; a value of 0 indicates the feature provides no 
+predictive power, while negative values indicate the feature actively 
+misleads the classifier.
+Table 10
+CCBHash features subhash informedness (TPR − FPR) (%).
+Algorithm Opt Ver Comp Bit Arch XZ
+Opcodes 33.4 37.0 5.7 2.3 0.0 0.0
+CFG topology 30.8 36.8 6.9 40.5 21.8 1.4
+Cycl. Comp. 47.1 65.5 20.5 72.6 64.0 11.1
+CG outdegree 59.8 71.7 32.7 66.5 26.5 16.1
+# Instructions 31.7 33.1 8.5 10.1 2.6 1.2
+CG topology 17.5 26.0 4.5 19.6 6.0 1.8
+Arg. types 51.8 55.5 45.6 −36.7 38.6 −37.4
+Var. types 55.0 62.1 44.4 −24.3 26.9 −26.8
+# Args + Vars 46.0 57.6 17.1 24.1 12.3 8.0
+# Basic blocks 44.8 64.9 19.3 69.9 57.8 13.9
+CG indegree 66.6 70.1 52.7 68.5 44.7 36.5
+Stack size 53.5 67.3 31.7 17.8 37.1 13.2
+Structural anchors vs. Instruction distribution volatility. The Opcodes fea-
+ture (a frequency-sorted hash of radare2’s generic instruction types) 
+drops to 0.0 informedness during architectural shifts (arch) and to-
+tal divergence (XZ). CISC-to-RISC transitions destroy the frequency 
+distribution: a single x86 instruction often expands to several ARM
+instructions, shifting the opcode counts and invalidating the hash.
+Cyclomatic Complexity and Call Graph (CG) Indegree compensate, 
+providing 44% to over 72% informedness across nearly all isolated 
+scenarios. High-level application logic is stable even when instruction 
+distributions shift.
+The bitness pointer penalty. In the bit scenario, argument and local 
+variable data type features drop to −36.8% and −24.3% informedness. 
+Data type analysis can actively harm matching across bitness bound-
+aries: pointer size changes with bitness, mutating the inferred argument 
+and variable types at the decompilation layer. The penalty is offset by 
+stable structural features, preserving CCBHash’s global AUC score.
+7.2. Algorithm efficiency
+This section addresses RQ5 by measuring the efficiency of binary-
+function fuzzy hashes following the FRASHER framework (Breitingen 
+et al., 2013; Göbel et al., 2022), originally designed to benchmark tra-
+ditional fuzzy hashes. However, binary code similarity extends beyond 
+the design assumptions of traditional fuzzy hashing algorithms, which 
+normally rely on the same reference: byte sequences.
+Because the algorithms in our study draw features from a diverse 
+range of binary code artefacts, such as byte sequences, assembly 
+mnemonics, CFG encodings, call-graph dependencies, and data types, 
+we constrain our FRASHER evaluation to showcase practical efficiency 
+performance. Specifically, we report on digest byte size, hash gener-
+ation speed from reversed artefacts, and pairwise digest comparison 
+throughput (Table  11). Similarity digest algorithms, like traditional 
+hash functions, operate in two stages: digest generation from binary 
+artefacts, followed by digest comparison (Martín-Pérez et al., 2021; Flynn 
+and Olukoya, 2025).6
+6 All timing experiments ran on an AMD Ryzen 7 7840HS with 64 GB RAM.
+Computers & Security 171 (2026) 105077 
+18 
+
+PAGE 20
+V. Bucci et al.
+Table 11
+Algorithm efficiency measured in our Python implementations.
+ Algorithm Size Generation Comparison
+ (bytes) (digests/s) (M.pairs/s)
+ Machoke 4 2,283 1617.6  
+ FSS 16 713 344.6  
+ FSSM 16 753 350.1  
+ FSSM-W 16 754 344.9  
+ CCBHash-U 16 25 115.5  
+ CCBHash-W 16 25 121.1  
+ FCatalog (slow) 64 32 76.8  
+ FCatalog (Numba) 64 10,182 76.8  
+ PIC Sig. var. 69,446 0.30  
+Size: Digest byte size.
+Generation: digests from cached radare2 artefacts (functions per second).
+Comparison: pairwise similarity computation (million pairs per second).
+To ensure that the generation efficiency analysis is representative 
+of typical function block sizes, we exclude the upper 0.5% of out-
+liers and partition the universal pool into deciles. From each decile 
+bucket, we randomly sample 100 functions and extract their cached
+radare2 artefacts as fixtures. We use fixtures without repeating the 
+reverse engineering process to disentangle binary analysis from the 
+time required for generating a digest. For each algorithm, we time the 
+digest generation throughput over the entire set of fixtures (spanning 
+all deciles), repeat this 50 times, and report the overall mean.
+Similarly, comparison efficiency is measured against a pooled ran-
+dom sample of 5000 function pairs drawn from the ranking-pair set 
+(independent of the size-decile fixtures used for generation). We fetch 
+and convert all digests to contiguous NumPy arrays outside the timed 
+region to minimise Python overhead and provide an equal setup for 
+all algorithms. Each algorithm then computes similarity scores in one 
+vectorised pass over the entire sample. We time this pass three times 
+and report throughput as the number of comparisons divided by the 
+mean pass duration.
+Table  11 reports on digest size, generation throughput, and pair-
+wise comparison speed. Machoke produces the smallest digest and 
+the fastest comparison, owing to its identity match paradigm. PIC 
+signatures generate the fastest because they only require a single dic-
+tionary lookup. However, they exhibit the slowest comparison times 
+due to their variable size, which scales up to 500 bytes. CCBHash
+has the worst generation throughput because it processes features 
+from the widest breadth of artefact modalities. Namely, processing 
+function call graphs is significantly slow for large binaries. Pairwise 
+comparison is fast because similarity computations operate on fixed-
+size vectors. FCatalog’s Numba optimisation reaches the highest 
+generation throughput at the cost of a 30-second warm-up, making 
+this implementation suitable for batch indexing but not for single-query 
+retrieval. Conversely, its comparison throughput is similar to the one 
+measured in CCBHash as it performs the same underlying operation. 
+Finally, FSS shows a slightly worse generation speed compared to
+FSSM and FSSM-W. We hypothesise that such a difference could be 
+justified by the lack of immediate values or the improved implementa-
+tion. On the other hand, the time required to calculate the Hamming 
+distance primitive 𝑑 does not show a significant difference because the 
+computation is identical.
+8. Discussion
+8.1. Limitations and threats to validity
+Our experiments are affected by the following limitations and 
+threats to validity:
+1. The original paper extracted binary features with the proprietary 
+tool IDA Pro. We intentionally decided to avoid this tool in 
+favour of radare2, where official implementations of CCB-
+Hash and Machoke are provided, and to promote reproducibil-
+ity with free, open source software. Consequently, a direct com-
+parison with Marcelli et al.’s results is not straightforward. Bi-
+nary reverse engineering is inherently heuristic: different disas-
+semblers make opinionated design choices that produce different 
+feature sets, as analysed in detail by Pang et al. (2021). Future 
+work may study this form of feature divergence not covered in 
+our study.
+2. Nevertheless, we still had to re-implement or overhaul most 
+algorithms. While r2inspect (Rivero, 2026) generates thor-
+ough fuzzy hash reports from binary executables, it could not 
+extract features from this dataset of 5489 binaries within a 
+reasonable time, as it did not support cached artefacts. For this 
+reason we open source BinRankBench, including both the 
+code repository and the dataset developed for this study, hoping 
+that our efforts can advance future work in this area.
+3. Cross-compiled BFSA ground truth requires source code by con-
+struction: functions can only be confirmed as semantically equiv-
+alent across architectures if compiled from the same source. 
+Licencing restrictions preclude proprietary software, limiting 
+evaluation datasets to open-source projects that can be com-
+piled from scratch. This is a widely shared constraint of the 
+field (Marcelli et al., 2022; Kim et al., 2023; Liu et al., 2024; 
+VenkataKeerthy et al., 2025; Fan et al., 2026).
+4. Compiler and optimisation divergence is a stated goal of most 
+algorithms included in this study (Onieva et al., 2024; Dul-
+lien, 2018; Radare2 Team, 2014). Conversely, architecture di-
+vergence extends beyond their original design assumptions. We 
+argue that the limitations observed in our results may not apply 
+to future algorithms designed specifically for this purpose.
+8.2. Algorithms implementation
+For this systematisation, reimplementing all fuzzy hash modules 
+was unavoidable. FunctionSimSearch was originally developed 
+for DynInst, a tool for reversing Windows binaries. Marcelli et al. 
+extended this by introducing feature-type weights and an IDA Pro 
+Python wrapper.
+We developed a wrapper compatible with both radare2 pre-
+processed features and live analysis. We also publish the pre-compiled 
+Python wheels for the original implementation by Dullien (2018) and 
+the upgraded version by Marcelli et al.. Similarly, the published repos-
+itories for Machoke and CCBHash required overhauling: (a) The 
+repository for Machoke was archived in an incompatible state with 
+modern releases of radare2. (b) The original implementation of
+CCBHash cannot parse binary data at rest and is also not up to date 
+with radare2.
+We acknowledge the threat of implementation drift and address 
+it by releasing a regression dataset. Future work may reference this 
+dataset to validate backward compatibility. Multiple upgrades of
+radare2 were also released while writing this paper; future research 
+may study the effect of toolchain drift.
+8.3. Methodological divergence and dataset purity
+While this evaluation builds on the dataset introduced by Marcelli 
+et al. (2022), we note that our empirical results for baseline fuzzy 
+hashes (FunctionSimSearch and FCatalog) demonstrate lower 
+absolute performance than originally reported. Because our target-to-
+distractor ranking ratio remains identical to the original benchmark 
+(1-to-100), this variance is not a byproduct of ranking probability but 
+rather a direct consequence of our strict dataset filtration pipeline.
+Computers & Security 171 (2026) 105077 
+19 
+
+PAGE 21
+V. Bucci et al.
+Specifically, our evaluation framework applies function-name isola-
+tion and PIC deduplication constraints before pair generation to elimi-
+nate repetitive boilerplate code. Such ubiquitous functions frequently 
+compile more consistently, which can inflate success rates. We argue 
+that algorithms such as PIC signatures, FCatalog, and Machoke are 
+likely to exhibit better accuracy in low-complexity boilerplate.
+Our study on the compilation gap is not concerned with such 
+functions. PIC-hash deduplication ensures that our evaluation pool is 
+devoid of trivial targets and comprises truly unique distractors. Further-
+more, the isolation constraint excludes generic function names, such as
+entry0 or main, where the assumption of source code equality cannot 
+be upheld. Please note that, while these design choices aim to improve 
+experimental rigour, they also eliminate real-world code reuse arising 
+from shared libraries and boilerplate, which typically aids in practical 
+malware attribution and vulnerability discovery tasks. Our experiments 
+intentionally favour pessimistic conditions, such that the robustness of 
+fuzzy hashes across the compilation gap is measured under diverse and 
+non-trivial settings.
+8.4. Choice of reverse-engineering toolchain
+We ran radare2 headlessly via Bin2ML to distribute the analysis 
+of 5489 binaries across hundreds of nodes in a High-Performance 
+Computing cluster. Prioritising freely available software also ensures 
+that our work remains reproducible and openly accessible.
+8.5. Compilation gap and implementation gap
+Our results establish that fuzzy hashes can close the compilation 
+gap without resorting to representation learning, answering the central 
+question of this systematisation.
+The compilation gap is the divergence between low-level represen-
+tations of the same source code across different compiler toolchains, 
+optimisation settings, architectures, and bitnesses. Multi-modal feature 
+hashing significantly reduces this gap; our results show that CCB-
+Hash achieves reliable separation across all isolated single-variable 
+scenarios. Progress on this gap would directly benefit forensic tasks, 
+such as malware attribution, software lineage inference, and Common 
+Vulnerabilities and Exposures (CVE)-based vulnerability search, where 
+the analyst seeks the same implementation compiled for a different 
+platform.
+On the other hand, implementation gap is the equivalence between 
+functions that share algorithmic intent but originate from indepen-
+dently written source code. No procedural hash can close this gap. A 
+hash derived from byte distributions, control flow topology, or opcode 
+frequencies is specific to a particular implementation; it carries no 
+information about an independent counterpart that produces the same 
+output. Closing this gap requires representations that abstract over 
+implementation form to recognise shared intent. For example, this is 
+relevant for detecting Common Weakness Enumerations (CWEs) across 
+codebases, where the goal is not to find a known vulnerable function 
+but to recognise a class of vulnerability in novel, independently written 
+code (Ross et al., 2025).
+This distinction has direct implications for ML-based BFSA research. 
+Cross-compiled benchmarks, including BinRankBench, evaluate the 
+compilation gap primarily. A model that outperforms fuzzy hashes 
+on such benchmarks may be doing so by closing that gap more ef-
+ficiently, rather than by learning implementation-independent seman-
+tics. BinRankBench establishes a deterministic, training-free ceiling 
+for the compilation gap. Future work claiming ML superiority on 
+cross-compiled benchmarks should validate whether the improvement 
+transfers to cross-implementation pairs, where procedural methods 
+offer no solution.
+Saul et al. (2024) demonstrate that REFuSe, a simple 1D Con-
+volutional Neural Network (CNN) on raw function bytes, matches 
+sophisticated ML architectures across five benchmarks. Four of the five 
+establish ground truth through the same-source compilation. The fifth 
+(MOTIF) uses malware family labels, where intra-family code reuse is 
+structurally closer to compilation divergence than to implementation 
+equivalence. None of them evaluates the cross-implementation case. 
+The over-engineering conclusion is therefore scoped to the compilation 
+gap, suggesting that ML complexity may be precisely what closing the 
+implementation gap requires.
+The partitioned architecture of CCBHash also demonstrates how 
+existing, older strategies may be replicated. Although fuzzy hashing 
+techniques rarely borrow components from one another, CCBHash
+took the serialisation technique proposed by Machoke and applied it to 
+CFGs and CGs. Future work may consider more advanced approaches, 
+such as the sub-graph canonicalisation of Rendezvous (Khoo et al., 
+2013). The partitioned model makes such transfers tractable and mea-
+surable: replacing one partition and re-running the ablation isolates the 
+effect on that modality alone. In a single-vector approach like Func-
+tionSimSearch, no individual feature contribution can be evaluated 
+without regenerating the entire digest.
+CCBHash was originally optimised for malware clustering, where 
+control-flow obfuscation and cross-optimisation robustness are the cen-
+tral design targets. To our knowledge, ours is the first evaluation of
+CCBHash against a synthetic, cross-compiled dataset with function-
+level granularity. In their original study, Onieva et al. (2024) evaluated 
+it against file-level aggregation tasks over a malware family corpus 
+comprising 40 samples. Our results show that CCBHash performs best 
+across optimisation settings, demonstrating that this kind of compila-
+tion noise can be overcome without training. Beyond optimisations,
+CCBHash performed strongly in scenarios it was not designed for, 
+suggesting that robustness built for adversarial conditions (e.g. control-
+flow obfuscation and cross-optimisation) transfers across divergence 
+types.
+9. Related work
+This section underlines the contribution of our work with regard to 
+existing BCSA studies and benchmark datasets.
+Göbel et al. (2022) introduced FRASHER, a benchmark framework 
+for generic fuzzy hashing algorithms (SSDEEP, TLSH, MRSH, SDHash). 
+Built on FRASH (Breitingen et al., 2013), it added adversarial resilience 
+and needle-in-the-haystack test cases. Neither framework can evaluate 
+techniques that recover features beyond raw bytes. BFSA requires 
+access to source code for cross-compilation, which FRASH does not 
+accommodate.
+Marcelli et al. (2022) was the first to effectively overcome this 
+limitation with a dataset of cross-compiled open-source projects. They 
+evaluated ML techniques against a baseline of FCatalog and Func-
+tionSimSearch hashes. However, PIC signatures, Machoke, and
+CCBHash were not included. Their fork of FunctionSimSearch
+also inadvertently disabled immediate values on non-ARM architectures, 
+undermining the validity of their experiments, which mixed finger-
+prints from multiple architectures. Additionally, FCatalog was tested 
+with 16-byte and 128-byte digests, whereas the official documentation 
+specifies 64 bytes (xorpd, 2026).
+Our work replicates the similarity accuracy experiments of Marcelli 
+et al. (2022) and adapts the benchmark of Breitingen et al. (2013) 
+to binary functions. The resulting adaptation measures efficiency and 
+robustness across the compilation gap. While Marcelli et al. (2022) 
+briefly evaluated baseline hashing algorithms, their primary objective 
+was to establish a performance baseline for machine learning. Our 
+work inverts this focus by selecting an expanded taxonomy of fuzzy 
+hashing techniques. We evaluate these algorithms against Marcelli 
+et al.’s Dataset-1, designed explicitly to benchmark ML models. We 
+expand the evaluation scale tenfold to provide practical and statistically 
+significant evidence of the efficiency and robustness of modern fuzzy 
+hashing.
+Computers & Security 171 (2026) 105077 
+20 
+
+PAGE 22
+V. Bucci et al.
+Recent efforts have introduced large, automated compilation frame-
+works to evaluate BCSA algorithms (e.g. BinKit (Kim et al., 2023),
+Assemblage (Liu et al., 2024), BinSimDB (Zuo et al., 2026), and
+EXHIB (Fan et al., 2026)). BinKit cross-compiles Linux packages 
+across compilers, versions, and obfuscation levels. Assemblage ex-
+tends this to Windows PE binaries (Liu et al., 2024). BinSimDB
+provides the most granular ground truth, pairing cross-compiled assem-
+bly sequences at the basic-block level (Zuo et al., 2026). EXHIB is the 
+most diversified: four of its five sub-datasets compile from source; the 
+fifth uses programming-contest submissions as a functional-equivalence 
+proxy (Fan et al., 2026). Such benchmarks share the same constraint: 
+function-level ground truth is established by compiling open-source 
+code across configurations, as licencing restrictions preclude the use 
+of proprietary software.
+We identified Dataset-1 as the de facto standard benchmark in 
+contemporary binary similarity literature (Collyer et al., 2023; Saul 
+et al., 2024; Collyer et al., 2024; Wang et al., 2024a).
+Therefore, this dataset ensures our experiments reproduce the con-
+ditions of deep representation learning benchmarks. Evaluating against 
+additional sources of obfuscation using frameworks like BinKit is a 
+relevant avenue for future work.
+Extensive work has reviewed the field of BCSA techniques without 
+narrowing their focus on function-level analysis (Haq and Caballero, 
+2021; Ruan et al., 2024; Javed et al., 2025; Fu et al., 2024). Due 
+to the large breadth of reviewed literature, many did not report on 
+experimental results (Haq and Caballero, 2021; Ruan et al., 2024; Javed 
+et al., 2025). Other researchers have reviewed ML-based algorithms, 
+often evaluating them in relation to novel proposals (Fu et al., 2024; 
+Shi et al., 2025; Saul et al., 2024; Collyer et al., 2024).
+Recent literature analysed fuzzy hashing algorithms applied to vul-
+nerability discovery and malware attribution without directly address-
+ing robustness to compilation noise (Prasad and Chawla, 2026; Ross 
+et al., 2025). Prasad and Chawla (2026) evaluated traditional file-level 
+fuzzy hashes against ML-based embeddings for malware analysis tasks. 
+Ross et al. (2025) studied file-level, section-level, and function-level 
+fuzzy hashes to detect malware payloads and vulnerabilities.
+To the best of our knowledge, we are the first to systematically 
+evaluate the efficiency and robustness of binary-function fuzzy hashes 
+across the compilation gap.
+10. Conclusion and future work
+This paper systematises the applicability of fuzzy hashes for cross-
+compiled Binary Function Similarity Analysis (BFSA).
+We propose the Stratified Binary Abstraction Model to map the impact 
+of platform divergence on binary artefacts. Next, we provide a system-
+atic review of the literature, classifying existing approaches according 
+to our layered model.
+We release BinRankBench, the toolchain developed for this study, 
+to evaluate Position Independent Code (PIC) signatures and popu-
+lar fuzzy hashes, including Catalog1, FunctionSimSearch, Ma-
+choke, and CCBHash, in cross-compiled settings.
+We derive a ground truth dataset from Marcelli et al.’s Dataset-1
+(Marcelli et al., 2022), yielding a universal pool of 4,278,822 unique, 
+cross-compiled functions. For the 1-to-N ranking phase, we query 
+14,000 target functions per scenario against a haystack of 1,400,000 
+distractors (1:100 ratio), totalling 84,000 targets across 8.4 million 
+distractor instances over six scenarios. For the 1-to-1 equivalence phase, 
+we sample 500,000 positive and 500,000 negative pairs per scenario, 
+yielding 3 million pairs of each class in total.
+Our findings show that fuzzy hashes relying on a single feature 
+modality are too brittle to withstand divergence across the compi-
+lation gap. Conversely, multi-modal hashes such as FunctionSim-
+Search and CCBHash achieve improved performance that can be 
+reinforced with precomputed feature importance weights. Our analysis 
+of CCBHash shows that encoding a wide breadth of features across 
+binary abstraction layers is the driving factor for cross-compilation 
+resilience. Finally, we evaluated the informedness of feature sub-hashes 
+to identify which modalities drive compilation stability. To the best of 
+our knowledge, we are the first to systematically study and evaluate 
+binary-function fuzzy hashes in cross-compiled settings.
+We identify two distinct challenges in the field of BCSA, the compi-
+lation gap and the implementation gap, as described in Section 8.5. The 
+compilation gap arises when identical source code is compiled into di-
+vergent binary code representations. We developed BinRankBench to 
+measure the efficiency and robustness of binary-function hashes across 
+this gap. On the other hand, the implementation gap concerns indepen-
+dent source code representations that share equal intent. Whether ML 
+models genuinely learn to close the implementation gap is the primary 
+open question for the field. Our work aims to assist in overcoming 
+these challenges. Future work will entail identifying adequate analysis 
+strategies and feature representations tailored to the intended use case.
+Open access
+For open access, the author has applied a Creative Commons At-
+tribution (CC BY) licence to any Author Accepted Manuscript version 
+arising from this submission.
+CRediT authorship contribution statement
+Valerio Bucci: Writing – original draft, Writing – review & editing, 
+Visualization, Validation, Software, Methodology, Investigation, For-
+mal analysis, Data curation, Conceptualization. Oluwafemi Olukoya: 
+Writing – review & editing, Supervision, Funding acquisition. Jesús 
+Martínez del Rincón: Writing – review & editing, Supervision, Fund-
+ing acquisition.
+Funding
+This work was supported by the Engineering and Physical Sciences 
+Research Council [grant number EP/W52444X/1, project reference 
+2929458].
+Declaration of competing interest
+The authors declare that they have no known competing finan-
+cial interests or personal relationships that could have appeared to 
+influence the work reported in this paper.
+Data availability
+The data has been published with DOI: 10.5281/zenodo.20439493
+Bridging the compilation gap: A taxonomy and evaluation of fuzzy ha
+shes for Binary Function Similarity Analysis (Original data) (Zenodo)
+References
+Afianian, A., Niksefat, S., Sadeghiyan, B., Baptiste, D., 2019. Malware dynamic analysis 
+evasion techniques: A survey. ACM Comput. Surv. 52 (6), 126:1–126:28. http:
+//dx.doi.org/10.1145/3365001, URL: https://dl.acm.org/doi/10.1145/3365001.
+Alrabaee, S., Debbabi, M., Wang, L., 2020. CPA: Accurate cross-platform binary author-
+ship characterization using LDA. IEEE Trans. Inf. Forensics Secur. 15, 3051–3066. 
+http://dx.doi.org/10.1109/TIFS.2020.2980190.
+Amalan, A., Smaragdakis, G., Viering, T.J., 2026. MalTree: Tracing malware evolution 
+from embeddings at scale. http://dx.doi.org/10.48550/arXiv.2606.06570, arXiv:
+2606.06570.
+Andriesse, D., Chen, X., Van Der Veen, V., Slowinska, A., Bos, H., 2016. An in-depth 
+analysis of disassembly on full-scale X86/X64 binaries. In: Proceedings of the 25th 
+USENIX Conference on Security Symposium. SEC’16, USENIX Association, USA, pp. 
+583–600.
+Anna-senpai, 2016. World’s largest net: Mirai botnet, client, echo loader, CNC source 
+code release. URL: https://hackforums.net/showthread.php?tid=5420472.
+Computers & Security 171 (2026) 105077 
+21 
+
+PAGE 23
+V. Bucci et al.
+ANSSI, 2015. Machoc hash. URL: https://github.com/ANSSI-FR/polichombr/blob/dev/
+docs/MACHOC_HASH.md.
+Antonakakis, M., April, T., Bailey, M., Bernhard, M., Bursztein, E., Cochran, J., 
+Durumeric, Z., Halderman, J.A., Invernizzi, L., Kallitsis, M., Kumar, D., Lever, C., 
+Ma, Z., Mason, J., Menscher, D., Seaman, C., Sullivan, N., Thomas, K., Zhou, Y., 
+2017. Understanding the mirai botnet. In: 26th USENIX Security Symposium. 
+USENIX Security 17, pp. 1093–1110.
+Arp, D., Quiring, E., Pendlebury, F., Warnecke, A., Pierazzi, F., Wressnegger, C., 
+Cavallaro, L., Rieck, K., 2024. Pitfalls in machine learning for computer security. 
+Commun. ACM 67 (11), 104–112. http://dx.doi.org/10.1145/3643456.
+Berre, S.L., Pourcelot, T., 2025. 10 years of large-scale malware comparison: Going 
+deeper with machoke. URL: https://www.botconf.eu/botconf-presentation-or-
+article/10-years-of-large-scale-malware-comparison-going-deeper-with-machoke/. 
+Botconf 2025.
+Botacin, M., Aghakhani, H., Ortolani, S., Kruegel, C., Vigna, G., Oliveira, D., De 
+Geus, P.L., Grégio, A., 2021. One size does not fit all: A longitudinal analysis 
+of Brazilian financial malware. ACM Trans. Priv. Secur. 24 (2), 11:1–11:31. http:
+//dx.doi.org/10.1145/3429741.
+Breitingen, F., Stivaktakis, G., Baier, H., 2013. FRASH: A framework to test algorithms 
+of similarity hashing. Digit. Investig. 10, S50–S58, Proceedings of the Thirteenth 
+Annual DFRWS Conference.
+Broder, A.Z., Charikar, M., Frieze, A.M., Mitzenmacher, M., 1998. Min-wise independent 
+permutations. In: Proceedings of the Thirtieth Annual ACM Symposium on Theory 
+of Computing. pp. 327–336.
+Bulazel, A., Yener, B., 2017. A survey on automated dynamic malware analysis evasion 
+and counter-evasion: PC, mobile, and web. In: Proceedings of the 1st Reversing 
+and Offensive-Oriented Trends Symposium. ROOTS, Association for Computing 
+Machinery, New York, NY, USA, pp. 1–21. http://dx.doi.org/10.1145/3150376.
+3150378, URL: https://dl.acm.org/doi/10.1145/3150376.3150378.
+Chandramohan, M., Xue, Y., Xu, Z., Liu, Y., Cho, C.Y., Tan, H.B.K., 2016. BinGo: 
+Cross-architecture cross-OS binary search. In: Proceedings of the 2016 24th ACM 
+SIGSOFT International Symposium on Foundations of Software Engineering. FSE 
+2016, Association for Computing Machinery, New York, NY, USA, pp. 678–689. 
+http://dx.doi.org/10.1145/2950290.2950350.
+Cifuentes, C., Van Emmerik, M., 2000. UQBT: Adaptable binary translation at low cost. 
+Computer 33 (3), 60–66. http://dx.doi.org/10.1109/2.825697.
+Collyer, J., 2023. Bin2ml GitHub repository. URL: https://github.com/br0kej/bin2ml/.
+Collyer, J., Watson, T., Phillips, I., 2023. FASER: Binary code similarity search through 
+the use of intermediate representations. http://dx.doi.org/10.48550/arxiv.2310.
+03605, arXiv:2310.03605.
+Collyer, J., Watson, T., Phillips, I., 2024. Know your neighborhood: General and zero-
+shot capable binary function search powered by call graphlets. http://dx.doi.org/
+10.48550/arxiv.2406.02606, arXiv:2406.02606.
+Cooper, K.D., Torczon, L., 2012. Engineering a Compiler. Morgan Kaufmann, 
+Amsterdam Heidelberg.
+Costin, A., Zaddach, J., Francillon, A., Balzarotti, D., 2014. A large-scale analysis of 
+the security of embedded firmwares. In: 23rd USENIX Security Symposium. USENIX 
+Security 14, pp. 95–110.
+Cozzi, E., Vervier, P.-A., Dell’Amico, M., Shen, Y., Bilge, L., Balzarotti, D., 2020. The 
+tangled genealogy of IoT malware. In: Proceedings of the 36th Annual Computer 
+Security Applications Conference. ACSAC’20, Association for Computing Machinery, 
+New York, NY, USA, pp. 1–16. http://dx.doi.org/10.1145/3427228.3427256.
+Şandor, M., Portase, R.M., Coleşa, A., 2023. Ember feature dataset analysis for malware 
+detection. In: 2023 IEEE 19th International Conference on Intelligent Computer 
+Communication and Processing. ICCP, pp. 203–210. http://dx.doi.org/10.1109/
+ICCP60212.2023.10398693.
+Demetrio, L., Biggio, B., Lagorio, G., Roli, F., Armando, A., 2021. Functionality-
+preserving black-box optimization of adversarial windows malware. IEEE Trans. Inf. 
+Forensics Secur. 16, 3469–3478. http://dx.doi.org/10.1109/TIFS.2021.3082330.
+Ding, J., Chen, Z., Zhao, Y., Su, H., Guo, Y., Sun, E., 2017. MGeT: Malware gene-based 
+malware dynamic analyses. In: Proceedings of the 2017 International Conference 
+on Cryptography, Security and Privacy. ICCSP’17, Association for Computing 
+Machinery, New York, NY, USA, pp. 96–101. http://dx.doi.org/10.1145/3058060.
+3058065.
+Ding, S.H., Fung, B.C., Charland, P., 2016. Kam1n0: MapReduce-based assembly clone 
+search for reverse engineering. In: Proceedings of the 22nd ACM SIGKDD Interna-
+tional Conference on Knowledge Discovery and Data Mining. ACM, San Francisco 
+California USA, pp. 461–470. http://dx.doi.org/10.1145/2939672.2939719.
+Ding, S.H.H., Fung, B.C.M., Charland, P., 2019. Asm2Vec: Boosting static represen-
+tation robustness for binary clone search against code obfuscation and compiler 
+optimization. In: 2019 IEEE Symposium on Security and Privacy. SP, pp. 472–489. 
+http://dx.doi.org/10.1109/SP.2019.00003.
+Downing, E., Mirsky, Y., Park, K., Lee, W., 2021. {DeepReflect}: discovering malicious 
+functionality through binary reconstruction. In: 30th USENIX Security Symposium. 
+USENIX Security 21, pp. 3469–3486.
+Dullien, T., 2018. Searching statically-linked vulnerable library functions in ex-
+ecutable code. URL: https://googleprojectzero.blogspot.com/2018/12/searching-
+statically-linked-vulnerable.html.
+Eschweiler, S., Yakdan, K., Gerhards-Padilla, E., 2016. discovRE: Efficient cross-
+architecture identification of bugs in binary code. In: Proceedings 2016 Network 
+and Distributed System Security Symposium. Internet Society, San Diego, CA, 
+http://dx.doi.org/10.14722/ndss.2016.23185.
+Fakterman, L.R., 2025. Squidoor: Suspected Chinese threat actor’s backdoor tar-
+gets global organizations. URL: https://unit42.paloaltonetworks.com/advanced-
+backdoor-squidoor/.
+Fan, Y., Won, J.Y., Zhu, D., Sirlanci, M., Khalili, M., Yagemann, C., 2026. EXHIB: A 
+benchmark for realistic and diverse evaluation of function similarity in the wild. 
+http://dx.doi.org/10.48550/arXiv.2604.01554, arXiv:2604.01554.
+Flynn, R., Olukoya, O., 2025. Using approximate matching and machine learning to 
+uncover malicious activity in logs. Comput. Secur. 151, 104312.
+Fu, L., Ji, S., Liu, C., Liu, P., Duan, F., Wang, Z., Chen, W., Wang, T., 2022. 
+Focus: Function clone identification on cross-platform. Int. J. Intell. Syst. 37 (8), 
+5082–5112. http://dx.doi.org/10.1002/int.22752.
+Fu, L., Liu, P., Meng, W., Lu, K., Zhou, S., Zhang, X., Chen, W., Ji, S., 2024. 
+Understanding the AI-powered binary code similarity detection. arXiv:2410.07537. 
+URL: http://arxiv.org/abs/2410.07537.
+Gagnon, C.E., Ding, S.H.H., Charland, P., Fung, B.C.M., 2025. Beyond embeddings: 
+Interpretable feature extraction for binary code similarity. http://dx.doi.org/
+10.48550/arXiv.2509.23449, arXiv:2509.23449. URL: http://arxiv.org/abs/2509.
+23449.
+Gamblin, J., 2016. mirai source code. URL: https://github.com/jgamblin/Mirai-Source-
+Code.
+Gao, J., Yang, X., Fu, Y., Jiang, Y., Sun, J., 2018. VulSeeker: A semantic learning 
+based vulnerability seeker for cross-platform binary. In: Proceedings of the 33rd 
+ACM/IEEE International Conference on Automated Software Engineering. ASE’18, 
+Association for Computing Machinery, New York, NY, USA, pp. 896–899. http:
+//dx.doi.org/10.1145/3238147.3240480.
+Göbel, T., Uhlig, L., Baier, H., Breitingen, F., 2022. FRASHER: A framework for 
+automated evaluation of similarity hashing. Forensic Sci. Int.: Digit. Investig. 42, 
+301407.
+Godefroid, P., Klarlund, N., Sen, K., 2005. DART: Directed automated random testing. 
+In: Proceedings of the ACM SIGPLAN Conference on Programming Language 
+Design and Implementation. PLDI, vol. 40, pp. 213–223. http://dx.doi.org/10.
+1145/1065010.1065036.
+Google, 2011. BinDiff GitHub repository. URL: https://github.com/google/bindiff.
+Griffin, K., Schneider, S., Hu, X., Chiueh, T.-c., 2009. Automatic generation of string 
+signatures for malware detection. In: Kirda, E., Jha, S., Balzarotti, D. (Eds.), 
+Recent Advances in Intrusion Detection. Springer, Berlin, Heidelberg, pp. 101–120. 
+http://dx.doi.org/10.1007/978-3-642-04342-0_6.
+Haq, I.U., Caballero, J., 2021. A survey of binary code similarity. ACM Comput. Surv. 
+54 (3), 51:1–51:38. http://dx.doi.org/10.1145/3446371.
+Haq, I.U., Chica, S., Caballero, J., Jha, S., 2018. Malware lineage in the wild. Comput. 
+Secur. 78, 347–363. http://dx.doi.org/10.1016/j.cose.2018.07.012.
+He, H., Lin, X., Weng, Z., Zhao, R., Gan, S., Chen, L., Ji, Y., Wang, J., Xue, Z., 
+2024. Code is not natural language: Unlock the power of semantics-oriented 
+graph representation for binary code similarity detection. In: 33rd USENIX Security 
+Symposium. USENIX Security 24, pp. 1759–1776.
+Health Sector Cybersecurity Coordination Center (HC3), 2024. Qilin Threat Profile. 
+Technical Report 202106181500, U.S. Department of Health and Human Services.
+Hennessy, J.L., Patterson, D.A., 2017. Computer Architecture, Sixth Edition: A Quan-
+titative Approach, sixth ed. Morgan Kaufmann Publishers Inc., San Francisco, CA, 
+USA.
+Hex-Rays, 2026. ida pro: powerful disassembler, decompiler & debugger. URL: https:
+//hex-rays.com/ida-pro.
+Intezer, 2021. Defining genetic malware analysis. URL: https://intezer.com/blog/
+defining-genetic-malware-analysis-2/.
+Jang, J., Woo, M., Brumley, D., 2013. Towards automatic software lineage inference. 
+In: 22nd USENIX Security Symposium. USENIX Security 13, pp. 81–96.
+Javed, H., Ali, F., Shah, B., Kwak, D., 2025. Binary code analysis for cybersecurity: 
+A systematic review of forensic techniques in vulnerability detection and anti-
+evasion strategies. IEEE Access 13, 167139–167164. http://dx.doi.org/10.1109/
+ACCESS.2025.3610616.
+Joxean, K., DeepToad. URL: https://github.com/joxeankoret/deeptoad.
+Joxean, K., 2015. diaphora, the most advanced free and open source program diffing 
+tool. URL: https://github.com/joxeankoret/diaphora.
+Joxean, K., 2018. Diaphora: Heuristics and their explanation. URL: https://github.com/
+joxeankoret/diaphora/wiki/Heuristics-and-their-explanation.
+JPCERT, 2017. Impfuzzy: Fuzzy Hash calculated from import API of PE files. URL: 
+https://github.com/JPCERTCC/impfuzzy. JPCERT Coordination Center.
+Khan, M.R.A., Al-Awami, L., 2026. No ML, just hashes: Code similarity distance 
+for detecting IoT malware. In: 2026 IEEE International Conference on Consumer 
+Electronics. ICCE, pp. 1–6.
+Khoo, W.M., Mycroft, A., Anderson, R., 2013. Rendezvous: A search engine for binary 
+code. In: 2013 10th Working Conference on Mining Software Repositories. MSR, 
+pp. 329–338. http://dx.doi.org/10.1109/MSR.2013.6624046.
+Kim, G., Hong, S., Franz, M., Song, D., 2022. Improving cross-platform binary analysis 
+using representation learning via graph alignment. In: Proceedings of the 31st ACM 
+SIGSOFT International Symposium on Software Testing and Analysis. pp. 151–163. 
+http://dx.doi.org/10.1145/3533767.3534383.
+Computers & Security 171 (2026) 105077 
+22 
+
+PAGE 24
+V. Bucci et al.
+Kim, D., Jang, H., Shin, Y., 2025. FuzzyBin: Enhanced border binary identification by 
+leveraging fuzzy hashing algorithms. IEEE Access.
+Kim, D., Kim, E., Cha, S.K., Son, S., Kim, Y., 2023. Revisiting binary code similarity 
+analysis using interpretable feature engineering and lessons learned. IEEE Trans. 
+Softw. Eng. 49 (4), 1661–1682. http://dx.doi.org/10.1109/TSE.2022.3187689.
+Kim, G.-M., Park, J., Jang, Y.-H., Park, Y., 2019. Efficient automatic original entry point 
+detection. J. Inf. Sci. Eng. 35 (4), 887–901.
+Kornblum, J., 2006. Identifying almost identical files using context triggered piecewise 
+hashing. Digit. Investig. 3, 91–97. http://dx.doi.org/10.1016/j.diin.2006.06.015.
+Lattner, C., Adve, V., 2004. LLVM: A compilation framework for lifelong program 
+analysis & transformation. In: International Symposium on Code Generation and 
+Optimization, 2004. CGO 2004, pp. 75–86. http://dx.doi.org/10.1109/CGO.2004.
+1281665.
+Le, Q., Mikolov, T., 2014. Distributed representations of sentences and documents. 
+In: Proceedings of the 31st International Conference on International Conference 
+on Machine Learning - Volume 32. ICML’14, JMLR.org, Beijing, China, pp. 
+II–1188–II–1196.
+Lee, Y.-T., Ban, T., Wan, T.-L., Cheng, S.-M., Isawa, R., Takahashi, T., Inoue, D., 
+2020. Cross platform IoT-malware family classification based on printable strings. 
+In: 2020 IEEE 19th International Conference on Trust, Security and Privacy in 
+Computing and Communications. TrustCom, pp. 775–784.
+Levine, J.R., 1999. Linkers and Loaders, first ed. Morgan Kaufmann Publishers Inc., 
+San Francisco, CA, USA.
+Li, Y., Gu, C., Dullien, T., Vinyals, O., Kohli, P., 2019. Graph matching networks for 
+learning the similarity of graph structured objects. In: Proceedings of the 36th 
+International Conference on Machine Learning. PMLR, pp. 3835–3845.
+Liu, J., Fleischmann, N., Altamura, M., Raff, E., Holt, J., Micinski, K., 2026. 
+ASSEMBLAGE-DEEPHISTORY: A cross-build binary dataset with temporal coverage. 
+arXiv preprint arXiv:2605.21615.
+Liu, H., Ma, H., Gong, N., Zhang, Y., Zhang, Q., 2022. Dual-granularity interactive 
+semantic learning based vulnerability detection approach for cross-platform binary. 
+In: 2022 International Joint Conference on Neural Networks. IJCNN, pp. 1–8. 
+http://dx.doi.org/10.1109/IJCNN55064.2022.9892518.
+Liu, C., Saul, R., Sun, Y., Raff, E., Fuchs, M., Southard Pantano, T., Holt, J., Micinski, K., 
+2024. Assemblage: Automatic binary dataset construction for machine learning. 
+Adv. Neural Inf. Process. Syst. 37, 58698–58715. http://dx.doi.org/10.52202/
+079017-1871.
+Liu, Z., Tang, Q., Nie, S., Wu, S., Zhang, L.F., Tang, Y., 2025. Keenhash: Hashing 
+programs into function-aware embeddings for large-scale binary code similarity 
+analysis. Proc. ACM Softw. Eng. 2 (ISSTA), 801–824.
+Luo, L., Ming, J., Wu, D., Liu, P., Zhu, S., 2017. Semantics-based obfuscation-resilient 
+binary code similarity comparison with applications to software and algorithm 
+plagiarism detection. IEEE Trans. Softw. Eng. 43 (12), 1157–1177. http://dx.doi.
+org/10.1109/TSE.2017.2655046.
+Ma, Y., Liu, S., Jiang, J., Chen, G., Li, K., 2021. A comprehensive study on learning-
+based PE malware family classification methods. In: Proceedings of the 29th ACM 
+Joint Meeting on European Software Engineering Conference and Symposium on 
+the Foundations of Software Engineering. Association for Computing Machinery, 
+pp. 1314–1325. http://dx.doi.org/10.1145/3468264.3473925.
+Mahmoudyar, N., Ghorbani, A., Lashkari, A.H., 2024. Graph-based classification of 
+IoT malware families enhanced by fuzzy hashing. In: IFIP International Internet 
+of Things Conference.
+Mandiant, 2014. Tracking Malware with Import Hashing. Threat Intelligence, 
+Mandiant, URL: https://cloud.google.com/blog/topics/threat-intelligence/tracking-
+malware-import-hashing.
+Marcelli, A., Graziano, M., Ugarte-Pedrero, X., Fratantonio, Y., Mansouri, M., 
+Balzarotti, D., 2022. How machine learning is solving the binary function sim-
+ilarity problem. In: 31st USENIX Security Symposium. USENIX Security 22, pp. 
+2099–2116.
+Martín-Pérez, M., Rodríguez, R.J., Breitinger, F., 2021. Bringing order to approximate 
+matching: Classification and attacks on similarity digest algorithms. Forensic Sci. 
+Int.: Digit. Investig. 36, 301120.
+Martinez, E., 2023. VirusTotal +=mandiant permhash: Unearthing adversary infrastruc-
+ture and toolkits by leveraging permissions similarity. URL: https://blog.virustotal.
+com/2023/05/virustotal-mandiant-permhash-unearthing.html.
+Massarelli, L., Di Luna, G.A., Petroni, F., Querzoni, L., Baldoni, R., 2022. Function 
+representations for binary similarity. IEEE Trans. Dependable Secur. Comput. 19 
+(4), 2259–2273. http://dx.doi.org/10.1109/TDSC.2021.3051852.
+Merces, F., 2020. VirusTotal now supports trend micro ELF hash. https:
+//www.trendmicro.com/en_gb/research/20/j/virustotal-now-supports-trend-micro-
+elf-hash.html.
+Mercês, F., Costoya, J., 2020. Telfhash: An Algorithm That Finds Similar Malicious ELF 
+Files Used in Linux IoT Malware. Technical Report, Trend Micro.
+Microsoft Threat Intelligence, 2021. Combing through the fuzz: using fuzzy hashing 
+and deep learning to counter malware detection evasion techniques.
+Ming, J., Xu, D., Wu, D., 2015. Memoized semantics-based binary diffing with 
+application to malware lineage inference. In: ICT Systems Security and Privacy 
+Protection. Springer International Publishing, pp. 416–430. http://dx.doi.org/10.
+1007/978-3-319-18467-8_28.
+National Security Agency, 2019. Ghidra software reverse engineering framework. URL: 
+https://github.com/NationalSecurityAgency/ghidra.
+Nelson, N., 2024. China’s ‘evasive panda’ APT spies on Taiwan targets across 
+platforms. URL: https://www.darkreading.com/threat-intelligence/china-evasive-
+panda-apt-spies-taiwan-targets-across-platforms.
+Oliver, J., Cheng, C., Chen, Y., 2013. TLSH – A locality sensitive hash. In: 2013 Fourth 
+Cybercrime and Trustworthy Computing Workshop. IEEE, Sydney NSW, Australia, 
+pp. 7–13. http://dx.doi.org/10.1109/ctc.2013.9.
+Onieva, J.A., Pérez Jiménez, P., López, J., 2024. Malware similarity and a new 
+fuzzy hash: Compound code block hash (CCBHash). Comput. Secur. 142, 103856. 
+http://dx.doi.org/10.1016/j.cose.2024.103856.
+PANDA, PANDA: Platform for architecture-neutral dynamic analysis. URL: https://
+github.com/panda-re/panda.
+Pang, C., Yu, R., Chen, Y., Koskinen, E., Portokalidis, G., Mao, B., Xu, J., 2021. 
+SoK: All you ever wanted to know about X86/X64 binary disassembly but were 
+afraid to ask. In: 2021 IEEE Symposium on Security and Privacy. SP, pp. 833–851. 
+http://dx.doi.org/10.1109/SP40001.2021.00012.
+Pei, K., Xuan, Z., Yang, J., Jana, S., Ray, B., 2023. Learning approximate execution 
+semantics from traces for binary function similarity. IEEE Trans. Softw. Eng. 49 
+(4), 2776–2790. http://dx.doi.org/10.1109/TSE.2022.3231621.
+Pendlebury, F., Pierazzi, F., Jordaney, R., Kinder, J., Cavallaro, L., 2019. TESSERACT: 
+Eliminating experimental bias in malware classification across space and time. In: 
+28th USENIX Security Symposium. USENIX Security 19, pp. 729–746.
+Pewny, J., Garmany, B., Gawlik, R., Rossow, C., Holz, T., 2015. Cross-architecture bug 
+search in binary executables. In: 2015 IEEE Symposium on Security and Privacy. 
+IEEE, pp. 709–724.
+Pfeffer, A., Call, C., Chamberlain, J., Kellogg, L., Ouellette, J., Patten, T., Zacharias, G., 
+Lakhotia, A., Golconda, S., Bay, J., Hall, R., Scofield, D., 2012. Malware analysis 
+and attribution using genetic information. In: 2012 7th International Conference 
+on Malicious and Unwanted Software. pp. 39–45. http://dx.doi.org/10.1109/
+MALWARE.2012.6461006.
+Prasad, U., Chawla, A., 2026. A unified evaluation of learning-based similarity tech-
+niques for malware detection. http://dx.doi.org/10.48550/arXiv.2602.15376, arXiv 
+preprint arXiv:2602.15376.
+Radare2 Team, 2014. Zignatures. URL: https://radareorg.github.io/blog/posts/
+zignatures/.
+Radare2 Team, 2024. Radare2 GitHub repository. URL: https://github.com/radareorg/
+radare2.
+Raff, E., Nicholas, C., 2018. Lempel-ziv jaccard distance, an effective alternative to 
+ssdeep and sdhash. Digit. Investig. 24, 34–49. http://dx.doi.org/10.1016/j.diin.
+2017.12.004.
+Rahat, M.A., Banerjee, V., Bloom, G., Zhuang, Y., 2024. Cimalir: Cross-platform IoT 
+malware clustering using intermediate representation. In: 2024 IEEE 14th Annual 
+Computing and Communication Workshop and Conference. CCWC, pp. 0460–0466. 
+http://dx.doi.org/10.1109/CCWC60891.2024.10427663.
+Rahat, M.A., Banerjee, V., Bloom, G., Zhuang, Y., 2026. Ciao: Cross-architecture IoT 
+malware family classification with code reuse. In: 2026 IEEE 23rd Consumer 
+Communications & Networking Conference. CCNC, pp. 1–6. http://dx.doi.org/10.
+1109/CCNC65079.2026.11366435.
+Ren, X., Ho, M., Ming, J., Lei, Y., Li, L., 2021. Unleashing the hidden power of compiler 
+optimization on binary code difference: an empirical study. In: Proceedings of the 
+42nd ACM SIGPLAN International Conference on Programming Language Design 
+and Implementation. pp. 142–157.
+Rivero, M., 2026. Seifreed/R2inspect. URL: https://github.com/seifreed/r2inspect.
+Rosenblum, N., Zhu, X., Miller, B., Hunt, K., 2008. Learning to analyze binary 
+computer code. In: Proceedings of the AAAI Conference on Artificial Intelligence. 
+pp. 798–804.
+Ross, N., Olukoya, O., Martínez Del Rincón, J., 2025. On the limitations of fuzzy 
+hashing for malware similarity: An analysis of vulnerable code detection in 
+malware. In: 2025 IEEE 24th International Conference on Trust, Security and 
+Privacy in Computing and Communications. TrustCom, pp. 332–343. http://
+dx.doi.org/10.1109/Trustcom66490.2025.00044, URL: https://ieeexplore.ieee.org/
+abstract/document/11354760.
+Roussev, V., 2010. Data fingerprinting with similarity digests. In: Chow, K.-P., Shenoi, S. 
+(Eds.), Advances in Digital Forensics VI. Springer, Berlin, Heidelberg, pp. 207–226. 
+http://dx.doi.org/10.1007/978-3-642-15506-2_15.
+Roussev, V., 2011. An evaluation of forensic similarity hashes. Digit. Investig. 8, 
+S34–S41.
+Ruan, L., Xu, Q., Zhu, S., Huang, X., Lin, X., 2024. A survey of binary code 
+similarity detection techniques. Electronics 13 (9), 1715. http://dx.doi.org/10.
+3390/electronics13091715.
+Sadowski, C., Levin, G., 2007. SimHash: Hash-based Similarity Detection. Technical 
+Report, University of California, Santa Cruz.
+Saul, R., Liu, C., Fleischmann, N., Zak, R., Micinski, K., Raff, E., Holt, J., 2024. Is 
+function similarity over-engineered? Building a benchmark. In: Proceedings of the 
+38th International Conference on Neural Information Processing Systems. NIPS’24, 
+vol. 37, Curran Associates Inc., Red Hook, NY, USA, pp. 21636–21655.
+Schwartz, E.J., 2024. Comparing the performance of hashing techniques for 
+similar function detection. URL: https://www.sei.cmu.edu/blog/comparing-the-
+performance-of-hashing-techniques-for-similar-function-detection/.
+Computers & Security 171 (2026) 105077 
+23 
+
+PAGE 25
+V. Bucci et al.
+Sen, K., Marinov, D., Agha, G., 2005. CUTE: A concolic unit testing engine for C. In: 
+SIGSOFT Software Engineering Notes. vol. 30, pp. 263–272. http://dx.doi.org/10.
+1145/1095430.1081750.
+Shalev, N., Partush, N., 2018. Binary similarity detection using machine learning. In: 
+Proceedings of the 13th Workshop on Programming Languages and Analysis for 
+Security. PLAS’18, Association for Computing Machinery, New York, NY, USA, pp. 
+42–47. http://dx.doi.org/10.1145/3264820.3264821.
+Shi, J., Chen, Y., Xiao, Y., Li, Y., Xu, Z., Qiu, S., Zhang, C., Qi, K., Li, Y., Chen, X., 
+Zou, Y., Liu, Y., Huo, W., 2025. A large scale study of AI-based binary function 
+similarity detection techniques for security researchers and practitioners. In: 2025 
+40th IEEE/ACM International Conference on Automated Software Engineering. ASE, 
+pp. 1070–1082. http://dx.doi.org/10.1109/ASE63991.2025.00093.
+Shiel, I., O’Shaughnessy, S., 2019. Improving file-level fuzzy hashes for malware variant 
+classification. Digit. Investig. 28, S88–S94. http://dx.doi.org/10.1016/j.diin.2019.
+01.018.
+Shoshitaishvili, Y., Wang, R., Salls, C., Stephens, N., Polino, M., Dutcher, A., Grosen, J., 
+Feng, S., Hauser, C., Kruegel, C., Vigna, G., 2016. SoK: (State of) the art of war: 
+offensive techniques in binary analysis. In: 2016 IEEE Symposium on Security and 
+Privacy. pp. 138–157. http://dx.doi.org/10.1109/SP.2016.17.
+Snoke, T., Jacobs, M., 2023. Detecting and grouping malware using sec-
+tion hashes. http://dx.doi.org/10.58012/arq8-ed35, Carnegie Mellon University, 
+Software Engineering Institute’s Insights (blog).
+Song, D., Brumley, D., Yin, H., Caballero, J., Jager, I., Kang, M.G., Liang, Z., 
+Newsome, J., Poosankam, P., Saxena, P., 2008. BitBlaze: A new approach to 
+computer security via binary analysis. In: Sekar, R., Pujari, A.K. (Eds.), Information 
+Systems Security. vol. 5352, Springer Berlin Heidelberg, Berlin, Heidelberg, pp. 
+1–25. http://dx.doi.org/10.1007/978-3-540-89862-7_1.
+Tan, H., 2021. BCD: A cross-architecture binary comparison database experiment using 
+locality sensitive hashing algorithms. arXiv preprint arXiv:2112.05492.
+Tarjan, R., 1972. Depth-first search and linear graph algorithms. SIAM J. Comput. 1 
+(2), 146–160. http://dx.doi.org/10.1137/0201010.
+Uhlig, F., Struppek, L., Hintersdorf, D., Göbel, T., Baier, H., Kersting, K., 2023. 
+Combining AI and AM–Improving approximate matching through transformer 
+networks. Forensic Sci. Int.: Digit. Investig. 45, 301570.
+Uhm, J., Kim, M., Polychronakis, M., Koo, H., 2026. Fool me if you can: On the 
+robustness of binary code similarity detection models against semantics-preserving 
+transformations. Proc. ACM Softw. Eng. 3, http://dx.doi.org/10.1145/3797116.
+Vector 35, 2026. Binary ninja. URL: https://binary.ninja/.
+VenkataKeerthy, S., Banerjee, S., Dey, S., Andaluri, Y., Raghul, P.S., Kalyana-
+sundaram, S., Quintão Pereira, F.M., Upadrasta, R., 2025. VexIR2Vec: An 
+architecture-neutral embedding framework for binary similarity. ACM Trans. Softw. 
+Eng. Methodol. 34 (8), 219:1–219:54. http://dx.doi.org/10.1145/3721481.
+VirusTotal, 2020. Why is similarity so relevant when investigating attacks. https:
+//blog.virustotal.com/2020/11/why-is-similarity-so-relevant-when.html.
+VirusTotal, VirusTotal. URL: https://www.virustotal.com.
+Wang, H., Gao, Z., Zhang, C., Sun, M., Zhou, Y., Qiu, H., Xiao, X., 2024a. CEBin: A cost-
+effective framework for large-scale binary code similarity detection. In: Proceedings 
+of the 33rd ACM SIGSOFT International Symposium on Software Testing and 
+Analysis. ISSTA 2024, Association for Computing Machinery, New York, NY, USA, 
+pp. 149–161. http://dx.doi.org/10.1145/3650212.3652117.
+Wang, H., Liu, Z., Wang, S., Wang, Y., Tang, Q., Nie, S., Wu, S., 2024b. Are we 
+there yet? Filling the gap between binary similarity analysis and binary software 
+composition analysis. In: 2024 IEEE 9th European Symposium on Security and 
+Privacy. EuroS&P, IEEE, pp. 506–523.
+Wang, H., Qu, W., Katz, G., Zhu, W., Gao, Z., Qiu, H., Zhuge, J., Zhang, C., 2022. Jtrans: 
+Jump-aware transformer for binary code similarity detection. In: Proceedings of the 
+31st ACM SIGSOFT International Symposium on Software Testing and Analysis. 
+ISSTA 2022, Association for Computing Machinery, New York, NY, USA, pp. 1–13. 
+http://dx.doi.org/10.1145/3533767.3534367.
+Wang, M., Tang, Y., Lu, Z., 2019. Massive similar function searching for cross-
+architecture binaries. In: 2019 18th International Symposium on Distributed 
+Computing and Applications for Business Engineering and Science. DCABES, pp. 
+195–198. http://dx.doi.org/10.1109/DCABES48411.2019.00055.
+Wilson, J., 2023. Permhash — no curls necessary.
+xorpd, 2026. FCatalog. URL: https://www.xorpd.net/pages/fcatalog.html.
+Xu, X., Feng, S., Ye, Y., Shen, G., Su, Z., Cheng, S., Tao, G., Shi, Q., Zhang, Z., Zhang, X., 
+2023. Improving binary code similarity transformer models by semantics-driven 
+instruction deemphasis. In: Proceedings of the 32nd ACM SIGSOFT International 
+Symposium on Software Testing and Analysis. ISSTA 2023, pp. 1106–1118. http:
+//dx.doi.org/10.1145/3597926.3598121.
+Xu, X., Liu, C., Feng, Q., Yin, H., Song, L., Song, D., 2017. Neural network-based graph 
+embedding for cross-platform binary code similarity detection. In: Proceedings of 
+the 2017 ACM SIGSAC Conference on Computer and Communications Security. 
+CCS’17, Association for Computing Machinery, New York, NY, USA, pp. 363–376. 
+http://dx.doi.org/10.1145/3133956.3134018.
+Yang, S., Cheng, L., Zeng, Y., Lang, Z., Zhu, H., Shi, Z., 2021. Asteria: Deep 
+learning-based AST-encoding for cross-platform binary code similarity detection. In: 
+2021 51st Annual IEEE/IFIP International Conference on Dependable Systems and 
+Networks. DSN, pp. 224–236. http://dx.doi.org/10.1109/DSN48987.2021.00036.
+Yang, L., Ciptadi, A., Laziuk, I., Ahmadzadeh, A., Wang, G., 2021a. BODMAS: An open 
+dataset for learning based temporal analysis of PE malware. In: 2021 IEEE Security 
+and Privacy Workshops. SPW, pp. 78–84. http://dx.doi.org/10.1109/SPW53761.
+2021.00020.
+Yang, S., Dong, C., Xiao, Y., Cheng, Y., Shi, Z., Li, Z., Sun, L., 2023. Asteria-pro: 
+Enhancing deep learning-based binary code similarity detection by incorporating 
+domain knowledge. ACM Trans. Softw. Eng. Methodol. 33 (1), 1:1–1:40. http:
+//dx.doi.org/10.1145/3604611.
+Yang, J., Fu, C., Liu, X.-Y., Yin, H., Zhou, P., 2022. Codee: A tensor embedding scheme 
+for binary code search. IEEE Trans. Softw. Eng. 48 (7), 2224–2244. http://dx.
+doi.org/10.1109/TSE.2021.3056139, URL: https://ieeexplore.ieee.org/document/
+9345532.
+Yang, L., Guo, W., Hao, Q., Ciptadi, A., Ahmadzadeh, A., Xing, X., Wang, G., 2021b. 
+CADE: Detecting and explaining concept drift samples for security applications. In: 
+30th USENIX Security Symposium. USENIX Security 21, pp. 2327–2344.
+Zuo, F., Tompkins, C., Zeng, Q., Luo, L., Choe, Y.R., Rhee, J., 2026. BinSimDB: 
+Benchmark dataset construction for fine-grained binary code similarity analysis. 
+In: Security and Privacy in Communication Networks. Springer Nature Switzerland, 
+Cham, pp. 203–225. http://dx.doi.org/10.1007/978-3-031-94455-0_10.
+Valerio Bucci is a PhD candidate in the School of Electronics, Electrical Engineering 
+and Computer Science at Queen’s University Belfast, affiliated with the Centre for 
+Secure Information Technology (CSIT). His research investigates the cross-platform 
+resilience of binary code analysis techniques, with a focus on the effect of digital 
+evolution on threat design for cross-platform malware detection.
+Oluwafemi Olukoya is a Lecturer in the School of Electronics, Electrical Engineering 
+and Computer Science at Queen’s University Belfast. His research interests include 
+privacy, malware analysis, systems security and cybercrime. His current research 
+focuses on mobile systems security and privacy, sustainable malware analysis and 
+detection engineering, cyber-attack attribution and connecting software engineering 
+with legal and regulatory requirements, as well as the socio-technical dynamics of 
+the cyber environment.
+Jesús Martínez del Rincón is a Professor in the School of Electronics, Electrical 
+Engineering and Computer Science at Queen’s University Belfast. He received a BSc 
+in Telecommunication Engineering in 2003 and was awarded a PhD in Computer 
+Vision in 2008 from the University of Zaragoza for his work on the development 
+of tracking algorithms for video surveillance and human motion analysis. He also 
+worked as a DIRC Research Fellow at Kingston from 2009 to 2012, leading research on 
+human pose estimation, before joining Queen’s as an academic. His research interests 
+include security of AI, AI for security, human motion analysis, pose estimation, activity 
+recognition, tracking algorithms, multi-target tracking in real time, and malware 
+analysis.
+Computers & Security 171 (2026) 105077 
+24 

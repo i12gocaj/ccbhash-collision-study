@@ -1,0 +1,9 @@
+{
+  "file": "constant_247.exe",
+  "file_sha256": "593fb915e903b596f9df544fbe2d8749c2927c13344162cb37189a6dbf1cf873",
+  "log": "[!!] Failed to get features/attributes from entry0\nError to get variables\n",
+  "mode": "native_unmodified_API",
+  "radare_version": "5.8.8",
+  "signatures": {},
+  "worker_fingerprint": "07b8c83a4188c36177afff6ea800037fc70d56771259e53cf913b9c752cd6b1e"
+}

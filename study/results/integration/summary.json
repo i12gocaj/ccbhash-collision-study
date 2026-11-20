@@ -1,0 +1,32 @@
+{
+  "meaning": "Original API source executed with explicit schema/transport adapter; no changes to reducers, quantization, digests or weights",
+  "status": "passed",
+  "versions": {
+    "5.8.8": {
+      "api_calls": 512,
+      "files": 256,
+      "signatures": {
+        "collision_groups": 1,
+        "collision_pairs": 32640,
+        "excess": 255,
+        "max_group": 256,
+        "n": 256,
+        "unique": 1
+      },
+      "zero_extraction_errors": true
+    },
+    "6.0.4-wasi": {
+      "api_calls": 512,
+      "files": 256,
+      "signatures": {
+        "collision_groups": 1,
+        "collision_pairs": 32640,
+        "excess": 255,
+        "max_group": 256,
+        "n": 256,
+        "unique": 1
+      },
+      "zero_extraction_errors": true
+    }
+  }
+}

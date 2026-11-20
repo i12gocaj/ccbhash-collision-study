@@ -1,0 +1,710 @@
+[
+  {
+    "id": "git_2-47-1.exe/entry0",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll___set_app_type",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002ca0",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002cb0",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001e30",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll___wgetmainargs",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002ce0",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140001e40",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_malloc",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcslen",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_memcpy",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.140002cc0",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll__cexit",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll__initterm",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_exit",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll__amsg_exit",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcschr",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_memmove",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcsstr",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_realloc",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_fwprintf",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcscpy",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll___iob_func",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_fprintf",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_fwrite",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_vfprintf",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_abort",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_signal",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_calloc",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_free",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_strlen",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_strncmp",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/fcn.1400017c0",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcsncmp",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcsncpy",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll__wcsdup",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcscmp",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcsncat",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_fgets",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_fclose",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcscat",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll__wcsicmp",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_strcpy",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll_wcsspn",
+    "reason": "filtered"
+  },
+  {
+    "id": "git_2-47-1.exe/sub.msvcrt.dll__wcsnicmp",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.free",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.abort",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.__errno_location",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.remove",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.inflate",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.ferror",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.fread",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.inflateReset2",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.strtod",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.crc32",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.pow",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.fclose",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.strlen",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.__stack_chk_fail",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.modf",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.deflateReset",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.deflate",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.memset",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.fputc",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.deflateInit2_",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.memcmp",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.frexp",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp._setjmp",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.__memcpy_chk",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.memcpy",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.inflateEnd",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.adler32",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.malloc",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.fflush",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.deflateEnd",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.fopen",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.inflateInit2_",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.gmtime",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.floor",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.inflateReset",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.fwrite",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.__fprintf_chk",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.imp.strerror",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/entry0",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_save_uint_32",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_libpng_ver",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_eXIf",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_io_state",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_filter_heuristics_fixed",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_save_int_32",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_access_version_number",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_uint_16",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_io_chunk_type",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_copyright",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_check_for_invalid_index",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_read_user_transform_fn",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_save_uint_16",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_int_32",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_uint_32",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_filter_heuristics",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_set_eXIf",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_header_version",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/sym.png_get_header_ver",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.000052a0",
+    "reason": "filtered"
+  },
+  {
+    "id": "libpng16.so.16.43.0/fcn.00005290",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.dlerror",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_get_changeset",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.pthread_sigmask",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.abort",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.__fprintf_chk",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.isatty",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_set_exit_handler",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_add_intf",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_get_version",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.__register_atfork",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_set_app_id",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.geteuid",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_new",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.__vfprintf_chk",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.pthread_kill",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.pthread_self",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.sigaction",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_set_user_agent",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.signal",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.alarm",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.sigaddset",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_playlist_play",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.__stack_chk_fail",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.libvlc_release",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.flockfile",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.funlockfile",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.sigemptyset",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.dlsym",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.fwrite",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.sigdelset",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.sigwait",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.memcpy",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/sym.imp.fflush",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/entry.init1",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/fcn.00001240",
+    "reason": "filtered"
+  },
+  {
+    "id": "vlc_3-0-20/fcn.00001ba0",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_compressBound",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_memset",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_get_crc_table",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_sprintf",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_gzopen",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_strlen",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_gztell",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_memcpy",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_zcalloc",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_zcfree",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_free",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_zlibCompileFlags",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sym.zlib1.dll_zlibVersion",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b90410",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/fcn.61b90ab0",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll__errno",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fflush",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll___dllonexit",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fwrite",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fread",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fclose",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll__vsnprintf",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fputc",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_strcpy",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_strcat",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_strerror",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll__fdopen",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fgetpos",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fprintf",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fopen",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_fsetpos",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll__filelengthi64",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.KERNEL32.dll_FindAtomA",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.msvcrt.dll_abort",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.KERNEL32.dll_AddAtomA",
+    "reason": "filtered"
+  },
+  {
+    "id": "zlib1_1-2-3.dll/sub.KERNEL32.dll_GetAtomNameA",
+    "reason": "filtered"
+  }
+]

@@ -1,0 +1,153 @@
+{
+  "archive_reader": {
+    "sha256": "ad4c82fadcbdf93c03b4fc440f300509c7d60c5c2f4d183e35d9d70d6957037d",
+    "version": "7zr 26.03"
+  },
+  "compiler": {
+    "archive_sha256": "554f5378228923ffd558eac35e21af020c73789d87afeabf4bfd16f2e6feed2c",
+    "clang": "clang version 19.1.7 (https://github.com/ziglang/zig-bootstrap de1b01a8c1dddf75a560123ac1c2ab182b4830da)",
+    "zig": "0.14.1"
+  },
+  "cutoff_date": "2026-10-06",
+  "external_replication": false,
+  "fixture_repository": {
+    "commit": "6cfda141e0d8ce76d58f1c5e8fc9969b4ba8d8a3",
+    "url": "https://github.com/valbucci/binrankbench"
+  },
+  "graph_accelerator": {
+    "compiler": "Zig 0.14.1 / Clang 19.1.7",
+    "dll_sha256": "341e9d27689ee38e22935746cc6f722b7b7c5bc134cfa5c6b4b6cbe9f881009e",
+    "source_sha256": "58cbd5e9a958a38a5ae345aa50e45ad43b147ceed1a33087c4112b0ca45dde39",
+    "target": "x86_64-windows-gnu"
+  },
+  "manifests": "SHA256 checks detect changed files; they are not a digital signature or independent timestamp.",
+  "object": {
+    "commit": "fd40d49973f5129c171dc5849ec6a8bb5fdd88a0",
+    "file": "ccbhash-src/ccbhash.py",
+    "repository": "https://github.com/pblprz/ccbhash",
+    "sha256": "a1d7857c84b262ef50d84e068400e9e2b715e2ec13d1ce6357a12545dd0d1b45"
+  },
+  "primary_deposit": {
+    "bytes": 29071158824,
+    "doi": "10.5281/zenodo.20439493",
+    "file": "Marcelli-Dataset-1_r2-604-aaa_raw_data.7z",
+    "md5": "57e7c26bd46ca4447b153c7ec8c1a48f",
+    "sha256": "3446d7e1cbf8a8c31e9b66f0509ffa87f218c17c778de06635e686b79a6345e1",
+    "status": "downloaded_and_verified",
+    "url": "https://zenodo.org/api/records/20439493/files/Marcelli-Dataset-1_r2-604-aaa_raw_data.7z/content"
+  },
+  "python39": {
+    "compatible_native_api_cases": 5,
+    "complete_vector_hash_checks": 4260,
+    "numeric_values": 70007,
+    "python": "3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)]",
+    "scope": "Python 3.9.0 original source parity against Python 3.12 campaign; radare2 5.8.8 API probes",
+    "status": "passed",
+    "text_digests": 243363
+  },
+  "radare2": {
+    "native_probes": [
+      {
+        "attempted": 256,
+        "empty": 256,
+        "nonempty": 0,
+        "version": "5.8.8",
+        "worker_errors": 0
+      },
+      {
+        "attempted": 0,
+        "note": "not counted as a CCBHash extraction failure or collision",
+        "startup_exit_code": 3221225725,
+        "status": "radare_runtime_unavailable",
+        "stderr": "",
+        "version": "6.0.4"
+      }
+    ],
+    "resolution": {
+      "added_host_stack_bytes": 67108864,
+      "code_and_data_unchanged": true,
+      "completion_status": "passed: both complete controlled APIs and the four real binaries evaluated",
+      "distribution": "Official WASI with host-side C stack allocation",
+      "host_export_wasm_sha256": "7548791b153b8c36cb752941a93af4ee0e35f79cef3b650c0bce3b9197738f9b",
+      "initial_wasi_failure": "Out-of-bounds memory trap during recursion; eliminated for the evaluated binaries by relocating the C stack into grown memory",
+      "modified_section": "Export only: add access to the existing mutable LLVM C stack pointer",
+      "original_stack_pointer": 7141536,
+      "original_wasm_sha256": "4ffea034036a151dedd655a4f5c3fc85579b93209fbfb88fcf048f7dd6ee607c",
+      "preserved_sections": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "radare_version": "6.0.4",
+      "wasi_zip_sha256": "11ba96d1bfa97f6ee41a9a06c2ef39772b3521df110979365490901e3c523ec0",
+      "windows_native_failure": "0xC00000FD; unmodified 32-bit and 64-bit builds"
+    },
+    "used": [
+      "5.8.8 native",
+      "6.0.4 official WASI with documented host stack"
+    ],
+    "zip_sha256": "aa94bde159d57b11b461a1f3e0b8133c0e3a3b9776ddd1d682ea0007196e28d4"
+  },
+  "runtime": {
+    "machine": "AMD64",
+    "os": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "capstone": "5.0.6",
+      "charset-normalizer": "3.5.2",
+      "contourpy": "1.4.0",
+      "cycler": "0.12.1",
+      "fonttools": "4.66.1",
+      "keystone-engine": "0.9.2",
+      "kiwisolver": "1.5.1",
+      "markdown": "3.8.2",
+      "matplotlib": "3.10.3",
+      "numpy": "2.2.6",
+      "packaging": "26.3",
+      "pillow": "12.3.0",
+      "pyparsing": "3.3.3",
+      "pypdf": "6.10.0",
+      "python-dateutil": "2.9.0.post0",
+      "r2pipe": "1.9.6",
+      "reportlab": "4.4.9",
+      "scipy": "1.15.3",
+      "six": "1.17.0",
+      "unicorn": "2.1.4",
+      "wasmtime": "49.0.0"
+    },
+    "processor": "AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "seeds": {
+    "adversarial": 20261009,
+    "birthday": 20261006,
+    "birthday_mc": 610062026,
+    "compiled": 20261011,
+    "contracts": 20261010,
+    "emulation": 20261008,
+    "strata": [
+      20261100,
+      20261101,
+      20261102,
+      20261103,
+      20261104,
+      20261105
+    ],
+    "synthetic": 20261007
+  },
+  "study_version": "1.3"
+}
