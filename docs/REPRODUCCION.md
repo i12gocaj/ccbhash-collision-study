@@ -1,6 +1,6 @@
 # Reproducción completa del estudio
 
-Esta guía describe la reproducción íntegra en Windows y la verificación de los resultados guardados. Las rutas son relativas a la raíz del repositorio. Los datos pesados (columnas del corpus completo, muestras de validación y binarios de BinRankBench) se distribuyen en el paquete reproducible, no en Git.
+Esta guía describe la reproducción íntegra en Windows y la verificación de los resultados guardados. Las rutas son relativas a la raíz del repositorio. Los datos pesados (columnas del corpus completo, muestras de validación y binarios de BinRankBench) se distribuyen en el paquete reproducible de Zenodo ([DOI 10.5281/zenodo.24406637](https://doi.org/10.5281/zenodo.24406637)), no en Git.
 
 Manuscrito: `output/ESTUDIO_CCBHASH.md`. Documento compuesto: `output/pdf/ESTUDIO_CCBHASH.pdf`. Protocolo: `study/PROTOCOL.md`. Fuentes bibliográficas: `study/LITERATURA.md`.
 

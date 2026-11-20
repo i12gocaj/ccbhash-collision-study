@@ -2,6 +2,8 @@
 
 *Javier González Casares, 2026*
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24406637.svg)](https://doi.org/10.5281/zenodo.24406637) [![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-blue.svg)](LICENSE)
+
 **Firma igual no implica comportamiento igual.** Este estudio analiza con métodos reproducibles cuándo y por qué el fuzzy hash [CCBHash](https://github.com/pblprz/ccbhash) asigna la misma firma a funciones distintas. Mide cada mecanismo por separado y aporta testigos verificables y recuentos exactos sobre corpus públicos.
 
 > **English summary.** A reproducible collision study of CCBHash, a function-level fuzzy hash for malware similarity. It separates information lost before hashing, numeric quantization and 16-bit digest collisions. We build 256 x86-64 functions with an identical signature and provably different return values, compile a 64-function family for 4 architectures and 5 optimization levels, re-extract 4 public binaries with two radare2 versions, and count all equal-signature pairs among 7.2 million reconstructed vectors from a public Zenodo deposit. The original implementation is kept unmodified. Paper in Spanish: [`output/ESTUDIO_CCBHASH.md`](output/ESTUDIO_CCBHASH.md) / [PDF](output/pdf/ESTUDIO_CCBHASH.pdf).
@@ -54,7 +56,7 @@ output/            Manuscrito, PDF y figuras (PNG, SVG, PDF y CSV de datos)
 docs/              Hallazgos para los autores y guía de reproducción
 ```
 
-Los datos pesados no están en Git: las columnas de firmas del corpus completo (1,2 GB), los identificadores de registros, las muestras de validación (10 GB) y los binarios de BinRankBench. Se distribuyen en el paquete reproducible (`CCBHASH_ESTUDIO_REPRODUCIBLE.zip`, 2,2 GB), que incluye el manifiesto SHA-256 de todos los ficheros.
+Los datos pesados no están en Git: las columnas de firmas del corpus completo (1,2 GB), los identificadores de registros, las muestras de validación (10 GB) y los binarios de BinRankBench. Se distribuyen en el paquete reproducible publicado en Zenodo, [DOI 10.5281/zenodo.24406637](https://doi.org/10.5281/zenodo.24406637) (`CCBHASH_ESTUDIO_REPRODUCIBLE.zip`, 2,2 GB), que incluye el manifiesto SHA-256 de todos los ficheros.
 
 ## Verificar en 5 minutos
 
