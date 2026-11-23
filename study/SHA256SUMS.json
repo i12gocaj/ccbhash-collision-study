@@ -22,8 +22,8 @@
       "sha256": "4b349e72d71e160c70958a0a06ee4afe1dc28bacad78463ff79b1de1add3336b"
     },
     "README.md": {
-      "bytes": 9722,
-      "sha256": "ee5f453bdc946fcb4f0800599b3bfd78f360f30aa48081714ff244d457f1f361"
+      "bytes": 9841,
+      "sha256": "7ee8ea69a5dad2d963d9d2cf060dc4fb3e74351cd4c4c228bc107d9a06930e86"
     },
     "ccbhash-src/LICENSE": {
       "bytes": 11558,
@@ -58,8 +58,8 @@
       "sha256": "0bdb73408a30f3f9383900ca4af77f16775947ad48a8c20cb59b62e03df14213"
     },
     "docs/HALLAZGOS_PARA_AUTORES.md": {
-      "bytes": 10016,
-      "sha256": "ef6aeaffc6efac9749a587c7538fab2a0dafbc4e9bb36d664fb3c0977ec88d14"
+      "bytes": 10153,
+      "sha256": "6d2482b5b7f6da6d91fa99925850af49584986032a577a5163f6347345afa9c0"
     },
     "docs/REPRODUCCION.md": {
       "bytes": 5413,

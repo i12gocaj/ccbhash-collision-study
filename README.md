@@ -17,7 +17,7 @@
 | [Manuscrito](output/ESTUDIO_CCBHASH.md) ([PDF](output/pdf/ESTUDIO_CCBHASH.pdf)) | Método, resultados y demostraciones |
 | [Hallazgos para los autores](docs/HALLAZGOS_PARA_AUTORES.md) | Once observaciones sobre la implementación, con evidencia y propuestas |
 | [Reproducción](docs/REPRODUCCION.md) | Entorno fijado, campañas completas y verificadores |
-| [Protocolo](study/PROTOCOL.md) | Diseño definido antes de ejecutar las campañas |
+| [Protocolo](study/PROTOCOL.md) | Diseño de las campañas; documento local, sin prerregistro externo |
 | [Literatura](study/LITERATURA.md) | Fuentes consultadas y su relación con el estudio |
 
 ## Resultados principales
@@ -39,7 +39,7 @@ Dos firmas son iguales si y solo si coinciden sus seis digests textuales y sus s
 | 4 binarios de control (Git, libpng, VLC, zlib) | 2 de 109.277 | 0 |
 | Depósito público completo (7.224.074 funciones) | 25.452.152 de unos 26 billones | 522 |
 
-En el depósito, casi todas las coincidencias existen antes de comprimir y reúnen sobre todo variantes de compilación de una misma función, que es precisamente lo que un fuzzy hash debe agrupar. **Estas cifras no se presentan como tasas de error**: la divergencia de comportamiento solo se afirma donde está demostrada.
+En el depósito, casi todas las coincidencias existen antes de comprimir. No se ha medido cuántas reúnen variantes de una misma función, que es lo que un fuzzy hash debe agrupar. **Estas cifras no se presentan como tasas de error**: la divergencia de comportamiento solo se afirma donde está demostrada.
 
 ### Compilación real en cuatro arquitecturas
 
@@ -92,7 +92,7 @@ Los datos pesados no están en Git: las columnas de firmas del corpus completo (
 
 ## Cómo se hizo
 
-El estudio se ha desarrollado con asistencia de herramientas de IA para el código, el análisis y la redacción. Por eso se ha diseñado para que ninguna conclusión dependa de esa confianza: cada cifra del manuscrito procede de un fichero de resultados, y verificadores separados la recalculan por otra vía. Las afirmaciones de comportamiento se apoyan en demostraciones algebraicas, emulación y ejecución simbólica. Las correcciones y comentarios son bienvenidos a través de los [issues](https://github.com/i12gocaj/ccbhash-collision-study/issues).
+El estudio se ha desarrollado con asistencia de herramientas de IA para el código, el análisis y la redacción. Los verificadores, hechos también con esa asistencia, recalculan los resultados principales, y 9 de las 11 tablas del manuscrito se contrastan automáticamente con los ficheros de resultados; el texto se revisó aparte. Son comprobaciones internas: no sustituyen una revisión por pares ni una réplica externa. Las afirmaciones de comportamiento se apoyan en demostraciones algebraicas, emulación y ejecución simbólica. Las correcciones y comentarios son bienvenidos a través de los [issues](https://github.com/i12gocaj/ccbhash-collision-study/issues).
 
 ## Trabajos relacionados
 

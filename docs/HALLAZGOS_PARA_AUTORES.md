@@ -2,7 +2,7 @@
 
 Este documento resume, para quienes mantienen CCBHash, qué observa el estudio en la implementación pública y qué cambios podrían abordar cada efecto. Las referencias de línea corresponden a `ccbhash-src/ccbhash.py` en el commit `fd40d49973f5129c171dc5849ec6a8bb5fdd88a0`, que el estudio conserva sin modificar.
 
-La intención es constructiva. Un fuzzy hash debe agrupar código parecido, y muchas de las coincidencias medidas son precisamente el comportamiento buscado. Lo que el estudio documenta es dónde la representación deja de distinguir funciones cuyo comportamiento difiere de forma demostrable, para que esa frontera pueda elegirse de forma explícita.
+La intención es constructiva. Un fuzzy hash debe agrupar código parecido, y las coincidencias medidas pueden corresponder al comportamiento buscado. Lo que el estudio documenta es dónde la representación deja de distinguir funciones cuyo comportamiento difiere de forma demostrable, para que esa frontera pueda elegirse de forma explícita.
 
 Cada hallazgo indica su evidencia en `study/results` y la sección del manuscrito (`output/ESTUDIO_CCBHASH.md`) donde se explica.
 
@@ -83,7 +83,7 @@ En la línea 126, los destinos de cada bloque se ordenan como cadenas hexadecima
 
 ## 8. El esquema JSON de radare2 ha cambiado
 
-El código espera `offset` en `aflj` y en los bloques de `agj`, y `bpvars`/`spvars`/`regpvars` en `afij`. Con radare2 5.8.8 y 6.0.4, esas claves son `addr`, `regvars` o directamente no aparecen, y las variables hay que pedirlas con `afvj`. Sin adaptación, la implementación no se ejecuta con versiones actuales.
+El código espera `offset` en `aflj` y en los bloques de `agj`, y `bpvars`/`spvars`/`regpvars` en `afij`. En las capturas del estudio, radare2 5.8.8 conserva `offset`, pero usa `regvars` en lugar de `regpvars`. Con 6.0.4, la dirección pasa a `addr` y `afij` no incluye las variables, que se obtienen con `afvj`. En la sonda sin adaptador con 5.8.8, la implementación se ejecuta, pero descarta la función con `Error to get variables` y devuelve un resultado vacío (`probe.json`).
 
 El estudio usa un adaptador explícito (`study/compat.py`) que solo renombra claves y obtiene las listas reales de `afvj`, sin tocar reductores, intervalos, digests ni pesos.
 
@@ -91,7 +91,7 @@ El estudio usa un adaptador explícito (`study/compat.py`) que solo renombra cla
 
 ## 9. Bucle de reintento sin límite
 
-En las líneas 259-262 (y en 318-321 y 497-500) se repite `aaa` y `aflj` mientras la lista de funciones esté vacía. Si un fichero no contiene funciones detectables, o radare2 no puede abrirlo, el proceso no termina.
+En las líneas 259-262 (y en 318-321 y 497-500) se repite `aaa` y `aflj` mientras la lista de funciones esté vacía. Si un fichero no contiene funciones detectables y la lista sigue vacía, el bucle no termina.
 
 **Propuesta.** Limitar los reintentos y lanzar una excepción descriptiva. Conviene además cerrar la instancia de `r2pipe` en cada reintento, porque ahora se abre una nueva sin cerrar la anterior.
 
@@ -111,6 +111,6 @@ Los pesos suman 1 en decimal, pero la suma en coma flotante puede dar `1.0000000
 
 ## Lo que no se afirma
 
-- No se estima una tasa de falsos positivos en malware real. Los recuentos del corpus público describen ese corpus, y la mayoría de coincidencias reúnen funciones que probablemente proceden del mismo código fuente compilado de otra forma, que es lo que un fuzzy hash debe agrupar.
+- No se estima una tasa de falsos positivos en malware real. Los recuentos del corpus público describen ese corpus. No se ha medido cuántas coincidencias reúnen funciones del mismo código fuente compilado de otra forma, que es lo que un fuzzy hash debe agrupar.
 - La divergencia de comportamiento solo se afirma donde se ha demostrado: en las familias controladas, mediante una fórmula de retorno, emulación y ejecución simbólica.
 - Las propuestas no se han evaluado en este estudio. Son puntos de partida para que los autores midan su efecto en la tarea para la que se diseñó CCBHash.
